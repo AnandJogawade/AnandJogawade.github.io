@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-title h2 {
+            font-size: 2em;
+            color: #333;
+        }
+        .section-title h2 span {
+            color: #007bff;
+        }
+        .certifications-area, .skills-area, .courses-area {
+            padding: 40px 0;
+            background-color: #ffffff;
+        }
+        .certifications-area {
+            border-top: 5px solid #007bff;
+        }
+        .skills-area {
+            border-top: 5px solid #28a745;
+        }
+        .courses-area {
+            border-top: 5px solid #ffc107;
+        }
+        .certifications-area h2, .skills-area h2, .courses-area h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .certifications-area h2:first-of-type, .courses-area h2:first-of-type {
+            font-size: 1.5em; /* Font size for section titles */
+        }
+        .certifications-area h2:last-of-type, .courses-area h2:last-of-type {
+            font-size: 1.2em; /* Smaller font size for sub-titles */
+        }
+        .certifications-area hr, .skills-area hr, .courses-area hr {
+            width: 200px;
+            margin: 20px auto;
+            border: 1px solid #007bff;
+        }
+        .certifications-list, .skills-list, .courses-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .certifications-list li, .skills-list li, .courses-list li {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+            cursor: pointer; /* Indicates that the element is clickable */
+            text-align: center;
+        }
+        .certifications-list li:hover, .skills-list li:hover, .courses-list li:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+        }
+        .certifications-list h5, .courses-list h5 {
+            margin: 0;
+            font-size: 1em;
+            color: #007bff;
+        }
+        .certifications-list a, .courses-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .certifications-list a:hover, .courses-list a:hover {
+            text-decoration: underline;
+        }
+        .skills-list li {
+            flex: 0 0 22%;
+            max-width: 22%;
+        }
+        .courses-list li {
+            flex: 0 0 22%;
+            max-width: 22%;
+        }
+        .skills-list h4, .courses-list h4 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            .skills-list li, .courses-list li {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+        }
+        @media (max-width: 576px) {
+            .skills-list li, .courses-list li {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+        /* Styling for link as a block element */
+        .certifications-list a, .courses-list a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- Courses area starts -->
+    <div id="courses" class="courses-area">
+        <div class="container">
+            <div class="section-title">
+                <h1>Courses</h1>
+            </div>
+            <hr>
+            <ul class="courses-list">
+                <li>
+                    <a href="https://coursera.org/share/ccfa02acb7afe5c3b0a027317dec1596" target="_blank">
+                        <h5>
+                
+                            Technical Deep Dive with Incident Response Tools (Infosec)
+                        </h5>
+                    </a>
+                </li>  <li>
+                    <a href="https://drive.google.com/file/d/1qjlx8j1kecxBr6e_EVO5qiJQX3Hf60qm/view?usp=sharing" target="_blank">
+                        <h5>
+
+                        The Trenches: Security Operations Center(EC-Council)
+                        </h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://drive.google.com/file/d/1TP6sC4DSbbgiUIYtgxhOnYSbt20ZRzQJ/view?usp=sharing" target="_blank">
+                        <h5>
+
+                           Bug Bounty-Ethical Hacking (Udemy)
+                        </h5>
+                    </a>
+                </li>  <li>
+                    <a href="https://coursera.org/share/fd3acb2b260a870f23e0800ff2b934eb" target="_blank">
+                        <h5>
+                            Cloud Security on AWS (Edureka)
+                        </h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://coursera.org/share/a75addbd7aa3ca3c12f5da582b6714f4" target="_blank">
+                        <h5>
+                
+                            Cloud Top Ten Risks (University of Minnesota)
+                        </h5>
+                    </a>
+                </li> <li>
+                    <a href="https://coursera.org/share/3e33ee3730159ca0229559e0c1688536" target="_blank">
+                        <h5>
+
+                            Hacking and Patching(University of Colorado System)
+                        </h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Courses area ends -->
+</body>
+</html>
