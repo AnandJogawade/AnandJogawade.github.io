@@ -1,0 +1,1574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Jogawade - Portfolio</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167131966-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-167131966-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WNXJN5W');
+    </script>
+
+    <!-- Meta tags -->
+    <meta name="description" content="Anand Jogawade's Personal Portfolio Website">
+    <meta name="keywords" content="Anand Jogawade, developer, portfolio, cybersecurity, appsec, penetration testing">
+    <meta name="author" content="Anand Jogawade">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            background: #1c1c1c; /* Slightly dark background for better contrast */
+        }
+
+        /* Header Styling */
+        .header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: #333;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 1.5em;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .header .logo span {
+            color: #007bff;
+        }
+
+        .header .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header .nav-menu li {
+            margin: 0;
+        }
+
+        .header .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .header .nav-menu a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .header .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                /* Hide the menu by default on mobile */
+            }
+
+            .header .nav-menu.show {
+                display: flex;
+            }
+
+            .header .nav-menu li {
+                margin: 5px 0;
+            }
+
+            .header .nav-menu a {
+                width: 100%;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin: 0 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header .logo {
+                font-size: 1.2em;
+            }
+
+            .header .nav-menu a {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Banner Area */
+    .banner-area {
+    position: relative;
+    height: 100vh;
+    background: url('bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+/*particals animation */
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .welcome-text {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px;
+            border-radius: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-text .img-area img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text h3 {
+            font-size: 2.5em;
+            margin: 10px 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .headline-wrapper {
+            font-size: 1.5em;
+            line-height: 1.3;
+            color: #fff;
+            position: relative;
+        }
+
+        .headline-wrapper .line {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .headline-wrapper .line.visible {
+            opacity: 1;
+        }
+
+        .headline-wrapper .line:nth-child(1) { animation: fadeInOut 4s infinite; }
+        .headline-wrapper .line:nth-child(2) { animation: fadeInOut 4s infinite; animation-delay: 1s; }
+        .headline-wrapper .line:nth-child(3) { animation: fadeInOut 4s infinite; animation-delay: 2s; }
+        .headline-wrapper .line:nth-child(4) { animation: fadeInOut 4s infinite; animation-delay: 3s; }
+
+        @keyframes fadeInOut {
+            0%, 10% { opacity: 1; }
+            20%, 90% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .social-icon {
+            margin: 20px 0;
+        }
+
+        .social-icon ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icon ul li {
+            margin: 0 10px;
+        }
+
+        .social-icon ul li a {
+            color: #007bff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icon ul li a:hover {
+            color: #0056b3;
+        }
+
+        .mouse-scroll {
+            display: inline-block;
+            margin-top: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .mouse-scroll .mouse {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+        }
+
+        .mouse-scroll .mouse-movement {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: mouseMovement 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes mouseMovement {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(0.5); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNXJN5W" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Anand <span>Jogawade</span></div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience-section">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>   
+    </header>
+
+    <!-- Banner Area -->
+    <div class="banner-area" id="home">
+        <div id="particles-js"></div>
+        <div class="welcome-text">
+            <div class="img-area">
+                <img src="images/home/newMe.png" alt="Anand Jogawade">
+            </div>
+            <h3>Anand Jogawade</h3>
+            <div class="headline-wrapper">
+                <div class="line">Certified AppSec Practitioner</div>
+                <div class="line">Certified in Cybersecurity</div>
+                <div class="line">Cyber Security Auditor</div>
+                <div class="line">Penetration Tester</div>
+            </div>
+            <div class="social-icon">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/anand-jogawade/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Anand7758" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+            <a class="mouse-scroll" href="#about">
+                <span class="mouse">
+                    <span class="mouse-movement"></span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+
+        function toggleMenu() {
+            var menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
+
+<!--end of  particals animations -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section-padding {
+            padding: 40px 0;
+        }
+        .about-area {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .about-area .stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+        .about-area .stack img {
+            width: 250px; /* Increased the width */
+            height: 250px; /* Increased the height */
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
+        }
+        .about-right {
+            padding: 20px;
+        }
+        .about-right h2 {
+            font-size: 1.8em;
+            color: #007bff;
+        }
+        .about-right p {
+            line-height: 1.6;
+            color: #d3d3d3;
+        }
+        .about-right p span {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .about-right a {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-size: 1em;
+            text-align: center;
+        }
+        .about-right a:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        .about-right .fa {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- About area starts -->
+    <div id="about" class="about-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="stack">
+                        <img src="images/about/formalPic.jpeg" alt="About Image">
+                    </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1 col-sm-12">
+                    <div class="about-right">
+                        <h2>Cyber Security Auditor</h2>
+                        <p>I am <span>Anand Jogawade</span>.</p>
+                        <p>
+                            I specialize in penetration testing for web, Android, and iOS applications, as well as servers and hosts, along with securing firewalls to protect against evolving threats. Additionally, I am experienced in conducting red teaming exercises to simulate real-world attacks and assess the resilience of security systems.
+                            <br><br>
+                            Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulnerability assessments, penetration testing, and conducting comprehensive IS, VAPT, and GAP audits. I leverage tools such as Nmap, BurpSuite, Nessus, Acunetix, Wireshark, SQLmap, and Metasploit to identify vulnerabilities and implement effective security solutions.
+                            <br><br>
+                            With a BBA(CA) degree from Savitribai Phule Pune University and certifications including ISC2 Certified in Cybersecurity (CC), The SecOps Group's Certified AppSec Practitioner (CAP), Fortinet Certified Associate in Cybersecurity, and specialized training in Ethical Hacking and Cloud Risk Management, I combine technical expertise with a proactive approach to security challenges.
+                        </p>
+                        <a href="#skills" class="btn-a">My Skills</a>
+                        <a href="https://drive.google.com/file/d/1RXeNG2UQjKuyWg6_8bQgH0qspg-w3t3U/view?usp=sharing" target="_blank" class="btn-a" download>
+                            <i class="fa fa-arrow-down"></i>Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About area ends -->
+</body>
+</html>
+
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+        }
+
+        .experience-section {
+            padding: 60px 20px;
+            background-color: #121212;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .experience-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .experience-card {
+            background-color: #242424;
+            border-radius: 12px;
+            padding: 20px 25px;
+            flex: 1 1 calc(45% - 20px); /* Adjust width for flexibility */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .experience-card h3 {
+            color: #00aaff;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .experience-card h4 {
+            color: #e0e0e0;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .experience-card p {
+            color: #bbbbbb;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .experience-card span {
+            display: inline-block;
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .experience-card {
+                flex: 1 1 100%; /* Single column layout on smaller screens */
+            }
+
+            .experience-container {
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="experience-section" class="experience-section">
+       <p><h1 class="section-title">My Experience</h1></p>
+        <div class="experience-container">
+            <!-- Experience Card 1 -->
+            <div class="experience-card">
+                <h3>Phoenix TechnoCyber</h3>
+                <h4>Cyber Security Auditor</h4>
+                <span>Jan 2024 - Present</span>
+                <p>
+                    As a Cyber Security Auditor at Phoenix Technocyber, I collaborate with the organization to safeguard their digital assets. My role involves identifying vulnerabilities and devising strategic solutions to fortify defenses. I specialize in Penetration Testing, Vulnerability Assessment, and Security Compliance.
+                </p>
+            </div>
+            <!-- Experience Card 2 -->
+            <div class="experience-card">
+                <h3>TechnoHacks EduTech Official</h3>
+                <h4>VAPT Analyst</h4>
+                <span>May 2024</span>
+                <p>
+                    Conducted Vulnerability Assessment and Penetration Testing (VAPT) to identify and address security weaknesses in various systems. Developed comprehensive reports detailing vulnerabilities, potential risks, and recommended mitigation strategies.    
+                 </p>
+            </div>
+            <!-- Experience Card 3 -->
+            <div class="experience-card">
+                <h3>ShadowFox</h3>
+                <h4>VAPT Analyst</h4>
+                <span>Mar 2024</span>
+                <p>
+                    Performed security tests to find weaknesses in systems and applications. Created clear reports on the issues found and suggested ways to fix them. Helped improve the overall security of the systems.
+                </p>
+            </div>
+            <!-- Experience Card 4 -->
+            <div class="experience-card">
+                <h3>Tutelr</h3>
+                <h4>VAPT Analyst</h4>
+                <span>Jan 2024 - Mar 2024</span>
+                <p>
+                    Assist in developing and implementing cloud security policies and procedures.
+                    Conduct vulnerability assessments and penetration testing.
+                    Work with the team to identify and mitigate security risks.
+                    Monitor and analyze security logs and alerts.
+                    Assist in incident response and disaster recovery efforts.
+                    Stay up to date with industry trends and best practices in cloud security.
+                 </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+    
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        /* General styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c; /* Dark gray background */
+            color: #f0f0f0; /* Light text for contrast */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 10px 0; /* Reduced padding */
+            margin: 0;
+        }
+
+        .section-title h2 {
+            font-size: 0.6em; /* Reduced font size by 50% */
+            color: #00aaff; /* White text */
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Certifications section */
+        .certifications-area {
+            padding: 20px 0; /* Reduced padding */
+            background-color: #242424; /* Dark gray for sections */
+            margin: 0; /* Removed unnecessary margin */
+            border-radius: 8px;
+        }
+
+        .certifications-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .certifications-list li {
+            background-color: #2a2a2a; /* Slightly lighter gray for cards */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certifications-list li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        .certifications-list a {
+            text-decoration: none;
+            color: #00aaff; /* Vibrant blue for links */
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .certifications-list h5 {
+            font-size: 1em;
+            margin: 10px 0 0;
+        }
+
+        /* Specialization & Other Courses section */
+        .specialization-other-courses-area {
+            padding: 20px 0; /* Reduced padding */
+            background-color: #242424; /* Dark gray for sections */
+            margin: 0; /* Removed unnecessary margin */
+            border-radius: 8px;
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .courses-box {
+            flex: 1;
+            background-color: #2a2a2a; /* Slightly lighter gray for cards */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .courses-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        .courses-box h2 {
+            color: #ffaa00; /* White text for headers */
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .courses-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .courses-box ul li {
+            margin-bottom: 10px;
+        }
+
+        .courses-box ul li a {
+            text-decoration: none;
+            color: #ffaa00; /* Yellow for course links */
+            font-size: 1em;
+        }
+
+        .courses-box ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* My Skills */
+        .skills-area {
+            padding: 20px 0; /* Reduced padding */
+            background-color: #242424; /* Black for My Skills section */
+            margin: 0; /* Removed unnecessary margin */
+            border-radius: 8px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .skills-list li {
+            background-color: #151515; /* Matching black for skills cards */
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 48%;
+        }
+
+        .skills-list li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        }
+
+        .skills-list h4 {
+            font-size: 1em;
+            color: #00aaff; /* Vibrant blue text for skills */
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .courses-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Certifications section -->
+    <div id="certifications" class="certifications-area">
+        <div class="container">
+            <div class="section-title">
+                <h1>Certifications</h1>
+            </div>
+            <ul class="certifications-list">
+                <li>
+                    <a target="_blank">
+                        <h5>ISC2 - Certified In Cybersecurity (CC) (2000366)</h5>
+                    </a>
+                </li>
+                <li>
+                    <a  target="_blank">
+                        <h5>Fortinet Certified Associate in Cybersecurity (FCA) </h5>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank">
+                        <h5>The SecOps Group - Certified AppSec Practitioner (CAP) (8356448)</h5>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Specialization & Other Courses section -->
+    <div id="specialization-other-courses" class="specialization-other-courses-area">
+        <div class="container">
+            <div class="section-title">
+                <h1>Specialization & Other Courses</h1>
+            </div>
+            <div class="courses-container">
+                <div class="courses-box">
+                    <h2>Specialization Courses</h2>
+                    <ul>
+                        <li>
+                            <a  target="_blank">
+                                Google Cybersecurity Professional Certificate (Google)
+                            </a>
+                        </li>
+                        <li>
+                            <a  target="_blank">
+                                OWASP Top 10 - 2021 Specialization (Infosec)
+                            </a>
+                        </li>
+                        <li>
+                            <a  target="_blank">
+                                Python for Cybersecurity Specialization (Infosec)
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank">
+                                Cybersecurity Attack and Defense Fundamentals (EC-Council)
+                            </a>
+                        </li>
+                        <li>
+                            <a  target="_blank">
+                                Ethical Hcking Expert (IANT)
+                            </a>
+                        </li><li>
+                            <a  target="_blank">
+                                Security Analyst Fundamentals Specialization (IBM)
+                            </a>
+                        </li>
+                        <li>
+                            <a  target="_blank">
+                                CCNA (IANT)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="courses-box">
+                    <h2>Other Courses</h2>
+                    <ul>
+                        <li>
+                            <a  target="_blank">
+                        
+                                    Technical Deep Dive with Incident Response Tools (Infosec)
+                            
+                            </a>
+                        </li>  <li>
+                            <a  target="_blank">
+                               
+        
+                                The Trenches: Security Operations Center(EC-Council)
+                               
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank">
+                              
+        
+                                   Bug Bounty-Ethical Hacking (Udemy)
+                                
+                            </a>
+                        </li>  <li>
+                            <a target="_blank">
+                              
+                                    Cloud Security on AWS (Edureka)
+
+                            </a>
+                        </li>
+                        <li>
+                            <a  target="_blank">
+                                
+                        
+                                    Cloud Top Ten Risks (University of Minnesota)
+                               
+                            </a>
+                        </li> <li>
+                            <a  target="_blank">
+                              
+        
+                                    Hacking and Patching(University of Colorado System)
+                                
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills section -->
+    <div id="skills" class="skills-area">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            <ul class="skills-list">
+                <li><h4>Red Teaming</h4></li>
+                <li><h4>Vulnerability Assessments</h4></li>
+                <li><h4>Penetration Testing</h4></li>
+                <li><h4>Securing Firewall</h4></li>
+                <li><h4>Active Directory</h4></li>
+                <li><h4>Exploit Development</h4></li>
+                <li><h4>Cloud Security (AWS)</h4></li>
+                <li><h4>Networking</h4></li>
+                <li><h4>Bash Scripting</h4></li>
+                <li><h4>Python</h4></li>
+                <li><h4>JavaScript</h4></li>
+                <li><h4>C++</h4></li>
+                <li><h4>Problem Solving</h4></li>
+                <li><h4>Critical Thinking</h4></li>
+                <li><h4>Metasploit</h4></li>
+                <li><h4>Burp Suite</h4></li>
+                <li><h4>Kali Linux</h4></li>
+                <li><h4>Leadership</h4></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+
+    <!-- Projects Section 
+
+    <div id="PROJECT" class="projects-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2>My <span>Projects</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="projects-content">
+            <div class="projects-nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="port-nav-list">
+                                <li><a class="img-filter active" data-filter="*">All</a></li>
+                                <li><a class="img-filter" data-filter=".ml">Data Science</a></li>
+                                <li><a class="img-filter" data-filter=".int">Full Stack / Integrated</a></li>
+                                <li><a class="img-filter" data-filter=".osc">Open Sourced</a></li>
+                                <li><a class="img-filter" data-filter=".oth">Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                </br>
+                </br> -->
+                <!--<div class="col-md-6">
+                <div class="row port-items" id="img-filter" style="position: relative; height: 570px;">
+
+
+                    <div class="col-xs-12 single-port int" style="position: absolute; left: 0px; top: 0px;">
+                        <ul class="resumes">
+                            <li class="resume-item expr">
+                                <img src="images/port/web-dev.png" alt="Avatar"
+                                    class="w3-left w3-circle w3-margin-right" style="width:80px">
+                                <p><span class="w3-large w3-margin-right"><b>Sakila Film Project</b></span></p>
+                                <p><i>Full Stack Project</i></br>
+                                <p>Full Stack ExtJs Dynamic Java-EE Film Inventory Project with CURD Operations
+                                    implemented using MySQL Server, Hibernate,
+                                    Spring MVC with Struts2.
+                                </p>
+                                <p class="w3-medium"><a href="https://github.com/rahulbordoloi/Java-Training-HRC"
+                                        target="_blank" class="w3-hover-text-green">Repository Link</a></p>
+                            </li>
+                        </ul>
+                    </div>           
+        </div>
+    </div>-->
+    <!-- End Projects Section -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio - Anand Jogawade</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #121212;
+                color: #e0e0e0;
+                scroll-behavior: smooth;
+            }
+    
+            /* Footer Section */
+            .footer {
+                background-color: #0a0a0a;
+                color: #fff;
+                padding: 40px 0;
+                font-size: 14px;
+            }
+            .footer .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 30px;
+            }
+            .footer .footer-about,
+            .footer .footer-links,
+            .footer .footer-contact {
+                flex: 1;
+                min-width: 250px;
+            }
+            .footer h4 {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+                color: #fff;
+            }
+            .footer p, .footer a {
+                color: #a0a0a0;
+                line-height: 1.8;
+                text-decoration: none;
+            }
+            .footer a:hover {
+                color: #1db954;
+            }
+            .footer-links ul {
+                list-style: none;
+                padding: 0;
+            }
+            .footer-links ul li {
+                margin-bottom: 10px;
+            }
+            .footer-links ul li a {
+                display: flex;
+                align-items: center;
+            }
+            .footer-links ul li a i {
+                margin-right: 10px;
+                color: #1db954;
+            }
+            .footer-contact .social-icons a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-color: #1e1e1e;
+                color: #fff;
+                border-radius: 50%;
+                line-height: 40px;
+                text-align: center;
+                margin-right: 10px;
+                transition: all 0.3s;
+            }
+            .footer-contact .social-icons a:hover {
+                background-color: #1db954;
+            }
+    
+            /* Bottom Footer */
+            .footer-bottom {
+                text-align: center;
+                margin-top: 30px;
+                border-top: 1px solid #333;
+                padding-top: 15px;
+                font-size: 12px;
+            }
+            .footer-bottom a {
+                color: #1db954;
+                font-weight: bold;
+                text-decoration: none;
+            }
+    
+            /* Scroll to Top Button */
+            .scroll-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #1db954;
+                color: #fff;
+                border: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                font-size: 20px;
+                line-height: 50px;
+                text-align: center;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+                display: none;
+                z-index: 999;
+            }
+            .scroll-to-top:hover {
+                background-color: #17a947;
+            }
+            <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Resume</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f9f9f9;
+                }
+                .section-padding {
+                    padding: 60px 0;
+                }
+                .custom-border {
+                    border-top: 6px solid #007bff;
+                }
+                .statistic-area {
+                    background-color: #242424;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+                    border-radius: 12px;
+                    padding: 40px;
+                    margin: 20px 0;
+                    text-align: center;
+                }
+                .statistic-area .item {
+                    padding: 20px;
+                    margin: 10px;
+                    background-color: #555;
+                    border-radius: 10px;
+                    transition: background-color 0.3s, box-shadow 0.3s;
+                }
+                .statistic-area .item:hover {
+                    background-color: #e2e2e2;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                }
+                .statistic-area .counter {
+                    font-size: 3em;
+                    color: #007bff;
+                    margin: 0;
+                    font-weight: 700;
+                }
+                .statistic-area p {
+                    color: #ffaa00;
+                    margin: 10px 0 0;
+                    font-size: 1.1em;
+                }
+                .button {
+                    display: inline-block;
+                    padding: 15px 30px;
+                    font-size: 16px;
+                    color: #ffffff;
+                    background-color: #007bff;
+                    border: none;
+                    border-radius: 5px;
+                    text-align: center;
+                    text-decoration: none;
+                    transition: background-color 0.3s, transform 0.3s;
+                }
+                .button:hover {
+                    background-color: #0056b3;
+                    transform: scale(1.05);
+                }
+        </style>
+    </head>
+    <body>
+     <!--Statistic area starts-->
+            <div class="statistic-area section-padding custom-border">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="item">
+                                <h2 class="counter" data-target="4">0</h2>
+                                <p>Personal Projects</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="item">
+                                <h2 class="counter" data-target="3">0</h2>
+                                <p>Open Source Contribution</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="item">
+                                <h2 class="counter" data-target="6">0</h2>
+                                <p>Awareness Trainings</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="item">
+                                <h2 class="counter" id="expCounter" data-target="0">0</h2>
+                                <p>Total Work Exp (Months)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p> </p>    
+                            <p></p><a href="https://github.com/Anand7758" class="button">Check out my Github Activity Log</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Statistic area ends-->
+            <!-- Blog Section -->
+<div id="blogs" class="blog-section section-padding custom-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Latest Blogs</h2>
+                <p class="section-subtitle">Explore my thoughts and insights on various topics!</p>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Blog Post 1 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/350x200" alt="Blog 1" class="img-fluid">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Coming Soon!</h3>
+                        <p class="blog-excerpt">....</p>
+                        <a href="#" class="blog-read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/350x200" alt="Blog 2" class="img-fluid">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Coming Soon!</h3>
+                        <p class="blog-excerpt">....</p>
+                        <a href="#" class="blog-read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/350x200" alt="Blog 3" class="img-fluid">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Coming Soon!</h3>
+                        <p class="blog-excerpt">....</p>
+                        <a href="#" class="blog-read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Section Styling -->
+<style>
+    .blog-section {
+        background-color: #242424;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+        font-size: 1.2em;
+        color: #ffaa00;
+        margin-bottom: 40px;
+    }
+
+    .blog-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 20px;
+    }
+
+    .blog-title {
+        font-size: 1.5em;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .blog-excerpt {
+        font-size: 1em;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    .blog-read-more {
+        font-size: 1em;
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .blog-read-more:hover {
+        color: #0056b3;
+    }
+</style>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <!-- About Section -->
+            <div class="footer-about">
+                <h4>Anand Jogawade</h4>
+                <p>Thank you so much for taking the time to visit my personal website! Here, you'll find a showcase of my work, passions, and creative journey. I’d love for you to connect with me on my social media platforms and dive deeper into the projects I’ve been working on.</p>
+                <p>Let’s collaborate, innovate, and create something truly extraordinary together. Your ideas, feedback, and thoughts mean the world to me, so don’t hesitate to reach out. The best is yet to come—let’s make it happen!</p>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home"><i class="fa fa-angle-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa fa-angle-right"></i> About</a></li>
+                    <li><a href="#experience-section"><i class="fa fa-angle-right"></i> Experience</a></li>
+                    <li><a href="#certifications"><i class="fa fa-angle-right"></i> Certifications</a></li>
+                    <li><a href="#skills"><i class="fa fa-angle-right"></i> Skills</a></li>
+                    <li><a href="#blogs"><i class="fa fa-angle-right"></i> Blogs</a></li>
+                    <li><a href="#projects"><i class="fa fa-angle-right"></i> Projects</a></li>
+                    <li><a href="#contact"><i class="fa fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fa fa-phone"></i> +91 7743819058</p>
+                <p><i class="fa fa-envelope"></i> jogawade2@gmail.com</p>
+                <p><i class="fa fa-map-marker"></i> Pune, Maharashtra, India</p>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/anand-jogawade" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/anand7758" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="mailto:jogawade2@gmail.com"><i class="fa fa-envelope"></i></a>
+                    <!--  <a href="" target="_blank"><i class="fa fa-twitter"></i></a> -->
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            Designed ❤️ by <a href="https://anand7758.github.io" target="_blank">Anand Jogawade</a>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTopBtn"><i class="fa fa-arrow-up"></i></button>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Show/Hide Scroll to Top Button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        });
+    
+        // Scroll to Top Functionality
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+    
+    </body>
+    </html>
+        <!-- Main JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            // Total Experience Calculator
+            function calculateExperience(startDate) {
+                let currentDate = new Date();
+                let firstDate = new Date(startDate);
+                let years = currentDate.getFullYear() - firstDate.getFullYear();
+                let months = currentDate.getMonth() - firstDate.getMonth();
+                if (months < 0) {
+                    years--;
+                    months += 12;
+                }
+                return (years * 12) + months;
+            }
+    
+            $(document).ready(function() {
+                // Animate counters
+                $('.counter').each(function() {
+                    $(this).prop('Counter', 00).animate({
+                        Counter: $(this).attr('data-target')
+                    }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+    
+                // Calculate and animate total work experience
+                let experienceMonths = calculateExperience("2024-01-01");
+                $('#expCounter').attr('data-target', experienceMonths).text(0);
+    
+                $('#expCounter').prop('Counter', 00).animate({
+                    Counter: $('#expCounter').attr('data-target')
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+    
+                // Extract the Current Business Year
+                var currentYear = new Date().getFullYear();
+                document.getElementById("currentYearId").innerHTML = currentYear;
+            });
+        </script>
+    </body>
+    </html>
+    
+
+
+        
+    
