@@ -541,4 +541,132 @@ canvas.height=window.innerHeight;
 let particles=[];
 let mouse={x:null,y:null};
 
-const particleCoun
+const particleCount=110;
+
+for(let i=0;i<particleCount;i++){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*1.3,
+vy:(Math.random()-0.5)*1.3,
+size:2,
+color:Math.random()>0.5?"#ffffff":"#1e88ff"
+});
+
+}
+
+canvas.addEventListener("mousemove",e=>{
+mouse.x=e.clientX;
+mouse.y=e.clientY;
+});
+
+canvas.addEventListener("mousedown",()=>{
+
+for(let i=0;i<25;i++){
+
+particles.push({
+x:mouse.x,
+y:mouse.y,
+vx:(Math.random()-0.5)*3,
+vy:(Math.random()-0.5)*3,
+size:2,
+color:"#1e88ff"
+});
+
+}
+
+});
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,i)=>{
+
+p.x+=p.vx;
+p.y+=p.vy;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+ctx.fillStyle=p.color;
+ctx.fill();
+
+particles.slice(i+1).forEach(p2=>{
+
+let dx=p.x-p2.x;
+let dy=p.y-p2.y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(p2.x,p2.y);
+ctx.strokeStyle="rgba(0,150,255,"+(1-dist/120)+")";
+ctx.stroke();
+
+}
+
+});
+
+});
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+/* EXPERIENCE COUNTER */
+
+const start=new Date("2024-06-01");
+
+function calcMonths(){
+
+const now=new Date();
+let months=(now.getFullYear()-start.getFullYear())*12;
+months+=now.getMonth()-start.getMonth();
+return months;
+
+}
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+
+let months=calcMonths();
+let counter=0;
+
+let interval=setInterval(()=>{
+counter++;
+document.getElementById("expMonths").innerText=counter;
+
+if(counter>=months)clearInterval(interval);
+
+},40);
+
+observer.disconnect();
+
+}
+});
+});
+
+observer.observe(document.querySelector("#stats"));
+
+/* SCROLL BUTTON */
+
+const btn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+btn.style.display=window.scrollY>300?"block":"none";
+};
+
+btn.onclick=function(){
+window.scrollTo({top:0,behavior:"smooth"});
+};
+
+</script>
+
+</body>
+</html>
