@@ -356,7 +356,21 @@ against evolving threats.
 
 <div class="exp-grid">
 
-<div class="exp-card">Security Auditor – Company</div>
+<div class="exp-card">
+
+<h3>Security Auditor</h3>
+
+<p style="color:#1e88ff;margin-top:5px;">
+Company Name
+</p>
+
+<p style="margin-top:10px;color:#bbb;font-size:14px;">
+• Conducted vulnerability assessments and penetration testing  
+• Identified security weaknesses and provided remediation steps  
+• Performed VAPT and security audits
+</p>
+
+</div>
 <div class="exp-card">Cyber Security Analyst – Company</div>
 <div class="exp-card">Penetration Tester – Company</div>
 <div class="exp-card">Security Researcher – Company</div>
@@ -611,7 +625,25 @@ ctx.stroke();
 });
 
 });
+});
+});
 
+/* keep particle count stable */
+if(particles.length < particleCount){
+
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-0.5)*1.3,
+vy:(Math.random()-0.5)*1.3,
+size:2,
+color:Math.random()>0.5?"#ffffff":"#1e88ff"
+});
+
+}
+
+requestAnimationFrame(draw);
+}
 requestAnimationFrame(draw);
 
 }
@@ -670,3 +702,4 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
+
