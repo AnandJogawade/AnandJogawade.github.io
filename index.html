@@ -1,203 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Anand Jogawade | Cyber Security Auditor</title>
+<title>Anand Jogawade - Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="description" content="Anand Jogawade Personal Portfolio">
+<meta name="keywords" content="Cybersecurity, AppSec, Penetration Testing">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167131966-1"></script>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
 body{
-font-family:Poppins;
-background:#0f172a;
-color:#e2e8f0;
+margin:0;
+font-family:Montserrat;
+background:#121212;
+color:white;
+scroll-behavior:smooth;
 }
 
 /* NAVBAR */
 
-header{
+.header{
 position:fixed;
 top:0;
 width:100%;
-background:#020617;
-padding:18px 8%;
+background:#1b1b1b;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:12px 8%;
 z-index:1000;
 }
 
 .logo{
-font-size:22px;
-font-weight:600;
-color:white;
+font-size:20px;
+font-weight:bold;
 }
 
 .logo span{
-color:#38bdf8;
+color:#007bff;
 }
 
-nav a{
-color:#cbd5f5;
-margin-left:25px;
+.nav-menu{
+list-style:none;
+display:flex;
+gap:18px;
+}
+
+.nav-menu a{
+color:white;
 text-decoration:none;
-font-size:14px;
 }
 
-nav a:hover{
-color:#38bdf8;
+.nav-menu a:hover{
+color:#007bff;
 }
 
 /* HERO */
 
-.hero{
+.banner-area{
 height:100vh;
+background:url('bg.jpg') center/cover no-repeat;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-background:url(bg.jpg) center/cover;
-padding:0 20px;
+position:relative;
 }
 
-.hero img{
-width:170px;
-height:170px;
+#particles-js{
+position:absolute;
+width:100%;
+height:100%;
+}
+
+.welcome-text{
+position:relative;
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:20px;
+max-width:700px;
+}
+
+.welcome-text img{
+width:200px;
+height:200px;
 border-radius:50%;
-border:3px solid #38bdf8;
+object-fit:cover;
 margin-bottom:20px;
 }
 
-.hero h1{
-font-size:40px;
+.headline-wrapper{
+font-size:20px;
+margin-top:10px;
 }
 
-.hero span{
-color:#38bdf8;
-}
-
-.hero p{
-max-width:650px;
-margin:15px 0;
-color:#cbd5f5;
-}
-
-.btn{
-display:inline-block;
-margin:10px;
-padding:12px 22px;
-background:#38bdf8;
-color:black;
-border-radius:6px;
-text-decoration:none;
-font-weight:600;
-}
-
-.btn:hover{
-background:#0ea5e9;
-}
-
-/* SECTION */
+/* SECTIONS */
 
 section{
-padding:90px 8%;
+padding:80px 10%;
 }
 
 .section-title{
 text-align:center;
 font-size:32px;
 margin-bottom:40px;
-color:#38bdf8;
+color:#007bff;
 }
 
 /* ABOUT */
 
-.about{
-display:grid;
-grid-template-columns:1fr 2fr;
+.about-container{
+display:flex;
 gap:40px;
 align-items:center;
+flex-wrap:wrap;
 }
 
-.about img{
-width:260px;
-border-radius:10px;
+.about-container img{
+width:320px;
+border-radius:50%;
 }
 
 /* EXPERIENCE */
 
-.cards{
+.experience-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.experience-card{
+background:#1e1e1e;
+padding:25px;
+border-radius:10px;
+}
+
+.experience-card h3{
+color:#007bff;
+}
+
+/* CERTIFICATIONS */
+
+.certifications-list{
+list-style:none;
+padding:0;
+display:grid;
+gap:15px;
+}
+
+.certifications-list li{
+background:#1e1e1e;
+padding:20px;
+border-radius:8px;
+text-align:center;
+}
+
+/* SKILLS */
+
+.skills-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+list-style:none;
+padding:0;
+}
+
+.skills-list li{
+background:#1e1e1e;
+padding:15px;
+text-align:center;
+border-radius:8px;
+}
+
+/* BLOG */
+
+.blog-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
-.card{
-background:#020617;
-padding:25px;
-border-radius:10px;
+.blog-card{
+background:#1e1e1e;
+border-radius:8px;
+overflow:hidden;
 }
 
-.card h3{
-color:#38bdf8;
+.blog-card img{
+width:100%;
+height:180px;
+object-fit:cover;
 }
 
-/* SKILLS */
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.skill{
-background:#020617;
-padding:15px;
-text-align:center;
-border-radius:6px;
+.blog-content{
+padding:20px;
 }
 
 /* FOOTER */
 
-footer{
-background:#020617;
-text-align:center;
-padding:40px 8%;
+.footer{
+background:#0a0a0a;
+padding:60px 10%;
 }
 
-.social a{
-margin:0 10px;
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer h4{
+margin-bottom:10px;
+}
+
+.social-icons a{
 color:white;
+margin-right:10px;
 font-size:18px;
 }
 
-.social a:hover{
-color:#38bdf8;
-}
-
-@media(max-width:900px){
-
-.about{
-grid-template-columns:1fr;
+.footer-bottom{
 text-align:center;
-}
-
+margin-top:40px;
+font-size:13px;
 }
 
 </style>
@@ -206,66 +239,78 @@ text-align:center;
 
 <body>
 
-<header>
+<header class="header">
 
-<div class="logo">
-Anand <span>Jogawade</span>
-</div>
+<div class="logo">Anand <span>Jogawade</span></div>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
-</nav>
+<ul class="nav-menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#blogs">Blogs</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
 </header>
 
-
 <!-- HERO -->
 
-<section class="hero" id="home">
+<div class="banner-area" id="home">
+
+<div id="particles-js"></div>
+
+<div class="welcome-text">
 
 <img src="images/home/newMe.png">
 
-<h1>Anand <span>Jogawade</span></h1>
+<h2>Anand Jogawade</h2>
 
-<p>
-Cyber Security Auditor specializing in penetration testing,
-red teaming, vulnerability assessments and cloud security.
-</p>
+<div class="headline-wrapper">
+Certified AppSec Practitioner<br>
+Certified in Cybersecurity<br>
+Cyber Security Auditor<br>
+Penetration Tester
+</div>
 
-<a href="#about" class="btn">About Me</a>
+<div style="margin-top:20px;">
+<a href="https://linkedin.com/in/anand-jogawade" target="_blank"><i class="fa fa-linkedin"></i></a>
+<a href="https://github.com/anandjogawade" target="_blank"><i class="fa fa-github"></i></a>
+</div>
 
-</section>
+</div>
+
+</div>
 
 
 <!-- ABOUT -->
 
 <section id="about">
 
-<h2 class="section-title">About Me</h2>
+<h2 class="section-title">About</h2>
 
-<div class="about">
+<div class="about-container">
 
 <img src="images/about/formalPic.jpeg">
 
+<div>
+
+<h3>Cyber Security Auditor</h3>
+
+<p>I am <b>Anand Jogawade</b>.</p>
+
 <p>
-
-I specialize in penetration testing for web, Android and iOS
-applications along with infrastructure security assessments.
-
-Currently working as a Cyber Security Auditor at
-Phoenix TechnoCyber where I perform VAPT,
-security audits and red team simulations.
-
-Tools used:
-
-Nmap, Burp Suite, Nessus, Wireshark,
-Metasploit, SQLMap.
-
+I specialize in penetration testing for web, Android, and iOS applications, as well as servers and hosts, along with securing firewalls.
 </p>
+
+<p>
+Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulnerability assessments, penetration testing, and conducting comprehensive IS, VAPT, and GAP audits.
+</p>
+
+<a href="#skills">My Skills</a>
+
+</div>
 
 </div>
 
@@ -278,29 +323,56 @@ Metasploit, SQLMap.
 
 <h2 class="section-title">Experience</h2>
 
-<div class="cards">
+<div class="experience-container">
 
-<div class="card">
+<div class="experience-card">
 <h3>Phoenix TechnoCyber</h3>
-<p>Security Auditor (2024-Present)</p>
+<h4>Security Auditor</h4>
+<span>Jan 2024 - Present</span>
+<p>Penetration testing, vulnerability assessment and compliance.</p>
 </div>
 
-<div class="card">
+<div class="experience-card">
 <h3>TechnoHacks EduTech</h3>
-<p>Security Analyst</p>
+<h4>Security Analyst</h4>
+<span>May 2024</span>
+<p>Conducted vulnerability assessments and security testing.</p>
 </div>
 
-<div class="card">
+<div class="experience-card">
 <h3>ShadowFox</h3>
-<p>Penetration Tester</p>
+<h4>Penetration Tester</h4>
+<span>Mar 2024</span>
+<p>Security testing and reporting vulnerabilities.</p>
 </div>
 
-<div class="card">
+<div class="experience-card">
 <h3>Tutelr</h3>
-<p>Cyber Security Analyst</p>
+<h4>Cyber Security Analyst</h4>
+<span>Jan 2024 - Mar 2024</span>
+<p>Cloud security monitoring and vulnerability assessments.</p>
 </div>
 
 </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+<h2 class="section-title">Certifications</h2>
+
+<ul class="certifications-list">
+
+<li>Certified Red Team Analyst (CRTA)</li>
+<li>Certified Cyber Security Analyst (C3SA)</li>
+<li>ISC2 Certified in Cybersecurity (CC)</li>
+<li>Fortinet Certified Associate in Cybersecurity</li>
+<li>Certified AppSec Practitioner (CAP)</li>
+
+</ul>
 
 </section>
 
@@ -311,54 +383,103 @@ Metasploit, SQLMap.
 
 <h2 class="section-title">Skills</h2>
 
-<div class="skills">
+<ul class="skills-list">
 
-<div class="skill">Red Teaming</div>
-<div class="skill">Penetration Testing</div>
-<div class="skill">Active Directory</div>
-<div class="skill">Exploit Development</div>
-<div class="skill">Cloud Security</div>
-<div class="skill">Python</div>
-<div class="skill">Networking</div>
-<div class="skill">Burp Suite</div>
-<div class="skill">Metasploit</div>
-<div class="skill">Kali Linux</div>
+<li>Red Teaming</li>
+<li>Penetration Testing</li>
+<li>Vulnerability Assessments</li>
+<li>Active Directory</li>
+<li>Exploit Development</li>
+<li>Cloud Security</li>
+<li>Networking</li>
+<li>Python</li>
+<li>Burp Suite</li>
+<li>Metasploit</li>
+<li>Kali Linux</li>
+
+</ul>
+
+</section>
+
+
+<!-- BLOGS -->
+
+<section id="blogs">
+
+<h2 class="section-title">Latest Blogs</h2>
+
+<div class="blog-grid">
+
+<div class="blog-card">
+<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png">
+<div class="blog-content">
+<h3>PikaShow Security Risk</h3>
+<a href="https://medium.com/@Anand_Jogawade">Read More</a>
+</div>
+</div>
+
+<div class="blog-card">
+<img src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*JLL03zl3YlJSntCRjPv1DQ.png">
+<div class="blog-content">
+<h3>LDAP Nightmare</h3>
+<a href="https://medium.com/@Anand_Jogawade">Read More</a>
+</div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- FOOTER -->
 
-<footer id="contact">
+<footer class="footer" id="contact">
 
-<h3>Contact</h3>
+<div class="footer-grid">
 
+<div>
+<h4>Anand Jogawade</h4>
+<p>Cyber Security Auditor specializing in VAPT and red teaming.</p>
+</div>
+
+<div>
+<h4>Contact</h4>
 <p>Pune, Maharashtra, India</p>
+<p>Email: jogawade2@gmail.com</p>
+</div>
 
-<div class="social">
+<div>
+<h4>Social</h4>
 
-<a href="https://linkedin.com/in/anand-jogawade" target="_blank">
-<i class="fab fa-linkedin"></i>
-</a>
+<div class="social-icons">
 
-<a href="https://github.com/anandjogawade" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="mailto:jogawade2@gmail.com">
-<i class="fa fa-envelope"></i>
-</a>
+<a href="https://linkedin.com/in/anand-jogawade"><i class="fa fa-linkedin"></i></a>
+<a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
 
 </div>
 
-<p style="margin-top:20px;font-size:13px">
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
 © 2026 Anand Jogawade
-</p>
+
+</div>
 
 </footer>
 
-</body>
 
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+
+particlesJS("particles-js",{
+particles:{number:{value:120},size:{value:3},move:{speed:3}}
+});
+
+</script>
+
+</body>
 </html>
