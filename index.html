@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Anand Jogawade | Cyber Security Auditor</title>
 
 <style>
@@ -73,7 +72,6 @@ align-items:center;
 justify-content:center;
 text-align:center;
 position:relative;
-
 background-image:url("https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/bg.jpg");
 background-size:cover;
 background-position:center;
@@ -112,7 +110,7 @@ color:#1e88ff;
 color:white;
 margin-top:6px;
 font-weight:500;
-transition:.3s;
+transition:.25s;
 }
 
 /* PARTICLES */
@@ -142,7 +140,7 @@ align-items:center;
 }
 
 .about img{
-width:280px;
+width:260px;
 border-radius:10px;
 }
 
@@ -151,8 +149,11 @@ border-radius:10px;
 .exp-grid{
 margin-top:40px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
+max-width:1100px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .exp-card{
@@ -323,6 +324,7 @@ display:none;
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#blogs">Blogs</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
@@ -356,8 +358,8 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 <h2>Cyber Security Auditor</h2>
 
 <p>
-I specialize in penetration testing for web, Android, and iOS applications,
-along with securing servers and firewalls against evolving threats.
+Specialized in penetration testing, vulnerability assessments,
+and security auditing of web, mobile, and infrastructure systems.
 </p>
 
 </div>
@@ -456,6 +458,18 @@ along with securing servers and firewalls against evolving threats.
 
 </section>
 
+<section id="contact">
+
+<h2 style="text-align:center">Contact</h2>
+
+<p style="text-align:center;margin-top:20px">
+Email: jogawade2@gmail.com<br>
+Phone: +91 7743819058<br>
+Pune, Maharashtra, India
+</p>
+
+</section>
+
 <footer>
 
 <div class="footer-grid">
@@ -467,6 +481,21 @@ along with securing servers and firewalls against evolving threats.
 <p style="color:#aaa;margin-top:10px">
 Cyber Security Portfolio
 </p>
+
+</div>
+
+<div>
+
+<h3 style="color:white">Quick Links</h3>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#blogs">Blogs</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
 </div>
 
@@ -503,7 +532,8 @@ title.style.opacity=1;
 i=(i+1)%titles.length;
 },200);
 
-},1500);
+},1600);
+
 
 /* PARTICLES */
 
@@ -514,15 +544,15 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-const particleCount=120;
+const particleCount=110;
 
 for(let i=0;i<particleCount;i++){
 
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-vx:(Math.random()-0.5)*1.4,
-vy:(Math.random()-0.5)*1.4,
+vx:(Math.random()-0.5)*0.8,
+vy:(Math.random()-0.5)*0.8,
 size:2,
 color:Math.random()>0.5?"#ffffff":"#1e88ff"
 });
@@ -548,6 +578,25 @@ ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 ctx.fillStyle=p.color;
 ctx.fill();
 
+particles.slice(i+1).forEach(p2=>{
+
+let dx=p.x-p2.x;
+let dy=p.y-p2.y;
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(p2.x,p2.y);
+ctx.strokeStyle="rgba(0,150,255,"+(1-dist/120)+")";
+ctx.lineWidth=1;
+ctx.stroke();
+
+}
+
+});
+
 });
 
 requestAnimationFrame(draw);
@@ -555,6 +604,7 @@ requestAnimationFrame(draw);
 }
 
 draw();
+
 
 /* EXPERIENCE COUNTER */
 
@@ -578,7 +628,8 @@ document.getElementById("expMonths").innerText=counter;
 
 if(counter>=months)clearInterval(interval);
 
-},120);
+},400);
+
 
 /* STATS COUNTER */
 
@@ -596,9 +647,10 @@ el.innerText=count;
 
 if(count>=target)clearInterval(interval);
 
-},120);
+},400);
 
 });
+
 
 /* SCROLL BUTTON */
 
