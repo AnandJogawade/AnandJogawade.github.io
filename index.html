@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Anand Jogawade - Portfolio</title>
 
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167131966-1"></script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config','UA-167131966-1');
-</script>
-
-<!-- Fonts / Icons -->
+<meta name="description" content="Anand Jogawade's Personal Portfolio Website">
+<meta name="keywords" content="Anand Jogawade, cybersecurity, appsec, penetration testing">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- Bootstrap -->
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
@@ -146,10 +133,10 @@ object-fit:cover;
 margin-bottom:20px;
 }
 
-/* SECTION */
+/* GENERAL SECTION */
 
 .section-padding{
-padding:70px 0;
+padding:80px 0;
 }
 
 .section-title{
@@ -166,11 +153,6 @@ background:#242424;
 padding:20px;
 border-radius:10px;
 margin-bottom:20px;
-transition:.3s;
-}
-
-.experience-card:hover{
-transform:translateY(-5px);
 }
 
 /* SKILLS */
@@ -233,6 +215,7 @@ display:none;
 <body>
 
 <header class="header">
+
 <div class="logo">Anand <span>Jogawade</span></div>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -246,6 +229,7 @@ display:none;
 <li><a href="#blogs">Blogs</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </header>
 
 <!-- HERO -->
@@ -261,15 +245,22 @@ display:none;
 <h3>Anand Jogawade</h3>
 
 <div class="headline-wrapper">
-<div>Certified AppSec Practitioner</div>
-<div>Certified in Cybersecurity</div>
-<div>Cyber Security Auditor</div>
-<div>Penetration Tester</div>
+<div class="line">Certified AppSec Practitioner</div>
+<div class="line">Certified in Cybersecurity</div>
+<div class="line">Cyber Security Auditor</div>
+<div class="line">Penetration Tester</div>
 </div>
 
 <div class="social-icon">
-<a href="https://linkedin.com/in/anand-jogawade"><i class="fa fa-linkedin"></i></a>
-<a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
+
+<a href="https://www.linkedin.com/in/anand-jogawade/" target="_blank">
+<i class="fa fa-linkedin"></i>
+</a>
+
+<a href="https://github.com/anandjogawade" target="_blank">
+<i class="fa fa-github"></i>
+</a>
+
 </div>
 
 </div>
@@ -287,16 +278,14 @@ display:none;
 <div class="row align-items-center">
 
 <div class="col-md-4 text-center">
-
 <img src="images/about/formalPic.jpeg" class="img-fluid rounded-circle">
-
 </div>
 
 <div class="col-md-8">
 
 <h3>Cyber Security Auditor</h3>
 
-<p>I specialize in penetration testing for web, Android, iOS applications, and infrastructure security.</p>
+<p>I specialize in penetration testing for web, Android, and iOS applications, along with infrastructure security and red teaming.</p>
 
 <a href="#skills" class="btn btn-primary">My Skills</a>
 
@@ -332,6 +321,20 @@ display:none;
 </div>
 </div>
 
+<div class="col-md-6">
+<div class="experience-card">
+<h4>ShadowFox</h4>
+<p>Penetration Tester — Mar 2024</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="experience-card">
+<h4>Tutelr</h4>
+<p>Cyber Security Analyst — Jan 2024 - Mar 2024</p>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -347,13 +350,16 @@ display:none;
 <h2 class="section-title">Skills</h2>
 
 <ul class="skills-list">
+
 <li>Red Teaming</li>
 <li>Penetration Testing</li>
 <li>Active Directory</li>
+<li>Exploit Development</li>
 <li>Cloud Security</li>
-<li>Metasploit</li>
+<li>Python</li>
 <li>Burp Suite</li>
 <li>Kali Linux</li>
+
 </ul>
 
 </div>
@@ -371,23 +377,15 @@ display:none;
 <div class="row">
 
 <div class="col-md-4">
-
 <div class="blog-card">
-
 <div class="blog-image">
 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png">
 </div>
-
 <div class="blog-content">
-
 <h5>PikaShow Security Risk</h5>
-
 <a href="https://medium.com/@Anand_Jogawade">Read More</a>
-
 </div>
-
 </div>
-
 </div>
 
 </div>
@@ -412,9 +410,9 @@ display:none;
 
 </footer>
 
-<button class="scroll-to-top" id="scrollToTopBtn"><i class="fa fa-arrow-up"></i></button>
-
-<!-- SCRIPTS -->
+<button class="scroll-to-top" id="scrollToTopBtn">
+<i class="fa fa-arrow-up"></i>
+</button>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
@@ -449,6 +447,37 @@ scrollToTopBtn.style.display="none";
 scrollToTopBtn.onclick=()=>{
 window.scrollTo({top:0,behavior:"smooth"});
 };
+
+function calculateExperience(startDate){
+let currentDate=new Date();
+let firstDate=new Date(startDate);
+let years=currentDate.getFullYear()-firstDate.getFullYear();
+let months=currentDate.getMonth()-firstDate.getMonth();
+if(months<0){years--;months+=12;}
+return (years*12)+months;
+}
+
+$(document).ready(function(){
+
+$('.counter').each(function(){
+
+$(this).prop('Counter',0).animate({
+
+Counter:$(this).attr('data-target')
+
+},{
+
+duration:4000,
+easing:'swing',
+step:function(now){
+$(this).text(Math.ceil(now));
+}
+
+});
+
+});
+
+});
 
 </script>
 
