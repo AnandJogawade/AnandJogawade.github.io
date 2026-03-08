@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -25,7 +26,7 @@ color:white;
 scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+/* HEADER */
 
 .header{
 position:fixed;
@@ -52,6 +53,8 @@ color:#007bff;
 list-style:none;
 display:flex;
 gap:18px;
+margin:0;
+padding:0;
 }
 
 .nav-menu a{
@@ -63,14 +66,44 @@ text-decoration:none;
 color:#007bff;
 }
 
+.menu-toggle{
+display:none;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-menu{
+display:none;
+flex-direction:column;
+background:#111;
+position:absolute;
+top:60px;
+right:0;
+width:200px;
+padding:20px;
+}
+
+.nav-menu.show{
+display:flex;
+}
+
+}
+
 /* HERO */
 
 .banner-area{
 height:100vh;
-background:url('bg.jpg') center/cover no-repeat;
+background:url('bg.jpg') center/cover;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 position:relative;
 }
@@ -97,15 +130,10 @@ object-fit:cover;
 margin-bottom:20px;
 }
 
-.headline-wrapper{
-font-size:20px;
-margin-top:10px;
-}
-
 /* SECTIONS */
 
 section{
-padding:80px 10%;
+padding:90px 10%;
 }
 
 .section-title{
@@ -119,9 +147,9 @@ color:#007bff;
 
 .about-container{
 display:flex;
+flex-wrap:wrap;
 gap:40px;
 align-items:center;
-flex-wrap:wrap;
 }
 
 .about-container img{
@@ -196,7 +224,7 @@ overflow:hidden;
 
 .blog-card img{
 width:100%;
-height:180px;
+height:200px;
 object-fit:cover;
 }
 
@@ -217,20 +245,26 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:40px;
 }
 
-.footer h4{
-margin-bottom:10px;
-}
-
-.social-icons a{
-color:white;
-margin-right:10px;
-font-size:18px;
-}
-
 .footer-bottom{
 text-align:center;
 margin-top:40px;
 font-size:13px;
+}
+
+/* SCROLL BUTTON */
+
+.scroll-to-top{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#007bff;
+border:none;
+color:white;
+width:45px;
+height:45px;
+border-radius:50%;
+cursor:pointer;
+display:none;
 }
 
 </style>
@@ -243,7 +277,10 @@ font-size:13px;
 
 <div class="logo">Anand <span>Jogawade</span></div>
 
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
 <ul class="nav-menu">
+
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
@@ -251,6 +288,7 @@ font-size:13px;
 <li><a href="#skills">Skills</a></li>
 <li><a href="#blogs">Blogs</a></li>
 <li><a href="#contact">Contact</a></li>
+
 </ul>
 
 </header>
@@ -267,22 +305,28 @@ font-size:13px;
 
 <h2>Anand Jogawade</h2>
 
-<div class="headline-wrapper">
+<p>
 Certified AppSec Practitioner<br>
 Certified in Cybersecurity<br>
 Cyber Security Auditor<br>
 Penetration Tester
+</p>
+
+<div>
+
+<a href="https://linkedin.com/in/anand-jogawade" target="_blank">
+<i class="fa fa-linkedin"></i>
+</a>
+
+<a href="https://github.com/anandjogawade" target="_blank">
+<i class="fa fa-github"></i>
+</a>
+
 </div>
 
-<div style="margin-top:20px;">
-<a href="https://linkedin.com/in/anand-jogawade" target="_blank"><i class="fa fa-linkedin"></i></a>
-<a href="https://github.com/anandjogawade" target="_blank"><i class="fa fa-github"></i></a>
 </div>
 
 </div>
-
-</div>
-
 
 <!-- ABOUT -->
 
@@ -298,14 +342,16 @@ Penetration Tester
 
 <h3>Cyber Security Auditor</h3>
 
-<p>I am <b>Anand Jogawade</b>.</p>
-
 <p>
-I specialize in penetration testing for web, Android, and iOS applications, as well as servers and hosts, along with securing firewalls.
+I am <b>Anand Jogawade</b>.
 </p>
 
 <p>
-Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulnerability assessments, penetration testing, and conducting comprehensive IS, VAPT, and GAP audits.
+I specialize in penetration testing for web, Android and iOS applications along with servers and hosts.
+</p>
+
+<p>
+Currently working as Cyber Security Auditor at Phoenix TechnoCyber focusing on VAPT and security audits.
 </p>
 
 <a href="#skills">My Skills</a>
@@ -316,7 +362,6 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 
 </section>
 
-
 <!-- EXPERIENCE -->
 
 <section id="experience">
@@ -326,37 +371,64 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 <div class="experience-container">
 
 <div class="experience-card">
+
 <h3>Phoenix TechnoCyber</h3>
+
 <h4>Security Auditor</h4>
+
 <span>Jan 2024 - Present</span>
-<p>Penetration testing, vulnerability assessment and compliance.</p>
+
+<p>
+Penetration testing, vulnerability assessment and compliance.
+</p>
+
 </div>
 
 <div class="experience-card">
+
 <h3>TechnoHacks EduTech</h3>
+
 <h4>Security Analyst</h4>
+
 <span>May 2024</span>
-<p>Conducted vulnerability assessments and security testing.</p>
+
+<p>
+Conducted vulnerability assessments and penetration testing.
+</p>
+
 </div>
 
 <div class="experience-card">
+
 <h3>ShadowFox</h3>
+
 <h4>Penetration Tester</h4>
+
 <span>Mar 2024</span>
-<p>Security testing and reporting vulnerabilities.</p>
+
+<p>
+Security testing and vulnerability reporting.
+</p>
+
 </div>
 
 <div class="experience-card">
+
 <h3>Tutelr</h3>
+
 <h4>Cyber Security Analyst</h4>
+
 <span>Jan 2024 - Mar 2024</span>
-<p>Cloud security monitoring and vulnerability assessments.</p>
+
+<p>
+Cloud security monitoring and vulnerability assessments.
+</p>
+
 </div>
 
 </div>
 
 </section>
-
 
 <!-- CERTIFICATIONS -->
 
@@ -367,15 +439,18 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 <ul class="certifications-list">
 
 <li>Certified Red Team Analyst (CRTA)</li>
+
 <li>Certified Cyber Security Analyst (C3SA)</li>
+
 <li>ISC2 Certified in Cybersecurity (CC)</li>
+
 <li>Fortinet Certified Associate in Cybersecurity</li>
+
 <li>Certified AppSec Practitioner (CAP)</li>
 
 </ul>
 
 </section>
-
 
 <!-- SKILLS -->
 
@@ -386,8 +461,8 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 <ul class="skills-list">
 
 <li>Red Teaming</li>
-<li>Penetration Testing</li>
 <li>Vulnerability Assessments</li>
+<li>Penetration Testing</li>
 <li>Active Directory</li>
 <li>Exploit Development</li>
 <li>Cloud Security</li>
@@ -401,7 +476,6 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 
 </section>
 
-
 <!-- BLOGS -->
 
 <section id="blogs">
@@ -411,25 +485,36 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 <div class="blog-grid">
 
 <div class="blog-card">
+
 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png">
+
 <div class="blog-content">
+
 <h3>PikaShow Security Risk</h3>
+
 <a href="https://medium.com/@Anand_Jogawade">Read More</a>
+
 </div>
+
 </div>
 
 <div class="blog-card">
+
 <img src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*JLL03zl3YlJSntCRjPv1DQ.png">
+
 <div class="blog-content">
+
 <h3>LDAP Nightmare</h3>
+
 <a href="https://medium.com/@Anand_Jogawade">Read More</a>
+
 </div>
+
 </div>
 
 </div>
 
 </section>
-
 
 <!-- FOOTER -->
 
@@ -438,25 +523,32 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 <div class="footer-grid">
 
 <div>
+
 <h4>Anand Jogawade</h4>
-<p>Cyber Security Auditor specializing in VAPT and red teaming.</p>
+
+<p>
+Cyber Security Auditor specializing in VAPT and Red Teaming.
+</p>
+
 </div>
 
 <div>
+
 <h4>Contact</h4>
-<p>Pune, Maharashtra, India</p>
-<p>Email: jogawade2@gmail.com</p>
+
+<p>📍 Pune, Maharashtra, India</p>
+
+<p>✉️ jogawade2@gmail.com</p>
+
 </div>
 
 <div>
+
 <h4>Social</h4>
 
-<div class="social-icons">
-
 <a href="https://linkedin.com/in/anand-jogawade"><i class="fa fa-linkedin"></i></a>
-<a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
 
-</div>
+<a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
 
 </div>
 
@@ -470,16 +562,48 @@ Currently, as a Cyber Security Auditor at Phoenix TechnoCyber, I focus on vulner
 
 </footer>
 
+<button class="scroll-to-top" id="scrollBtn">↑</button>
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <script>
 
 particlesJS("particles-js",{
-particles:{number:{value:120},size:{value:3},move:{speed:3}}
+particles:{
+number:{value:120},
+size:{value:3},
+move:{speed:3}
+}
 });
+
+function toggleMenu(){
+document.querySelector(".nav-menu").classList.toggle("show");
+}
+
+const btn=document.getElementById("scrollBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>300){
+
+btn.style.display="block";
+
+}else{
+
+btn.style.display="none";
+
+}
+
+}
+
+btn.onclick=function(){
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
 
 </script>
 
 </body>
+
 </html>
