@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anand Jogawade | Cyber Security Auditor</title>
+<title>Anand Jogawade</title>
 
 <style>
 
@@ -130,6 +130,13 @@ section{
 padding:90px 8%;
 }
 
+/* SECTION TITLES (NEW COLOR CHANGE) */
+
+h2{
+text-align:center;
+color:#1e88ff;
+}
+
 /* ABOUT */
 
 .about{
@@ -149,9 +156,9 @@ border-radius:10px;
 .exp-grid{
 margin-top:60px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
 gap:26px;
-max-width:1090px;
+max-width:1200px;
 margin-left:auto;
 margin-right:auto;
 }
@@ -265,8 +272,18 @@ footer{
 background:#0d0d0f;
 padding:50px 8%;
 border-top:1px solid #1a1a1a;
+font-size:14px;
 }
 
+footer p{
+font-size:13px;
+color:#bfbfbf;
+}
+
+footer h3{
+font-size:16px;
+}
+  
 .footer-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -366,7 +383,7 @@ and security auditing of web and infrastructure systems.
 
 <section id="experience">
 
-<h2 style="text-align:center">Experience</h2>
+<h2>Experience</h2>
 
 <div class="exp-grid">
 
@@ -426,7 +443,7 @@ and security auditing of web and infrastructure systems.
 
 <section id="skills">
 
-<h2 style="text-align:center">Skills</h2>
+<h2>Skills</h2>
 
 <div class="skills-grid">
 
@@ -473,7 +490,7 @@ and security auditing of web and infrastructure systems.
 
 <section id="blogs">
 
-<h2 style="text-align:center">Latest Blogs</h2>
+<h2>Latest Blogs</h2>
 
 <div class="blog-grid">
 
@@ -540,9 +557,9 @@ setTimeout(()=>{
 title.innerText=titles[i];
 title.style.opacity=1;
 i=(i+1)%titles.length;
-},200);
+},100);
 
-},1600);
+},1500);
 
 /* PARTICLES */
 
@@ -671,5 +688,3 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
-
-
