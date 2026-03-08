@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anand Jogawade | Cyber Security Auditor</title>
 
 <style>
-
-/* ---------------- GLOBAL ---------------- */
 
 *{
 margin:0;
@@ -35,8 +35,6 @@ color:#1e88ff;
 max-width:1200px;
 margin:auto;
 }
-
-/* ---------------- HEADER ---------------- */
 
 header{
 position:fixed;
@@ -86,7 +84,7 @@ font-size:26px;
 cursor:pointer;
 }
 
-/* ---------------- HERO ---------------- */
+/* HERO */
 
 .hero{
 height:100vh;
@@ -95,7 +93,12 @@ align-items:center;
 justify-content:center;
 text-align:center;
 position:relative;
-background:url("https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/bg.jpg") center/cover no-repeat;
+
+background-image:url("https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/bg.jpg");
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:fixed;
 }
 
 .hero::after{
@@ -105,7 +108,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.7);
+background:rgba(0,0,0,0.6);
 }
 
 .hero-content{
@@ -129,7 +132,7 @@ font-size:36px;
 color:#ccc;
 }
 
-/* ---------------- PARTICLES ---------------- */
+/* PARTICLES */
 
 #particles{
 position:absolute;
@@ -140,7 +143,7 @@ height:100%;
 z-index:1;
 }
 
-/* ---------------- ABOUT ---------------- */
+/* ABOUT */
 
 .about{
 display:flex;
@@ -158,7 +161,7 @@ border-radius:10px;
 flex:1;
 }
 
-/* ---------------- EXPERIENCE ---------------- */
+/* EXPERIENCE */
 
 .exp-grid{
 display:grid;
@@ -195,7 +198,7 @@ color:#aaa;
 margin-bottom:10px;
 }
 
-/* ---------------- CERTIFICATIONS ---------------- */
+/* CERTIFICATIONS */
 
 .cert-list{
 margin-top:30px;
@@ -214,7 +217,7 @@ border-radius:6px;
 margin-top:30px;
 }
 
-/* ---------------- SKILLS ---------------- */
+/* SKILLS */
 
 .skills-grid{
 margin-top:40px;
@@ -230,7 +233,7 @@ text-align:center;
 border-radius:6px;
 }
 
-/* ---------------- BLOG ---------------- */
+/* BLOG */
 
 .blog-grid{
 margin-top:40px;
@@ -255,14 +258,14 @@ object-fit:cover;
 padding:15px;
 }
 
-/* ---------------- CONTACT ---------------- */
+/* CONTACT */
 
 .contact-info{
 margin-top:30px;
 line-height:2;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* FOOTER */
 
 footer{
 background:#111;
@@ -300,7 +303,7 @@ font-size:14px;
 color:#888;
 }
 
-/* ---------------- MOBILE ---------------- */
+/* MOBILE */
 
 @media(max-width:900px){
 
@@ -337,6 +340,7 @@ font-size:28px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -361,9 +365,6 @@ font-size:28px;
 
 </header>
 
-
-<!-- HERO -->
-
 <section class="hero" id="home">
 
 <canvas id="particles"></canvas>
@@ -379,9 +380,6 @@ font-size:28px;
 
 </section>
 
-
-<!-- ABOUT -->
-
 <section id="about">
 
 <div class="container about">
@@ -393,9 +391,7 @@ font-size:28px;
 <h2>About Me</h2>
 
 <p>
-
 I specialize in penetration testing for web, Android, and iOS applications, as well as servers and hosts, along with securing firewalls to protect against evolving threats. Additionally, I am experienced in conducting red teaming exercises to simulate real-world attacks and assess the resilience of security systems.
-
 </p>
 
 </div>
@@ -404,9 +400,6 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 
 </section>
 
-
-<!-- EXPERIENCE -->
-
 <section id="experience">
 
 <h2 style="text-align:center">Experience</h2>
@@ -414,87 +407,77 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 <div class="exp-grid">
 
 <div class="exp-card">
-<div class="job">Senior Security Analyst</div>
+<div class="job">Security Auditor</div>
 <div class="company">Company Name</div>
-<div class="time">2023 - Present</div>
-<p>Responsible for vulnerability assessments, penetration testing and security audits.</p>
+<div class="time">2024 - Present</div>
+<p>Vulnerability assessments and penetration testing.</p>
 </div>
 
 <div class="exp-card">
-<div class="job">Cyber Security Consultant</div>
+<div class="job">Cyber Security Analyst</div>
 <div class="company">Company Name</div>
-<div class="time">2022 - 2023</div>
-<p>Performed security testing and delivered mitigation strategies.</p>
+<div class="time">2023</div>
+<p>Security monitoring and threat analysis.</p>
 </div>
 
 <div class="exp-card">
 <div class="job">Penetration Tester</div>
 <div class="company">Company Name</div>
-<div class="time">2022</div>
-<p>Web application and network penetration testing.</p>
-</div>
-
-<div class="exp-card">
-<div class="job">Security Analyst</div>
-<div class="company">Company Name</div>
-<div class="time">2021 - 2022</div>
-<p>Monitoring security events and performing threat analysis.</p>
-</div>
-
-<div class="exp-card">
-<div class="job">SOC Analyst</div>
-<div class="company">Company Name</div>
-<div class="time">2021</div>
-<p>Incident response and log monitoring.</p>
+<div class="time">2023</div>
+<p>Web and network penetration testing.</p>
 </div>
 
 <div class="exp-card">
 <div class="job">Security Researcher</div>
 <div class="company">Company Name</div>
-<div class="time">2020</div>
-<p>Research on vulnerabilities and exploitation techniques.</p>
+<div class="time">2022</div>
+<p>Security research and exploit analysis.</p>
+</div>
+
+<div class="exp-card">
+<div class="job">SOC Analyst</div>
+<div class="company">Company Name</div>
+<div class="time">2022</div>
+<p>Security event monitoring and incident response.</p>
+</div>
+
+<div class="exp-card">
+<div class="job">Security Consultant</div>
+<div class="company">Company Name</div>
+<div class="time">2021</div>
+<p>Security assessments and advisory services.</p>
 </div>
 
 <div class="exp-card">
 <div class="job">Cybersecurity Intern</div>
 <div class="company">Company Name</div>
-<div class="time">2019</div>
-<p>Assisted security teams in vulnerability testing.</p>
+<div class="time">2020</div>
+<p>Assisted in vulnerability scanning and reporting.</p>
 </div>
 
 </div>
 
 </section>
-
-
-<!-- CERTIFICATIONS -->
 
 <section id="certifications">
 
 <h2>Certifications</h2>
 
 <div class="cert-list">
-
 <div class="cert-item">Certification Name</div>
 <div class="cert-item">Certification Name</div>
 <div class="cert-item">Certification Name</div>
-
 </div>
 
-<h2 style="margin-top:50px">Courses</h2>
+<h2 style="margin-top:40px">Courses</h2>
 
 <div class="course-list">
-
 <p>Course Name</p>
 <p>Course Name</p>
 <p>Course Name</p>
-
 </div>
 
 </section>
-
-
-<!-- SKILLS -->
 
 <section id="skills">
 
@@ -527,9 +510,6 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 
 </section>
 
-
-<!-- BLOGS -->
-
 <section id="blogs">
 
 <h2 style="text-align:center">Blogs</h2>
@@ -540,7 +520,7 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 <img src="https://source.unsplash.com/600x400/?cybersecurity">
 <div class="blog-content">
 <h3>Blog Title</h3>
-<p>Short description of the blog.</p>
+<p>Short blog description</p>
 </div>
 </div>
 
@@ -548,15 +528,7 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 <img src="https://source.unsplash.com/600x400/?hacker">
 <div class="blog-content">
 <h3>Blog Title</h3>
-<p>Short description of the blog.</p>
-</div>
-</div>
-
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?server">
-<div class="blog-content">
-<h3>Blog Title</h3>
-<p>Short description of the blog.</p>
+<p>Short blog description</p>
 </div>
 </div>
 
@@ -564,33 +536,33 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 <img src="https://source.unsplash.com/600x400/?security">
 <div class="blog-content">
 <h3>Blog Title</h3>
-<p>Short description of the blog.</p>
+<p>Short blog description</p>
+</div>
+</div>
+
+<div class="blog">
+<img src="https://source.unsplash.com/600x400/?server">
+<div class="blog-content">
+<h3>Blog Title</h3>
+<p>Short blog description</p>
 </div>
 </div>
 
 </div>
 
 </section>
-
-
-<!-- CONTACT -->
 
 <section id="contact">
 
 <h2>Contact</h2>
 
 <div class="contact-info">
-
-<p>Email: your@email.com</p>
-<p>Phone: +91XXXXXXXXXX</p>
-<p>Location: Pune, India</p>
-
+<p>Email: jogawade2@gmail.com</p>
+<p>Phone: +91 7743819058</p>
+<p>Location: Pune, Maharashtra, India</p>
 </div>
 
 </section>
-
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -598,7 +570,7 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 
 <div>
 <h3>Anand Jogawade</h3>
-<p>Cyber Security Auditor Portfolio</p>
+<p>Cyber Security Portfolio</p>
 </div>
 
 <div>
@@ -627,24 +599,17 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 
 </footer>
 
-
 <script>
 
 /* MOBILE MENU */
 
 function toggleMenu(){
-
 let nav=document.getElementById("nav");
-
-if(nav.style.display==="block")
-nav.style.display="none";
-else
-nav.style.display="block";
-
+nav.style.display = nav.style.display === "block" ? "none" : "block";
 }
 
 
-/* PARTICLES */
+/* ELECTRIC PARTICLES */
 
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
@@ -653,24 +618,25 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
+const particleCount=80;
 
-for(let i=0;i<80;i++){
-
+for(let i=0;i<particleCount;i++){
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-vx:(Math.random()-0.5),
-vy:(Math.random()-0.5),
+vx:(Math.random()-0.5)*1.2,
+vy:(Math.random()-0.5)*1.2,
 size:2
-})
-
+});
 }
 
 function draw(){
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
-particles.forEach(p=>{
+for(let i=0;i<particles.length;i++){
+
+let p=particles[i];
 
 p.x+=p.vx;
 p.y+=p.vy;
@@ -680,16 +646,45 @@ if(p.y<0||p.y>canvas.height)p.vy*=-1;
 
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle="#1e88ff";
+ctx.fillStyle="#ffffff";
 ctx.fill();
 
-});
+for(let j=i+1;j<particles.length;j++){
 
-requestAnimationFrame(draw);
+let p2=particles[j];
+
+let dx=p.x-p2.x;
+let dy=p.y-p2.y;
+
+let dist=Math.sqrt(dx*dx+dy*dy);
+
+if(dist<120){
+
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(p2.x,p2.y);
+
+let opacity=1-dist/120;
+
+ctx.strokeStyle="rgba(0,150,255,"+opacity+")";
+ctx.lineWidth=1;
+ctx.stroke();
 
 }
 
+}
+
+}
+
+requestAnimationFrame(draw);
+}
+
 draw();
+
+window.addEventListener("resize",()=>{
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+});
 
 </script>
 
