@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Anand Jogawade | Cyber Security Auditor</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -21,7 +26,6 @@ body{
 font-family:Poppins;
 background:#0f172a;
 color:#e2e8f0;
-line-height:1.6;
 }
 
 /* NAVBAR */
@@ -31,17 +35,17 @@ position:fixed;
 top:0;
 width:100%;
 background:#020617;
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 8%;
 z-index:1000;
 }
 
 .logo{
 font-size:22px;
 font-weight:600;
-color:#fff;
+color:white;
 }
 
 .logo span{
@@ -68,6 +72,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+background:url(bg.jpg) center/cover;
 padding:0 20px;
 }
 
@@ -75,8 +80,8 @@ padding:0 20px;
 width:170px;
 height:170px;
 border-radius:50%;
-margin-bottom:20px;
 border:3px solid #38bdf8;
+margin-bottom:20px;
 }
 
 .hero h1{
@@ -90,21 +95,21 @@ color:#38bdf8;
 .hero p{
 max-width:650px;
 margin:15px 0;
-color:#94a3b8;
+color:#cbd5f5;
 }
 
-.hero .buttons a{
+.btn{
 display:inline-block;
 margin:10px;
 padding:12px 22px;
 background:#38bdf8;
-color:#000;
+color:black;
 border-radius:6px;
 text-decoration:none;
 font-weight:600;
 }
 
-.hero .buttons a:hover{
+.btn:hover{
 background:#0ea5e9;
 }
 
@@ -117,7 +122,7 @@ padding:90px 8%;
 .section-title{
 text-align:center;
 font-size:32px;
-margin-bottom:50px;
+margin-bottom:40px;
 color:#38bdf8;
 }
 
@@ -135,10 +140,6 @@ width:260px;
 border-radius:10px;
 }
 
-.about p{
-color:#cbd5f5;
-}
-
 /* EXPERIENCE */
 
 .cards{
@@ -151,20 +152,10 @@ gap:25px;
 background:#020617;
 padding:25px;
 border-radius:10px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
 }
 
 .card h3{
 color:#38bdf8;
-}
-
-.card span{
-font-size:13px;
-color:#94a3b8;
 }
 
 /* SKILLS */
@@ -172,57 +163,27 @@ color:#94a3b8;
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+gap:15px;
 }
 
 .skill{
 background:#020617;
 padding:15px;
 text-align:center;
-border-radius:8px;
-}
-
-/* BLOGS */
-
-.blogs{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.blog{
-background:#020617;
-border-radius:10px;
-overflow:hidden;
-}
-
-.blog img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.blog-content{
-padding:18px;
-}
-
-.blog-content h4{
-color:#38bdf8;
-margin-bottom:10px;
+border-radius:6px;
 }
 
 /* FOOTER */
 
 footer{
 background:#020617;
-padding:40px 8%;
 text-align:center;
-margin-top:60px;
+padding:40px 8%;
 }
 
 .social a{
 margin:0 10px;
-color:#cbd5f5;
+color:white;
 font-size:18px;
 }
 
@@ -240,21 +201,25 @@ text-align:center;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-<div class="logo">Anand <span>Jogawade</span></div>
+
+<div class="logo">
+Anand <span>Jogawade</span>
+</div>
 
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
-<a href="#blogs">Blogs</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
 
@@ -262,7 +227,7 @@ text-align:center;
 
 <section class="hero" id="home">
 
-<img src="images/profile.jpg">
+<img src="images/home/newMe.png">
 
 <h1>Anand <span>Jogawade</span></h1>
 
@@ -271,10 +236,7 @@ Cyber Security Auditor specializing in penetration testing,
 red teaming, vulnerability assessments and cloud security.
 </p>
 
-<div class="buttons">
-<a href="#skills">My Skills</a>
-<a href="#">Download Resume</a>
-</div>
+<a href="#about" class="btn">About Me</a>
 
 </section>
 
@@ -287,7 +249,7 @@ red teaming, vulnerability assessments and cloud security.
 
 <div class="about">
 
-<img src="images/about.jpg">
+<img src="images/about/formalPic.jpeg">
 
 <p>
 
@@ -295,13 +257,13 @@ I specialize in penetration testing for web, Android and iOS
 applications along with infrastructure security assessments.
 
 Currently working as a Cyber Security Auditor at
-Phoenix TechnoCyber where I perform VAPT, security
-audits and red team simulations.
+Phoenix TechnoCyber where I perform VAPT,
+security audits and red team simulations.
 
-Tools I regularly use include:
+Tools used:
 
-Nmap, Burp Suite, Nessus, Acunetix, Wireshark,
-Metasploit and SQLmap.
+Nmap, Burp Suite, Nessus, Wireshark,
+Metasploit, SQLMap.
 
 </p>
 
@@ -320,26 +282,22 @@ Metasploit and SQLmap.
 
 <div class="card">
 <h3>Phoenix TechnoCyber</h3>
-<span>Security Auditor • 2024-Present</span>
-<p>Perform VAPT, security audits and penetration testing.</p>
+<p>Security Auditor (2024-Present)</p>
 </div>
 
 <div class="card">
 <h3>TechnoHacks EduTech</h3>
-<span>Security Analyst</span>
-<p>Conducted vulnerability assessments and security testing.</p>
+<p>Security Analyst</p>
 </div>
 
 <div class="card">
 <h3>ShadowFox</h3>
-<span>Penetration Tester</span>
-<p>Identified application vulnerabilities and created reports.</p>
+<p>Penetration Tester</p>
 </div>
 
 <div class="card">
 <h3>Tutelr</h3>
-<span>Cyber Security Analyst</span>
-<p>Cloud security monitoring and incident response support.</p>
+<p>Cyber Security Analyst</p>
 </div>
 
 </div>
@@ -358,8 +316,8 @@ Metasploit and SQLmap.
 <div class="skill">Red Teaming</div>
 <div class="skill">Penetration Testing</div>
 <div class="skill">Active Directory</div>
-<div class="skill">Cloud Security</div>
 <div class="skill">Exploit Development</div>
+<div class="skill">Cloud Security</div>
 <div class="skill">Python</div>
 <div class="skill">Networking</div>
 <div class="skill">Burp Suite</div>
@@ -371,44 +329,7 @@ Metasploit and SQLmap.
 </section>
 
 
-<!-- BLOGS -->
-
-<section id="blogs">
-
-<h2 class="section-title">Latest Blogs</h2>
-
-<div class="blogs">
-
-<div class="blog">
-<img src="images/blog1.jpg">
-<div class="blog-content">
-<h4>PikaShow Security Risk</h4>
-<p>Why free streaming apps are dangerous.</p>
-</div>
-</div>
-
-<div class="blog">
-<img src="images/blog2.jpg">
-<div class="blog-content">
-<h4>LDAP Nightmare</h4>
-<p>New Active Directory vulnerability analysis.</p>
-</div>
-</div>
-
-<div class="blog">
-<img src="images/blog3.jpg">
-<div class="blog-content">
-<h4>Nmap Cheat Sheet</h4>
-<p>Commands every pentester should know.</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
+<!-- CONTACT -->
 
 <footer id="contact">
 
@@ -418,9 +339,17 @@ Metasploit and SQLmap.
 
 <div class="social">
 
-<a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
-<a href="https://github.com"><i class="fab fa-github"></i></a>
-<a href="mailto:example@gmail.com"><i class="fa fa-envelope"></i></a>
+<a href="https://linkedin.com/in/anand-jogawade" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://github.com/anandjogawade" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="mailto:jogawade2@gmail.com">
+<i class="fa fa-envelope"></i>
+</a>
 
 </div>
 
@@ -431,4 +360,5 @@ Metasploit and SQLmap.
 </footer>
 
 </body>
+
 </html>
