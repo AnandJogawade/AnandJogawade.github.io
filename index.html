@@ -30,11 +30,6 @@ h1,h2,h3{
 color:#1e88ff;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-}
-
 /* HEADER */
 
 header{
@@ -102,7 +97,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
 }
 
 .hero-content{
@@ -118,6 +113,15 @@ object-fit:cover;
 border:5px solid #1e88ff;
 margin-bottom:20px;
 }
+
+#title{
+color:white;
+margin-top:6px;
+font-weight:500;
+transition:opacity .4s ease;
+}
+
+/* PARTICLES */
 
 #particles{
 position:absolute;
@@ -186,8 +190,8 @@ border-radius:6px;
 
 .stats{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
 margin-top:40px;
 text-align:center;
 }
@@ -199,7 +203,7 @@ border-radius:10px;
 }
 
 .stat-number{
-font-size:32px;
+font-size:34px;
 color:#1e88ff;
 }
 
@@ -231,7 +235,7 @@ padding:15px;
 /* CONTACT */
 
 .contact-info{
-margin-top:30px;
+margin-top:20px;
 line-height:2;
 }
 
@@ -239,14 +243,32 @@ line-height:2;
 
 footer{
 background:#111;
-padding:40px 8%;
-margin-top:60px;
+padding:50px 8%;
+border-top:1px solid #222;
 }
 
 .footer-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:40px;
+}
+
+.footer-grid ul{
+list-style:none;
+margin-top:10px;
+}
+
+.footer-grid ul li{
+margin-bottom:8px;
+}
+
+.footer-grid a{
+color:#ccc;
+text-decoration:none;
+}
+
+.footer-grid a:hover{
+color:#1e88ff;
 }
 
 /* SCROLL BUTTON */
@@ -273,7 +295,9 @@ display:none;
 <body>
 
 <header>
+
 <div class="logo">ANAND <span>JOGAWADE</span></div>
+
 <nav>
 <ul>
 <li><a href="#home">Home</a></li>
@@ -284,6 +308,7 @@ display:none;
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
+
 </header>
 
 <section class="hero" id="home">
@@ -297,7 +322,7 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 
 <h1>Anand Jogawade</h1>
 
-<h3 id="title"></h3>
+<h3 id="title">Cyber Security Auditor</h3>
 
 </div>
 
@@ -305,7 +330,7 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 
 <section id="about">
 
-<div class="container about">
+<div class="about">
 
 <img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/about/aformalPic.jpeg">
 
@@ -314,7 +339,9 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 <h2>Cyber Security Auditor</h2>
 
 <p>
-I specialize in penetration testing for web, Android, and iOS applications, as well as servers and hosts, along with securing firewalls to protect against evolving threats.
+I specialize in penetration testing for web, Android, and iOS applications,
+as well as servers and hosts, along with securing firewalls to protect
+against evolving threats.
 </p>
 
 </div>
@@ -406,25 +433,10 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 
 <div class="blog-grid">
 
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?cybersecurity">
-<div class="blog-content">Blog Title</div>
-</div>
-
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?hacker">
-<div class="blog-content">Blog Title</div>
-</div>
-
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?server">
-<div class="blog-content">Blog Title</div>
-</div>
-
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?security">
-<div class="blog-content">Blog Title</div>
-</div>
+<div class="blog"><img src="https://source.unsplash.com/600x400/?cybersecurity"><div class="blog-content">Blog Title</div></div>
+<div class="blog"><img src="https://source.unsplash.com/600x400/?hacker"><div class="blog-content">Blog Title</div></div>
+<div class="blog"><img src="https://source.unsplash.com/600x400/?security"><div class="blog-content">Blog Title</div></div>
+<div class="blog"><img src="https://source.unsplash.com/600x400/?server"><div class="blog-content">Blog Title</div></div>
 
 </div>
 
@@ -442,14 +454,64 @@ I specialize in penetration testing for web, Android, and iOS applications, as w
 
 </section>
 
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3 style="color:white">Anand Jogawade</h3>
+
+<p style="color:#aaa;margin-top:10px">
+Thank you for visiting my portfolio website.
+</p>
+
+</div>
+
+<div>
+
+<h3 style="color:white">Quick Links</h3>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#blogs">Blogs</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3 style="color:white">Contact Info</h3>
+
+<p>📞 +91 7743819058</p>
+<p>✉ jogawade2@gmail.com</p>
+<p>📍 Pune, Maharashtra, India</p>
+
+</div>
+
+</div>
+
+<div style="text-align:center;margin-top:40px;color:#aaa">
+
+Designed ❤️ by <span style="color:#1e88ff">Anand Jogawade</span>
+
+</div>
+
+</footer>
+
 <button id="topBtn">↑</button>
 
 <script>
 
-/* TITLE ROTATION */
+/* ROTATING TITLES */
 
 const titles=[
-"Cyber Security Auditor",
 "Certified AppSec Practitioner",
 "Certified in Cybersecurity",
 "Cyber Security Auditor",
@@ -461,15 +523,12 @@ const title=document.getElementById("title");
 
 setInterval(()=>{
 title.style.opacity=0;
-
 setTimeout(()=>{
 title.innerText=titles[i];
 title.style.opacity=1;
 i=(i+1)%titles.length;
 },400);
-
 },2500);
-
 
 /* PARTICLES */
 
@@ -480,100 +539,6 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-vx:(Math.random()-0.5),
-vy:(Math.random()-0.5),
-size:2,
-color:Math.random()>0.5?"#ffffff":"#1e88ff"
-});
-}
+let mouse={x:null,y:null};
 
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach((p,i)=>{
-
-p.x+=p.vx;
-p.y+=p.vy;
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle=p.color;
-ctx.fill();
-
-particles.slice(i+1).forEach(p2=>{
-
-let dx=p.x-p2.x;
-let dy=p.y-p2.y;
-let dist=Math.sqrt(dx*dx+dy*dy);
-
-if(dist<120){
-ctx.beginPath();
-ctx.moveTo(p.x,p.y);
-ctx.lineTo(p2.x,p2.y);
-ctx.strokeStyle="rgba(0,150,255,"+(1-dist/120)+")";
-ctx.stroke();
-}
-
-});
-
-});
-
-requestAnimationFrame(draw);
-}
-
-draw();
-
-/* EXPERIENCE COUNTER */
-
-const start=new Date("2024-06-01");
-
-function calcMonths(){
-const now=new Date();
-let months=(now.getFullYear()-start.getFullYear())*12;
-months+=now.getMonth()-start.getMonth();
-return months;
-}
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-
-let months=calcMonths();
-let counter=0;
-
-let interval=setInterval(()=>{
-counter++;
-document.getElementById("expMonths").innerText=counter;
-
-if(counter>=months)clearInterval(interval);
-
-},40);
-
-observer.disconnect();
-
-}
-});
-});
-
-observer.observe(document.querySelector("#stats"));
-
-/* SCROLL BUTTON */
-
-const btn=document.getElementById("topBtn");
-
-window.onscroll=function(){
-btn.style.display=window.scrollY>300?"block":"none";
-};
-
-btn.onclick=function(){
-window.scrollTo({top:0,behavior:"smooth"});
-};
-
-</script>
-
-</body>
-</html>
+const particleCoun
