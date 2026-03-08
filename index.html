@@ -110,7 +110,7 @@ color:#1e88ff;
 color:white;
 margin-top:6px;
 font-weight:500;
-transition:.25s;
+transition:.3s;
 }
 
 /* PARTICLES */
@@ -147,24 +147,25 @@ border-radius:10px;
 /* EXPERIENCE */
 
 .exp-grid{
-margin-top:40px;
+margin-top:30px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-max-width:1100px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:18px;
+max-width:900px;
 margin-left:auto;
 margin-right:auto;
 }
 
 .exp-card{
 background:#121214;
-padding:25px;
-border-radius:10px;
-transition:.3s;
+padding:18px;
+border-radius:8px;
+transition:.25s;
+font-size:14px;
 }
 
 .exp-card:hover{
-transform:translateY(-6px);
+transform:translateY(-5px);
 }
 
 .exp-card h3{
@@ -211,7 +212,7 @@ text-align:center;
 
 .stat-box{
 background:#121214;
-padding:35px;
+padding:30px;
 border-radius:10px;
 transition:.3s;
 }
@@ -222,7 +223,7 @@ background:#1a1a1f;
 }
 
 .stat-number{
-font-size:36px;
+font-size:34px;
 color:#1e88ff;
 }
 
@@ -275,10 +276,6 @@ gap:40px;
 .footer-grid ul{
 list-style:none;
 margin-top:10px;
-}
-
-.footer-grid li{
-margin-bottom:8px;
 }
 
 .footer-grid a{
@@ -340,7 +337,6 @@ display:none;
 src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/home/newMe.png">
 
 <h1>Anand Jogawade</h1>
-
 <h3 id="title">Cyber Security Auditor</h3>
 
 </div>
@@ -359,7 +355,7 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 
 <p>
 Specialized in penetration testing, vulnerability assessments,
-and security auditing of web, mobile, and infrastructure systems.
+and security auditing of web and infrastructure systems.
 </p>
 
 </div>
@@ -375,18 +371,53 @@ and security auditing of web, mobile, and infrastructure systems.
 <div class="exp-grid">
 
 <div class="exp-card">
-
 <h3>Security Auditor</h3>
 <p>Phoenix TechnoCyber</p>
-<h3>Security Auditor</h3>
-<p>Phoenix TechnoCyber</p>
-
 <ul>
 <li>Conducted vulnerability assessments</li>
 <li>Performed penetration testing</li>
 <li>Generated remediation reports</li>
 </ul>
+</div>
 
+<div class="exp-card">
+<h3>Cyber Security Analyst</h3>
+<p>Company Name</p>
+<ul>
+<li>Security monitoring</li>
+<li>Threat detection</li>
+<li>Incident response</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<h3>Penetration Tester</h3>
+<p>Company Name</p>
+<ul>
+<li>Web application testing</li>
+<li>VAPT assessments</li>
+<li>Reporting vulnerabilities</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<h3>Security Researcher</h3>
+<p>Company Name</p>
+<ul>
+<li>Vulnerability research</li>
+<li>PoC development</li>
+<li>Security analysis</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<h3>Cyber Security Intern</h3>
+<p>Company Name</p>
+<ul>
+<li>Security testing support</li>
+<li>Documentation</li>
+<li>Tool research</li>
+</ul>
 </div>
 
 </div>
@@ -460,35 +491,22 @@ and security auditing of web, mobile, and infrastructure systems.
 
 </section>
 
-</section>
-
-<footer>
+<footer id="contact">
 
 <div class="footer-grid">
 
 <div>
-
 <h3 style="color:white">Anand Jogawade</h3>
-
 <p style="color:#aaa;margin-top:10px">
 Cyber Security Portfolio
 </p>
-
 </div>
 
 <div>
-
-<h3 style="color:white">Quick Links</h3>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#blogs">Blogs</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
+<h3 style="color:white">Contact Info</h3>
+<p>📞 +91 7743819058</p>
+<p>✉ jogawade2@gmail.com</p>
+<p>📍 Pune, Maharashtra, India</p>
 </div>
 
 </div>
@@ -526,7 +544,6 @@ i=(i+1)%titles.length;
 
 },1600);
 
-
 /* PARTICLES */
 
 const canvas=document.getElementById("particles");
@@ -536,7 +553,7 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-const particleCount=110;
+const particleCount=100;
 
 for(let i=0;i<particleCount;i++){
 
@@ -582,7 +599,6 @@ ctx.beginPath();
 ctx.moveTo(p.x,p.y);
 ctx.lineTo(p2.x,p2.y);
 ctx.strokeStyle="rgba(0,150,255,"+(1-dist/120)+")";
-ctx.lineWidth=1;
 ctx.stroke();
 
 }
@@ -597,8 +613,7 @@ requestAnimationFrame(draw);
 
 draw();
 
-
-/* EXPERIENCE COUNTER */
+/* COUNTERS */
 
 const start=new Date("2024-06-01");
 
@@ -622,9 +637,6 @@ if(counter>=months)clearInterval(interval);
 
 },400);
 
-
-/* STATS COUNTER */
-
 document.querySelectorAll(".stat-number").forEach(el=>{
 
 let target=parseInt(el.getAttribute("data-target"));
@@ -643,7 +655,6 @@ if(count>=target)clearInterval(interval);
 
 });
 
-
 /* SCROLL BUTTON */
 
 const btn=document.getElementById("topBtn");
@@ -660,4 +671,3 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
-
