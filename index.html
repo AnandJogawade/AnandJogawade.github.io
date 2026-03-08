@@ -104,11 +104,15 @@ object-fit:cover;
 margin-bottom:20px;
 }
 
+.hero h1{
+color:#1e88ff;
+}
+
 #title{
 color:white;
-margin-top:8px;
+margin-top:6px;
 font-weight:500;
-transition:.4s;
+transition:.3s;
 }
 
 /* PARTICLES */
@@ -164,7 +168,6 @@ transform:translateY(-6px);
 
 .exp-card h3{
 color:#1e88ff;
-margin-bottom:4px;
 }
 
 .exp-card ul{
@@ -325,8 +328,6 @@ display:none;
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero" id="home">
 
 <canvas id="particles"></canvas>
@@ -344,8 +345,6 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 
 </section>
 
-<!-- ABOUT -->
-
 <section id="about">
 
 <div class="about">
@@ -358,7 +357,7 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 
 <p>
 I specialize in penetration testing for web, Android, and iOS applications,
-as well as servers and hosts, along with securing firewalls against evolving threats.
+along with securing servers and firewalls against evolving threats.
 </p>
 
 </div>
@@ -366,8 +365,6 @@ as well as servers and hosts, along with securing firewalls against evolving thr
 </div>
 
 </section>
-
-<!-- EXPERIENCE -->
 
 <section id="experience">
 
@@ -383,20 +380,7 @@ as well as servers and hosts, along with securing firewalls against evolving thr
 <ul>
 <li>Conducted vulnerability assessments</li>
 <li>Performed penetration testing</li>
-<li>Created remediation reports</li>
-</ul>
-
-</div>
-
-<div class="exp-card">
-
-<h3>Cyber Security Analyst</h3>
-<p>Company Name</p>
-
-<ul>
-<li>Security monitoring</li>
-<li>Threat analysis</li>
-<li>Incident response</li>
+<li>Generated remediation reports</li>
 </ul>
 
 </div>
@@ -404,8 +388,6 @@ as well as servers and hosts, along with securing firewalls against evolving thr
 </div>
 
 </section>
-
-<!-- SKILLS -->
 
 <section id="skills">
 
@@ -419,35 +401,29 @@ as well as servers and hosts, along with securing firewalls against evolving thr
 <div class="skill">Metasploit</div>
 <div class="skill">Kali Linux</div>
 <div class="skill">Networking</div>
-<div class="skill">Active Directory</div>
 <div class="skill">Python</div>
-<div class="skill">Bash</div>
-<div class="skill">JavaScript</div>
-<div class="skill">C++</div>
-<div class="skill">Cloud Security</div>
+<div class="skill">Active Directory</div>
 
 </div>
 
 </section>
-
-<!-- STATS -->
 
 <section>
 
 <div class="stats">
 
 <div class="stat-box">
-<div class="stat-number">4</div>
+<div class="stat-number" data-target="4">0</div>
 <p>Personal Projects</p>
 </div>
 
 <div class="stat-box">
-<div class="stat-number">3</div>
+<div class="stat-number" data-target="3">0</div>
 <p>Open Source Contribution</p>
 </div>
 
 <div class="stat-box">
-<div class="stat-number">8</div>
+<div class="stat-number" data-target="8">0</div>
 <p>Awareness Trainings</p>
 </div>
 
@@ -459,8 +435,6 @@ as well as servers and hosts, along with securing firewalls against evolving thr
 </div>
 
 </section>
-
-<!-- BLOG -->
 
 <section id="blogs">
 
@@ -478,21 +452,9 @@ as well as servers and hosts, along with securing firewalls against evolving thr
 <div class="blog-content">Blog Title</div>
 </div>
 
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?security">
-<div class="blog-content">Blog Title</div>
-</div>
-
-<div class="blog">
-<img src="https://source.unsplash.com/600x400/?server">
-<div class="blog-content">Blog Title</div>
-</div>
-
 </div>
 
 </section>
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -508,26 +470,10 @@ Cyber Security Portfolio
 
 </div>
 
-<div>
-
-<h3 style="color:white">Quick Links</h3>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#blogs">Blogs</a></li>
-</ul>
-
-</div>
-
 </div>
 
 <div style="text-align:center;margin-top:40px;color:#aaa">
-
 Designed ❤️ by <span style="color:#1e88ff">Anand Jogawade</span>
-
 </div>
 
 </footer>
@@ -555,10 +501,9 @@ setTimeout(()=>{
 title.innerText=titles[i];
 title.style.opacity=1;
 i=(i+1)%titles.length;
-},400);
+},200);
 
-},2500);
-
+},1500);
 
 /* PARTICLES */
 
@@ -571,7 +516,7 @@ canvas.height=window.innerHeight;
 let particles=[];
 const particleCount=120;
 
-function createParticle(){
+for(let i=0;i<particleCount;i++){
 
 particles.push({
 x:Math.random()*canvas.width,
@@ -584,10 +529,6 @@ color:Math.random()>0.5?"#ffffff":"#1e88ff"
 
 }
 
-for(let i=0;i<particleCount;i++){
-createParticle();
-}
-
 function draw(){
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -597,38 +538,20 @@ particles.forEach((p,i)=>{
 p.x+=p.vx;
 p.y+=p.vy;
 
+if(p.x<0 || p.x>canvas.width || p.y<0 || p.y>canvas.height){
+p.x=Math.random()*canvas.width;
+p.y=Math.random()*canvas.height;
+}
+
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 ctx.fillStyle=p.color;
 ctx.fill();
 
-particles.slice(i+1).forEach(p2=>{
-
-let dx=p.x-p2.x;
-let dy=p.y-p2.y;
-let dist=Math.sqrt(dx*dx+dy*dy);
-
-if(dist<120){
-
-ctx.beginPath();
-ctx.moveTo(p.x,p.y);
-ctx.lineTo(p2.x,p2.y);
-ctx.strokeStyle="rgba(0,150,255,"+(1-dist/120)+")";
-ctx.stroke();
-
-}
-
 });
-
-});
-
-/* keep spawning */
-
-if(particles.length < particleCount){
-createParticle();
-}
 
 requestAnimationFrame(draw);
+
 }
 
 draw();
@@ -644,7 +567,38 @@ months+=now.getMonth()-start.getMonth();
 return months;
 }
 
-document.getElementById("expMonths").innerText=calcMonths();
+let months=calcMonths();
+let counter=0;
+
+let interval=setInterval(()=>{
+
+counter++;
+
+document.getElementById("expMonths").innerText=counter;
+
+if(counter>=months)clearInterval(interval);
+
+},120);
+
+/* STATS COUNTER */
+
+document.querySelectorAll(".stat-number").forEach(el=>{
+
+let target=parseInt(el.getAttribute("data-target"));
+if(!target) return;
+
+let count=0;
+
+let interval=setInterval(()=>{
+
+count++;
+el.innerText=count;
+
+if(count>=target)clearInterval(interval);
+
+},120);
+
+});
 
 /* SCROLL BUTTON */
 
