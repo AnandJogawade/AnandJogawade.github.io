@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Anand Jogawade | Cyber Security Auditor</title>
 
 <style>
@@ -17,17 +18,8 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0f0f10;
-color:#e4e4e4;
-line-height:1.6;
-}
-
-section{
-padding:80px 8%;
-}
-
-h1,h2,h3{
-color:#1e88ff;
+background:#0a0a0c;
+color:#e6e6e6;
 }
 
 /* HEADER */
@@ -37,18 +29,19 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-background:#111;
+background:#0d0d0f;
+padding:16px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 8%;
+border-bottom:1px solid #1a1a1a;
 z-index:1000;
-border-bottom:1px solid #222;
 }
 
 .logo{
 font-size:22px;
 font-weight:bold;
+color:white;
 }
 
 .logo span{
@@ -58,18 +51,16 @@ color:#1e88ff;
 nav ul{
 display:flex;
 list-style:none;
+gap:25px;
 }
 
-nav ul li{
-margin-left:25px;
-}
-
-nav ul li a{
+nav a{
+color:#ccc;
 text-decoration:none;
-color:#ddd;
+font-size:15px;
 }
 
-nav ul li a:hover{
+nav a:hover{
 color:#1e88ff;
 }
 
@@ -86,7 +77,6 @@ position:relative;
 background-image:url("https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/bg.jpg");
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
 background-attachment:fixed;
 }
 
@@ -97,7 +87,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,.65);
 }
 
 .hero-content{
@@ -109,16 +99,16 @@ z-index:2;
 width:180px;
 height:180px;
 border-radius:50%;
-object-fit:cover;
 border:5px solid #1e88ff;
+object-fit:cover;
 margin-bottom:20px;
 }
 
 #title{
 color:white;
-margin-top:6px;
+margin-top:8px;
 font-weight:500;
-transition:opacity .4s ease;
+transition:.4s;
 }
 
 /* PARTICLES */
@@ -132,13 +122,19 @@ height:100%;
 z-index:1;
 }
 
+/* SECTIONS */
+
+section{
+padding:90px 8%;
+}
+
 /* ABOUT */
 
 .about{
 display:flex;
-gap:50px;
-align-items:center;
+gap:40px;
 flex-wrap:wrap;
+align-items:center;
 }
 
 .about img{
@@ -146,28 +142,35 @@ width:280px;
 border-radius:10px;
 }
 
-.about-text{
-flex:1;
-}
-
 /* EXPERIENCE */
 
 .exp-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
 margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
 .exp-card{
-background:#181818;
+background:#121214;
 padding:25px;
 border-radius:10px;
 transition:.3s;
 }
 
 .exp-card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
+}
+
+.exp-card h3{
+color:#1e88ff;
+margin-bottom:4px;
+}
+
+.exp-card ul{
+margin-top:10px;
+padding-left:18px;
+color:#bbb;
 }
 
 /* SKILLS */
@@ -176,34 +179,46 @@ transform:translateY(-5px);
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
-margin-top:30px;
+margin-top:40px;
 }
 
 .skill{
-background:#161616;
+background:#121214;
 padding:18px;
 text-align:center;
-border-radius:6px;
+border-radius:8px;
+transition:.3s;
+}
+
+.skill:hover{
+transform:scale(1.08);
+background:#1a1a1f;
 }
 
 /* STATS */
 
 .stats{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 margin-top:40px;
 text-align:center;
 }
 
 .stat-box{
-background:#181818;
-padding:30px;
+background:#121214;
+padding:35px;
 border-radius:10px;
+transition:.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-6px);
+background:#1a1a1f;
 }
 
 .stat-number{
-font-size:34px;
+font-size:36px;
 color:#1e88ff;
 }
 
@@ -213,13 +228,20 @@ color:#1e88ff;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-margin-top:30px;
+margin-top:40px;
 }
 
 .blog{
-background:#181818;
-border-radius:8px;
+background:#121214;
+border-radius:10px;
 overflow:hidden;
+transition:.3s;
+cursor:pointer;
+}
+
+.blog:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(30,136,255,.25);
 }
 
 .blog img{
@@ -232,19 +254,12 @@ object-fit:cover;
 padding:15px;
 }
 
-/* CONTACT */
-
-.contact-info{
-margin-top:20px;
-line-height:2;
-}
-
 /* FOOTER */
 
 footer{
-background:#111;
+background:#0d0d0f;
 padding:50px 8%;
-border-top:1px solid #222;
+border-top:1px solid #1a1a1a;
 }
 
 .footer-grid{
@@ -258,7 +273,7 @@ list-style:none;
 margin-top:10px;
 }
 
-.footer-grid ul li{
+.footer-grid li{
 margin-bottom:8px;
 }
 
@@ -278,12 +293,12 @@ position:fixed;
 bottom:25px;
 right:25px;
 background:#1e88ff;
-border:none;
 width:45px;
 height:45px;
+border:none;
 border-radius:50%;
 color:white;
-font-size:20px;
+font-size:18px;
 cursor:pointer;
 display:none;
 }
@@ -305,11 +320,12 @@ display:none;
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#blogs">Blogs</a></li>
-<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
 </header>
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -328,20 +344,21 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 
 </section>
 
+<!-- ABOUT -->
+
 <section id="about">
 
 <div class="about">
 
 <img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/about/aformalPic.jpeg">
 
-<div class="about-text">
+<div>
 
 <h2>Cyber Security Auditor</h2>
 
 <p>
 I specialize in penetration testing for web, Android, and iOS applications,
-as well as servers and hosts, along with securing firewalls to protect
-against evolving threats.
+as well as servers and hosts, along with securing firewalls against evolving threats.
 </p>
 
 </div>
@@ -350,23 +367,45 @@ against evolving threats.
 
 </section>
 
+<!-- EXPERIENCE -->
+
 <section id="experience">
 
 <h2 style="text-align:center">Experience</h2>
 
 <div class="exp-grid">
 
-<div class="exp-card">Security Auditor – Company</div>
-<div class="exp-card">Cyber Security Analyst – Company</div>
-<div class="exp-card">Penetration Tester – Company</div>
-<div class="exp-card">Security Researcher – Company</div>
-<div class="exp-card">SOC Analyst – Company</div>
-<div class="exp-card">Security Consultant – Company</div>
-<div class="exp-card">Cybersecurity Intern – Company</div>
+<div class="exp-card">
+
+<h3>Security Auditor</h3>
+<p>Phoenix TechnoCyber</p>
+
+<ul>
+<li>Conducted vulnerability assessments</li>
+<li>Performed penetration testing</li>
+<li>Created remediation reports</li>
+</ul>
+
+</div>
+
+<div class="exp-card">
+
+<h3>Cyber Security Analyst</h3>
+<p>Company Name</p>
+
+<ul>
+<li>Security monitoring</li>
+<li>Threat analysis</li>
+<li>Incident response</li>
+</ul>
+
+</div>
 
 </div>
 
 </section>
+
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -385,21 +424,15 @@ against evolving threats.
 <div class="skill">Bash</div>
 <div class="skill">JavaScript</div>
 <div class="skill">C++</div>
-<div class="skill">AWS</div>
 <div class="skill">Cloud Security</div>
-<div class="skill">Exploit Development</div>
-<div class="skill">Vulnerability Assessment</div>
-<div class="skill">SOC Operations</div>
-<div class="skill">Threat Hunting</div>
-<div class="skill">Malware Analysis</div>
-<div class="skill">Digital Forensics</div>
-<div class="skill">Security Automation</div>
 
 </div>
 
 </section>
 
-<section id="stats">
+<!-- STATS -->
+
+<section>
 
 <div class="stats">
 
@@ -427,32 +460,39 @@ against evolving threats.
 
 </section>
 
+<!-- BLOG -->
+
 <section id="blogs">
 
 <h2 style="text-align:center">Latest Blogs</h2>
 
 <div class="blog-grid">
 
-<div class="blog"><img src="https://source.unsplash.com/600x400/?cybersecurity"><div class="blog-content">Blog Title</div></div>
-<div class="blog"><img src="https://source.unsplash.com/600x400/?hacker"><div class="blog-content">Blog Title</div></div>
-<div class="blog"><img src="https://source.unsplash.com/600x400/?security"><div class="blog-content">Blog Title</div></div>
-<div class="blog"><img src="https://source.unsplash.com/600x400/?server"><div class="blog-content">Blog Title</div></div>
+<div class="blog">
+<img src="https://source.unsplash.com/600x400/?cybersecurity">
+<div class="blog-content">Blog Title</div>
+</div>
+
+<div class="blog">
+<img src="https://source.unsplash.com/600x400/?hacker">
+<div class="blog-content">Blog Title</div>
+</div>
+
+<div class="blog">
+<img src="https://source.unsplash.com/600x400/?security">
+<div class="blog-content">Blog Title</div>
+</div>
+
+<div class="blog">
+<img src="https://source.unsplash.com/600x400/?server">
+<div class="blog-content">Blog Title</div>
+</div>
 
 </div>
 
 </section>
 
-<section id="contact">
-
-<h2>Contact</h2>
-
-<div class="contact-info">
-<p>Email: jogawade2@gmail.com</p>
-<p>Phone: +91 7743819058</p>
-<p>Pune, Maharashtra, India</p>
-</div>
-
-</section>
+<!-- FOOTER -->
 
 <footer>
 
@@ -463,7 +503,7 @@ against evolving threats.
 <h3 style="color:white">Anand Jogawade</h3>
 
 <p style="color:#aaa;margin-top:10px">
-Thank you for visiting my portfolio website.
+Cyber Security Portfolio
 </p>
 
 </div>
@@ -473,25 +513,12 @@ Thank you for visiting my portfolio website.
 <h3 style="color:white">Quick Links</h3>
 
 <ul>
-
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#blogs">Blogs</a></li>
-<li><a href="#contact">Contact</a></li>
-
 </ul>
-
-</div>
-
-<div>
-
-<h3 style="color:white">Contact Info</h3>
-
-<p>📞 +91 7743819058</p>
-<p>✉ jogawade2@gmail.com</p>
-<p>📍 Pune, Maharashtra, India</p>
 
 </div>
 
@@ -509,7 +536,7 @@ Designed ❤️ by <span style="color:#1e88ff">Anand Jogawade</span>
 
 <script>
 
-/* ROTATING TITLES */
+/* TITLE ROTATION */
 
 const titles=[
 "Certified AppSec Practitioner",
@@ -523,12 +550,15 @@ const title=document.getElementById("title");
 
 setInterval(()=>{
 title.style.opacity=0;
+
 setTimeout(()=>{
 title.innerText=titles[i];
 title.style.opacity=1;
 i=(i+1)%titles.length;
 },400);
+
 },2500);
+
 
 /* PARTICLES */
 
@@ -539,44 +569,24 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-let mouse={x:null,y:null};
+const particleCount=120;
 
-const particleCount=110;
-
-for(let i=0;i<particleCount;i++){
+function createParticle(){
 
 particles.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-vx:(Math.random()-0.5)*1.3,
-vy:(Math.random()-0.5)*1.3,
+vx:(Math.random()-0.5)*1.4,
+vy:(Math.random()-0.5)*1.4,
 size:2,
 color:Math.random()>0.5?"#ffffff":"#1e88ff"
 });
 
 }
 
-canvas.addEventListener("mousemove",e=>{
-mouse.x=e.clientX;
-mouse.y=e.clientY;
-});
-
-canvas.addEventListener("mousedown",()=>{
-
-for(let i=0;i<25;i++){
-
-particles.push({
-x:mouse.x,
-y:mouse.y,
-vx:(Math.random()-0.5)*3,
-vy:(Math.random()-0.5)*3,
-size:2,
-color:"#1e88ff"
-});
-
+for(let i=0;i<particleCount;i++){
+createParticle();
 }
-
-});
 
 function draw(){
 
@@ -612,8 +622,13 @@ ctx.stroke();
 
 });
 
-requestAnimationFrame(draw);
+/* keep spawning */
 
+if(particles.length < particleCount){
+createParticle();
+}
+
+requestAnimationFrame(draw);
 }
 
 draw();
@@ -623,36 +638,13 @@ draw();
 const start=new Date("2024-06-01");
 
 function calcMonths(){
-
 const now=new Date();
 let months=(now.getFullYear()-start.getFullYear())*12;
 months+=now.getMonth()-start.getMonth();
 return months;
-
 }
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-
-let months=calcMonths();
-let counter=0;
-
-let interval=setInterval(()=>{
-counter++;
-document.getElementById("expMonths").innerText=counter;
-
-if(counter>=months)clearInterval(interval);
-
-},40);
-
-observer.disconnect();
-
-}
-});
-});
-
-observer.observe(document.querySelector("#stats"));
+document.getElementById("expMonths").innerText=calcMonths();
 
 /* SCROLL BUTTON */
 
