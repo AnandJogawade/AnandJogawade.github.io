@@ -1,29 +1,41 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Anand Jogawade - Portfolio</title>
 
-<meta name="description" content="Anand Jogawade Personal Portfolio">
-<meta name="keywords" content="Cybersecurity, AppSec, Penetration Testing">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Google Analytics -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167131966-1"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','UA-167131966-1');
+</script>
+
+<!-- Fonts / Icons -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Bootstrap -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
 
 body{
 margin:0;
-font-family:Montserrat;
+font-family:Montserrat,sans-serif;
 background:#121212;
-color:white;
-scroll-behavior:smooth;
+color:#fff;
+overflow-x:hidden;
 }
 
 /* HEADER */
@@ -32,16 +44,16 @@ scroll-behavior:smooth;
 position:fixed;
 top:0;
 width:100%;
-background:#1b1b1b;
+background:#222;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 8%;
+padding:10px 20px;
 z-index:1000;
 }
 
 .logo{
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 }
 
@@ -52,26 +64,32 @@ color:#007bff;
 .nav-menu{
 list-style:none;
 display:flex;
-gap:18px;
 margin:0;
 padding:0;
+}
+
+.nav-menu li{
+margin-left:15px;
 }
 
 .nav-menu a{
 color:white;
 text-decoration:none;
+padding:8px 12px;
+border-radius:4px;
 }
 
 .nav-menu a:hover{
-color:#007bff;
+background:#007bff;
 }
 
 .menu-toggle{
 display:none;
+font-size:22px;
 cursor:pointer;
 }
 
-/* MOBILE */
+/* MOBILE NAV */
 
 @media(max-width:768px){
 
@@ -80,14 +98,13 @@ display:block;
 }
 
 .nav-menu{
-display:none;
 flex-direction:column;
-background:#111;
 position:absolute;
 top:60px;
 right:0;
+background:#222;
 width:200px;
-padding:20px;
+display:none;
 }
 
 .nav-menu.show{
@@ -99,13 +116,13 @@ display:flex;
 /* HERO */
 
 .banner-area{
-height:100vh;
-background:url('bg.jpg') center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
 position:relative;
+height:100vh;
+background:url('bg.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 #particles-js{
@@ -116,24 +133,23 @@ height:100%;
 
 .welcome-text{
 position:relative;
-background:rgba(0,0,0,0.6);
-padding:40px;
+background:rgba(0,0,0,.6);
+padding:30px;
 border-radius:20px;
-max-width:700px;
 }
 
 .welcome-text img{
-width:200px;
-height:200px;
+width:220px;
+height:220px;
 border-radius:50%;
 object-fit:cover;
 margin-bottom:20px;
 }
 
-/* SECTIONS */
+/* SECTION */
 
-section{
-padding:90px 10%;
+.section-padding{
+padding:70px 0;
 }
 
 .section-title{
@@ -143,127 +159,70 @@ margin-bottom:40px;
 color:#007bff;
 }
 
-/* ABOUT */
-
-.about-container{
-display:flex;
-flex-wrap:wrap;
-gap:40px;
-align-items:center;
-}
-
-.about-container img{
-width:320px;
-border-radius:50%;
-}
-
 /* EXPERIENCE */
 
-.experience-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
 .experience-card{
-background:#1e1e1e;
-padding:25px;
-border-radius:10px;
-}
-
-.experience-card h3{
-color:#007bff;
-}
-
-/* CERTIFICATIONS */
-
-.certifications-list{
-list-style:none;
-padding:0;
-display:grid;
-gap:15px;
-}
-
-.certifications-list li{
-background:#1e1e1e;
+background:#242424;
 padding:20px;
-border-radius:8px;
-text-align:center;
+border-radius:10px;
+margin-bottom:20px;
+transition:.3s;
+}
+
+.experience-card:hover{
+transform:translateY(-5px);
 }
 
 /* SKILLS */
 
 .skills-list{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-list-style:none;
-padding:0;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .skills-list li{
 background:#1e1e1e;
-padding:15px;
-text-align:center;
-border-radius:8px;
+padding:10px 15px;
+border-radius:6px;
 }
 
 /* BLOG */
 
-.blog-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
 .blog-card{
-background:#1e1e1e;
+background:#151515;
 border-radius:8px;
 overflow:hidden;
+margin-bottom:20px;
 }
 
-.blog-card img{
+.blog-image img{
 width:100%;
 height:200px;
 object-fit:cover;
 }
 
 .blog-content{
-padding:20px;
+padding:15px;
 }
 
 /* FOOTER */
 
 .footer{
 background:#0a0a0a;
-padding:60px 10%;
+padding:40px 0;
 }
-
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-}
-
-.footer-bottom{
-text-align:center;
-margin-top:40px;
-font-size:13px;
-}
-
-/* SCROLL BUTTON */
 
 .scroll-to-top{
 position:fixed;
 bottom:20px;
 right:20px;
-background:#007bff;
+width:50px;
+height:50px;
+background:#1db954;
 border:none;
-color:white;
-width:45px;
-height:45px;
 border-radius:50%;
-cursor:pointer;
+color:white;
 display:none;
 }
 
@@ -274,28 +233,24 @@ display:none;
 <body>
 
 <header class="header">
-
 <div class="logo">Anand <span>Jogawade</span></div>
 
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 <ul class="nav-menu">
-
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
+<li><a href="#experience-section">Experience</a></li>
 <li><a href="#certifications">Certifications</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#blogs">Blogs</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
-
 </header>
 
 <!-- HERO -->
 
-<div class="banner-area" id="home">
+<section class="banner-area" id="home">
 
 <div id="particles-js"></div>
 
@@ -303,58 +258,49 @@ display:none;
 
 <img src="images/home/newMe.png">
 
-<h2>Anand Jogawade</h2>
+<h3>Anand Jogawade</h3>
 
-<p>
-Certified AppSec Practitioner<br>
-Certified in Cybersecurity<br>
-Cyber Security Auditor<br>
-Penetration Tester
-</p>
+<div class="headline-wrapper">
+<div>Certified AppSec Practitioner</div>
+<div>Certified in Cybersecurity</div>
+<div>Cyber Security Auditor</div>
+<div>Penetration Tester</div>
+</div>
 
-<div>
-
-<a href="https://linkedin.com/in/anand-jogawade" target="_blank">
-<i class="fa fa-linkedin"></i>
-</a>
-
-<a href="https://github.com/anandjogawade" target="_blank">
-<i class="fa fa-github"></i>
-</a>
-
+<div class="social-icon">
+<a href="https://linkedin.com/in/anand-jogawade"><i class="fa fa-linkedin"></i></a>
+<a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
 </div>
 
 </div>
 
-</div>
+</section>
 
 <!-- ABOUT -->
 
-<section id="about">
+<section id="about" class="section-padding">
+
+<div class="container">
 
 <h2 class="section-title">About</h2>
 
-<div class="about-container">
+<div class="row align-items-center">
 
-<img src="images/about/formalPic.jpeg">
+<div class="col-md-4 text-center">
 
-<div>
+<img src="images/about/formalPic.jpeg" class="img-fluid rounded-circle">
+
+</div>
+
+<div class="col-md-8">
 
 <h3>Cyber Security Auditor</h3>
 
-<p>
-I am <b>Anand Jogawade</b>.
-</p>
+<p>I specialize in penetration testing for web, Android, iOS applications, and infrastructure security.</p>
 
-<p>
-I specialize in penetration testing for web, Android and iOS applications along with servers and hosts.
-</p>
+<a href="#skills" class="btn btn-primary">My Skills</a>
 
-<p>
-Currently working as Cyber Security Auditor at Phoenix TechnoCyber focusing on VAPT and security audits.
-</p>
-
-<a href="#skills">My Skills</a>
+</div>
 
 </div>
 
@@ -364,149 +310,83 @@ Currently working as Cyber Security Auditor at Phoenix TechnoCyber focusing on V
 
 <!-- EXPERIENCE -->
 
-<section id="experience">
+<section id="experience-section" class="section-padding">
 
-<h2 class="section-title">Experience</h2>
+<div class="container">
 
-<div class="experience-container">
+<h2 class="section-title">My Experience</h2>
 
+<div class="row">
+
+<div class="col-md-6">
 <div class="experience-card">
-
-<h3>Phoenix TechnoCyber</h3>
-
-<h4>Security Auditor</h4>
-
-<span>Jan 2024 - Present</span>
-
-<p>
-Penetration testing, vulnerability assessment and compliance.
-</p>
-
+<h4>Phoenix TechnoCyber</h4>
+<p>Security Auditor — Jan 2024 - Present</p>
+</div>
 </div>
 
+<div class="col-md-6">
 <div class="experience-card">
-
-<h3>TechnoHacks EduTech</h3>
-
-<h4>Security Analyst</h4>
-
-<span>May 2024</span>
-
-<p>
-Conducted vulnerability assessments and penetration testing.
-</p>
-
+<h4>TechnoHacks EduTech</h4>
+<p>Security Analyst — May 2024</p>
 </div>
-
-<div class="experience-card">
-
-<h3>ShadowFox</h3>
-
-<h4>Penetration Tester</h4>
-
-<span>Mar 2024</span>
-
-<p>
-Security testing and vulnerability reporting.
-</p>
-
-</div>
-
-<div class="experience-card">
-
-<h3>Tutelr</h3>
-
-<h4>Cyber Security Analyst</h4>
-
-<span>Jan 2024 - Mar 2024</span>
-
-<p>
-Cloud security monitoring and vulnerability assessments.
-</p>
-
 </div>
 
 </div>
 
-</section>
-
-<!-- CERTIFICATIONS -->
-
-<section id="certifications">
-
-<h2 class="section-title">Certifications</h2>
-
-<ul class="certifications-list">
-
-<li>Certified Red Team Analyst (CRTA)</li>
-
-<li>Certified Cyber Security Analyst (C3SA)</li>
-
-<li>ISC2 Certified in Cybersecurity (CC)</li>
-
-<li>Fortinet Certified Associate in Cybersecurity</li>
-
-<li>Certified AppSec Practitioner (CAP)</li>
-
-</ul>
+</div>
 
 </section>
 
 <!-- SKILLS -->
 
-<section id="skills">
+<section id="skills" class="section-padding">
+
+<div class="container">
 
 <h2 class="section-title">Skills</h2>
 
 <ul class="skills-list">
-
 <li>Red Teaming</li>
-<li>Vulnerability Assessments</li>
 <li>Penetration Testing</li>
 <li>Active Directory</li>
-<li>Exploit Development</li>
 <li>Cloud Security</li>
-<li>Networking</li>
-<li>Python</li>
-<li>Burp Suite</li>
 <li>Metasploit</li>
+<li>Burp Suite</li>
 <li>Kali Linux</li>
-
 </ul>
+
+</div>
 
 </section>
 
-<!-- BLOGS -->
+<!-- BLOG -->
 
-<section id="blogs">
+<section id="blogs" class="section-padding">
+
+<div class="container">
 
 <h2 class="section-title">Latest Blogs</h2>
 
-<div class="blog-grid">
+<div class="row">
+
+<div class="col-md-4">
 
 <div class="blog-card">
 
+<div class="blog-image">
 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png">
+</div>
 
 <div class="blog-content">
 
-<h3>PikaShow Security Risk</h3>
+<h5>PikaShow Security Risk</h5>
 
 <a href="https://medium.com/@Anand_Jogawade">Read More</a>
 
 </div>
 
 </div>
-
-<div class="blog-card">
-
-<img src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*JLL03zl3YlJSntCRjPv1DQ.png">
-
-<div class="blog-content">
-
-<h3>LDAP Nightmare</h3>
-
-<a href="https://medium.com/@Anand_Jogawade">Read More</a>
 
 </div>
 
@@ -518,92 +398,59 @@ Cloud security monitoring and vulnerability assessments.
 
 <!-- FOOTER -->
 
-<footer class="footer" id="contact">
+<footer id="contact" class="footer">
 
-<div class="footer-grid">
-
-<div>
+<div class="container text-center">
 
 <h4>Anand Jogawade</h4>
 
-<p>
-Cyber Security Auditor specializing in VAPT and Red Teaming.
-</p>
+<p>Pune, Maharashtra, India</p>
 
-</div>
-
-<div>
-
-<h4>Contact</h4>
-
-<p>📍 Pune, Maharashtra, India</p>
-
-<p>✉️ jogawade2@gmail.com</p>
-
-</div>
-
-<div>
-
-<h4>Social</h4>
-
-<a href="https://linkedin.com/in/anand-jogawade"><i class="fa fa-linkedin"></i></a>
-
-<a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-© 2026 Anand Jogawade
+<a href="https://linkedin.com/in/anand-jogawade"><i class="fa fa-linkedin"></i></a> <a href="https://github.com/anandjogawade"><i class="fa fa-github"></i></a>
 
 </div>
 
 </footer>
 
-<button class="scroll-to-top" id="scrollBtn">↑</button>
+<button class="scroll-to-top" id="scrollToTopBtn"><i class="fa fa-arrow-up"></i></button>
+
+<!-- SCRIPTS -->
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script>
 
-particlesJS("particles-js",{
+particlesJS('particles-js',{
 particles:{
-number:{value:120},
+number:{value:150},
 size:{value:3},
-move:{speed:3}
+move:{speed:6}
 }
 });
 
 function toggleMenu(){
-document.querySelector(".nav-menu").classList.toggle("show");
+document.querySelector('.nav-menu').classList.toggle('show');
 }
 
-const btn=document.getElementById("scrollBtn");
+const scrollToTopBtn=document.getElementById("scrollToTopBtn");
 
-window.onscroll=function(){
-
-if(document.documentElement.scrollTop>300){
-
-btn.style.display="block";
-
+window.addEventListener("scroll",()=>{
+if(window.scrollY>300){
+scrollToTopBtn.style.display="block";
 }else{
-
-btn.style.display="none";
-
+scrollToTopBtn.style.display="none";
 }
+});
 
-}
-
-btn.onclick=function(){
-
+scrollToTopBtn.onclick=()=>{
 window.scrollTo({top:0,behavior:"smooth"});
-
-}
+};
 
 </script>
 
 </body>
-
 </html>
