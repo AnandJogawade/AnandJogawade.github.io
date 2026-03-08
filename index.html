@@ -147,21 +147,21 @@ border-radius:10px;
 /* EXPERIENCE */
 
 .exp-grid{
-margin-top:30px;
+margin-top:40px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:18px;
-max-width:900px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:22px;
+max-width:1050px;
 margin-left:auto;
 margin-right:auto;
 }
 
 .exp-card{
 background:#121214;
-padding:18px;
-border-radius:8px;
+padding:22px;
+border-radius:10px;
 transition:.25s;
-font-size:14px;
+font-size:15px;
 }
 
 .exp-card:hover{
@@ -615,7 +615,7 @@ draw();
 
 /* COUNTERS */
 
-const start=new Date("2024-06-01");
+const start=new Date("2024-01-01");
 
 function calcMonths(){
 const now=new Date();
@@ -635,7 +635,7 @@ document.getElementById("expMonths").innerText=counter;
 
 if(counter>=months)clearInterval(interval);
 
-},400);
+},100);
 
 document.querySelectorAll(".stat-number").forEach(el=>{
 
@@ -651,7 +651,7 @@ el.innerText=count;
 
 if(count>=target)clearInterval(interval);
 
-},400);
+},100);
 
 });
 
@@ -671,3 +671,4 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
+
