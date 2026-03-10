@@ -99,8 +99,8 @@ z-index:2;
 }
 
 .profile{
-width:180px;
-height:180px;
+width:210px;
+height:210px;
 border-radius:50%;
 border:5px solid #1e88ff;
 object-fit:cover;
@@ -142,9 +142,9 @@ text-align:left;
 color:#1e88ff;
 }
 
-#experience h2,
-#skills h2,
-#blogs h2{
+#experience h1,
+#skills h1,
+#blogs h1{
 text-align:center;
 color:#1e88ff;
 }
@@ -271,7 +271,7 @@ box-shadow:0 0 20px rgba(30,136,255,.25);
 
 .blog img{
 width:100%;
-height:160px;
+height:150px;
 object-fit:cover;
 }
 
@@ -281,26 +281,54 @@ padding:15px;
 
 /* FOOTER */
 
+/* FOOTER */
+
 footer{
 background:#0d0d0f;
-padding:50px 8%;
+padding:35px 8%;
 border-top:1px solid #1a1a1a;
 font-size:14px;
+margin-top:40px;
 }
 
-footer p{
-font-size:13px;
-color:#bfbfbf;
-}
-
-footer h3{
-font-size:16px;
-}
-  
 .footer-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
+grid-template-columns:1fr 1fr;
+width:100%;
+gap:20px;
+align-items:start;
+}
+
+.about-left h3,
+.contact-right h3{
+font-size:16px;
+color:white;
+margin-bottom:8px;
+}
+
+.footer-text{
+color:#bfbfbf;
+line-height:1.6;
+max-width:520px;
+}
+
+.contact-right{
+text-align:right;
+}
+
+.contact-right p{
+color:#bfbfbf;
+margin:4px 0;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+color:#aaa;
+}
+
+.footer-bottom span{
+color:#1e88ff;
 }
 
 .footer-grid ul{
@@ -350,6 +378,8 @@ display:none;
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
+<li><a href="#skills">Stats</a></li>
+<li><a href="#Projects">Projects</a></li>
 <li><a href="#blogs">Blogs</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -367,7 +397,7 @@ display:none;
 src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/home/newMe.png">
 
 <h1>Anand Jogawade</h1>
-<h3 id="title">Cyber Security Auditor</h3>
+<h3 id="title">Security Researcher</h3>
 
 </div>
 
@@ -380,73 +410,106 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 <img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/about/aformalPic.jpeg">
 
 <div>
-
-<h2>Cyber Security Auditor</h2>
+<br><br>
+<h2>Lead Penetration Tester</h2>
 
 <p>
-Specialized in penetration testing, vulnerability assessments,
-and security auditing of web and infrastructure systems.
+I am a Penetration Tester with 2.5+ years of experience conducting web application, mobile (Android & iOS), and enterprise infrastructure security assessments<p></p>
+across internal and external environments. My work focuses on identifying exploitable weaknesses, mapping realistic attack paths, and demonstrating measurable<p></p>
+business impact through controlled exploitation. In internal assessments, I analyze network architecture and Active Directory environments to identify privilege<p></p> 
+boundaries, trust relationships,and lateral movement opportunities. I prioritize attack path validation assessing how an initial foothold could escalate toward<p></p>
+broader compromise within enterprise domains.<br><br>
+
+My methodology emphasizes manual testing, business logic flaw discovery, authentication and authorization bypass analysis, privilege escalation, and structured<p></p>
+attack chaining. Where in scope, I also evaluate the effectiveness of security controls by validating detection and response mechanisms, including endpoint and<p></p>
+XDR defenses, to assess resilience against adversarial techniques.Beyond vulnerability discovery, I work closely with engineering and IT teams to provide <p></p>
+risk-prioritized remediation guidance, support secure configuration improvements, and conduct retesting to ensure effective resolution. Alongside enterprise <p></p>
+engagements, I undertake independent security testing and source code reviews,helping organizations strengthen secure development practices and reduce overall<p></p>
+attack surface exposure.
 </p>
 
 </div>
 
 </div>
-
 </section>
-
 <section id="experience">
 
-<h2>Experience</h2>
-
+<h1>Experience</h1>
 <div class="exp-grid">
+<div class="exp-card">
+<h3>Lead Penetration Tester</h3>
+<p>Infilux AppSec</p>
+<ul>
+<li>Web Application Penetration Testing</li>
+<li>Mobile Application Penetration Testing</li>
+<li>Internal Network / Active Directory Security Assessments</li>
+<li>Firewall Rule Reviews</li>
+<li>Lead and Mentor Penetration Testing Team</li>
+<li>Provide Client Remediation Guidance</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<h3>Application Security Engineer</h3>
+<p>Pixel Softwares</p>
+<ul>
+<li>Web Application Penetration Testing</li>
+<li>Conduct Secure Code Reviews</li>
+<li>Work With Development Teams</li>
+</ul>
+</div>
+
+<div class="exp-card">
+<h3>Security Researcher(Bug Bounty)</h3>
+<p>Com Olho</p>
+<ul>
+<li>Web Application Penetration Testing</li>
+<li>Vulnerability Discovery & Responsible Disclosure</li>
+<li>Reporting and Documenting Security Findings</li>
+</ul>
+</div>
 
 <div class="exp-card">
 <h3>Security Auditor</h3>
 <p>Phoenix TechnoCyber</p>
 <ul>
-<li>Conducted vulnerability assessments</li>
-<li>Performed penetration testing</li>
-<li>Generated remediation reports</li>
+<li>Infrastructure VAPT</li>
+<li>Firewall Rule Reviews</li>
+<li>Web Application Penetration Testing</li>
+<li>Conducting IS/GAP Audits</li>
+<li>client Remediation Guidance</li>
 </ul>
 </div>
 
 <div class="exp-card">
-<h3>Cyber Security Analyst</h3>
-<p>Company Name</p>
+<h3>Web Application Security Intern</h3>
+<p>TechnoHacks EduTech Official</p>
 <ul>
-<li>Security monitoring</li>
-<li>Threat detection</li>
-<li>Incident response</li>
+<li>Web Application Penetration Testing</li>
+<li>Setup/Configuring VMs</li>
+<li>Packet Capturing</li>
 </ul>
 </div>
 
 <div class="exp-card">
-<h3>Penetration Tester</h3>
-<p>Company Name</p>
+<h3>Penetration Testing Intern</h3>
+<p>ShadowFox</p>
 <ul>
-<li>Web application testing</li>
-<li>VAPT assessments</li>
-<li>Reporting vulnerabilities</li>
-</ul>
-</div>
+<li>Network Penetration Testing</li>
+<li>Web Application Penetration Testing</li>
+<li>Wifi Hacking</li>
+<li>Packet Capturing</li>
 
-<div class="exp-card">
-<h3>Security Researcher</h3>
-<p>Company Name</p>
-<ul>
-<li>Vulnerability research</li>
-<li>PoC development</li>
-<li>Security analysis</li>
 </ul>
 </div>
 
 <div class="exp-card">
 <h3>Cyber Security Intern</h3>
-<p>Company Name</p>
+<p>Tutelr</p>
 <ul>
-<li>Security testing support</li>
-<li>Documentation</li>
-<li>Tool research</li>
+<li>Configuration Hardening Of Windows Machine</li>
+<li>Performing Forensics Assessments</li>
+<li>Creating & Configuring Network</li>
 </ul>
 </div>
 
@@ -456,40 +519,47 @@ and security auditing of web and infrastructure systems.
 
 <section id="skills">
 
-<h2>Skills</h2>
+<h1>Skills</h1>
 
 <div class="skills-grid">
 
-<div class="skill">Penetration Testing</div>
+<div class="skill">Active Directory Assessment</div>
+<div class="skill">AV/XDR/EDR Bypass</div>
 <div class="skill">Red Teaming</div>
-<div class="skill">Burp Suite</div>
-<div class="skill">Metasploit</div>
-<div class="skill">Kali Linux</div>
-<div class="skill">Networking</div>
+<div class="skill">Internal/External VAPT</div>
+<div class="skill">Mobile/API VAPT</div>
+<div class="skill">Secure Code Review</div>
+<div class="skill">Firewall Rule Review</div>
+<div class="skill">Shell Scripting</div>
+<div class="skill">Bash Scripting</div>
 <div class="skill">Python</div>
-<div class="skill">Active Directory</div>
+<div class="skill">IS/GAP Audit</div>
+<div class="skill">Networking</div>
+<div class="skill">Team Lead</div>
+<div class="skill">Problem Solving</div>
+<div class="skill">Critical Thinking</div>
 
 </div>
-
 </section>
+<section id="skills">
 
-<section>
+<h1>Stats</h1>
 
 <div class="stats">
 
 <div class="stat-box">
-<div class="stat-number" data-target="4">0</div>
-<p>Personal Projects</p>
+<div class="stat-number" data-target="14">0</div>
+<p>Certifications</p>
 </div>
 
 <div class="stat-box">
-<div class="stat-number" data-target="3">0</div>
-<p>Open Source Contribution</p>
+<div class="stat-number" data-target="23">0</div>
+<p>Course Completed</p>
 </div>
 
 <div class="stat-box">
-<div class="stat-number" data-target="8">0</div>
-<p>Awareness Trainings</p>
+<div class="stat-number" data-target="12">0</div>
+<p>Conducted Awareness Trainings</p>
 </div>
 
 <div class="stat-box">
@@ -500,49 +570,116 @@ and security auditing of web and infrastructure systems.
 </div>
 
 </section>
-
 <section id="blogs">
-
-<h2>Latest Blogs</h2>
+<h1>Latest Blogs</h1>
 
 <div class="blog-grid">
 
+<a href="https://medium.com/@Anand_Jogawade/my-ecpptv3-exam-experience-a-real-test-of-manual-pentesting-skills-febdce44d95f" target="_blank" style="text-decoration:none;color:inherit;">
 <div class="blog">
-<img src="https://source.unsplash.com/600x400/?cybersecurity">
-<div class="blog-content">Blog Title</div>
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*txqZn2Ayt1Thn6uD9XDpTw.png">
+<div class="blog-content">
+My eCPPTv3 Exam Experience — A Real Test of Manual Pentesting Skills... <br>(Read More)
 </div>
+</div>
+</a>
 
+
+<a href="https://medium.com/@Anand_Jogawade/the-dark-side-of-free-streaming-apps-why-pikashow-castle-and-others-are-digital-landmines-️-ce5f0a3ab3ea" target="_blank" style="text-decoration:none;color:inherit;">
 <div class="blog">
-<img src="https://source.unsplash.com/600x400/?hacker">
-<div class="blog-content">Blog Title</div>
+<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png">
+<div class="blog-content">
+🚫The Dark Side of Free Streaming Apps: Why PikaShow, Castle, and Others Are Digital Landmines⚠️... <br>(Read More)
 </div>
-
 </div>
+</a>
 
+
+<a href="https://medium.com/@Anand_Jogawade/social-engineering-attacks-and-cybersecurity-awareness-for-end-users-c1b5dd81cbfd" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="blog">
+<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*lZhGKtFo_hci3BYW9n6ydQ.png">
+<div class="blog-content">
+Social Engineering Attacks and Cybersecurity Awareness... <br>(Read More)
+</div>
+</div>
+</a>
+
+
+<a href="https://medium.com/@Anand_Jogawade/cybersecurity-for-small-businesses-fe64eeeeac3a" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="blog">
+<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*-YyoInXnXQCTvihUQaOXbQ.png">
+<div class="blog-content">
+Cybersecurity for Small Businesses... <br>(Read More)
+</div>
+</div>
+</a>
+
+<a href="https://medium.com/@Anand_Jogawade/ldap-nightmare-a-serious-threat-to-active-directory-in-2025-7c3e38857c24" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="blog">
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*JLL03zl3YlJSntCRjPv1DQ.png">
+<div class="blog-content">
+LDAP Nightmare: A Serious Threat to Active Directory in 2025... <br>(Read More)
+</div>
+</div>
+</a>
+
+<a href="https://medium.com/@Anand_Jogawade/emerging-cybersecurity-technologies-the-future-of-digital-protection-9be56fae924c" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="blog">
+<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6EMT6UwBIlJeLXFZQHHNRQ.png">
+<div class="blog-content">
+Emerging Cybersecurity Technologies: The Future of Digital Protection... <br>(Read More)
+</div>
+</div>
+</a>
+
+<a href="https://medium.com/@Anand_Jogawade/cyberwarfare-labs-certified-red-team-analyst-crta-certification-my-experience-honest-7f206d951d8f" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="blog">
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*KlgN48yXT4_WdPWd2DP3gQ.png">
+<div class="blog-content">
+CyberWarFare Labs: Certified Red Team Analyst (CRTA) Certification — My Experience & Honest Review (24hr Exam Format)... <br>(Read More)
+</div>
+</div>
+</a>
+
+
+<a href="https://medium.com/@Anand_Jogawade" target="_blank" style="text-decoration:none;color:inherit;">
+<div class="blog">
+<img src="https://www.shutterstock.com/image-illustration/coming-soon-black-color-background-600nw-2659927991.jpg">
+<div class="blog-content">
+Coming Soon... <br>(Read More)
+</div>
+</div>
+</a>
+</div>
 </section>
 
 <footer id="contact">
 
 <div class="footer-grid">
 
-<div>
-<h3 style="color:white">Anand Jogawade</h3>
-<p style="color:#aaa;margin-top:10px">
-Cyber Security Portfolio
+<div class="about-left">
+<h3>Anand Jogawade</h3>
+
+<p class="footer-text">
+Thank you so much for taking the time to visit my personal website! Here, you'll find a showcase of my work, passions, and creative journey. I’d love for you to connect with me on my social media platforms and dive deeper into the projects I’ve been working on.<br><br>
+
+Let’s collaborate, innovate, and create something truly extraordinary together. Your ideas, feedback, and thoughts mean the world to me, so don’t hesitate to reach out. The best is yet to come—let’s make it happen!
 </p>
-</div>
-
-<div>
-<h3 style="color:white">Contact Info</h3>
-<p>📞 +91 7743819058</p>
-<p>✉ jogawade2@gmail.com</p>
-<p>📍 Pune, Maharashtra, India</p>
-</div>
 
 </div>
 
-<div style="text-align:center;margin-top:40px;color:#aaa">
-Designed ❤️ by <span style="color:#1e88ff">Anand Jogawade</span>
+
+<div class="contact-right">
+<h3>Contact Info</h3>
+<p>✉ anandjogawade@gmail.com</p>
+<p>✉ www.linkedin.com/in/anand-jogawade</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+Designed ❤️ by <span>Anand Jogawade</span>
 </div>
 
 </footer>
@@ -554,10 +691,11 @@ Designed ❤️ by <span style="color:#1e88ff">Anand Jogawade</span>
 /* TITLE ROTATION */
 
 const titles=[
-"Certified AppSec Practitioner",
-"Certified in Cybersecurity",
-"Cyber Security Auditor",
-"Penetration Tester"
+"Application Security Engineer",
+"Lead Penetration Tester",
+"Red Team Specialist",
+"Lead Offensive Security",
+"Security Auditor"
 ];
 
 let i=0;
@@ -701,5 +839,6 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
+
 
 
