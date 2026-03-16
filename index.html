@@ -154,9 +154,11 @@ color:#1e88ff;
 
 .about{
 display:flex;
-gap:40px;
-flex-wrap:wrap;
+gap:60px;
 align-items:center;
+justify-content:center;
+max-width:1200px;
+margin:auto;
 }
 
 .about img{
@@ -362,6 +364,208 @@ cursor:pointer;
 display:none;
 }
 
+/* =========================
+   MOBILE HEADER
+   ========================= */
+
+.menu-toggle{
+display:none;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+/* ===== DESKTOP ABOUT FIX ===== */
+
+.about div{
+flex:1;
+}
+
+.about p{
+margin-bottom:14px;
+line-height:1.7;
+font-size:16px;
+}
+
+/* =========================
+   MOBILE VIEW
+   ========================= */
+
+   
+@media (max-width:768px){
+
+/* MOBILE FONT OPTIMIZATION */
+
+body{
+font-size:14px;
+}
+
+/* logo */
+
+.logo{
+font-size:18px;
+}
+
+/* section headings */
+
+h1{
+font-size:22px;
+}
+
+h2{
+font-size:20px;
+}
+
+/* about text */
+
+.about p{
+font-size:14px;
+line-height:1.6;
+}
+
+/* experience cards */
+
+.exp-card{
+font-size:14px;
+padding:20px;
+}
+
+.exp-card h3{
+font-size:16px;
+}
+
+/* skills */
+
+.skill{
+font-size:13px;
+padding:14px;
+}
+
+/* stats */
+
+.stat-number{
+font-size:26px;
+}
+
+.stats p{
+font-size:13px;
+}
+
+/* blogs */
+
+.blog-content{
+font-size:13px;
+}
+
+/* footer */
+
+.footer-text{
+font-size:13px;
+}
+
+/* header */
+
+header{
+padding:14px 5%;
+}
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#0d0d0f;
+display:none;
+border-top:1px solid #1a1a1a;
+}
+
+nav ul{
+flex-direction:column;
+gap:0;
+}
+
+nav ul li{
+border-bottom:1px solid #1a1a1a;
+}
+
+nav a{
+display:block;
+padding:14px 20px;
+}
+
+nav.active{
+display:block;
+}
+
+/* hero */
+
+.hero{
+background-attachment:scroll;
+}
+
+/* profile */
+
+.profile{
+width:140px;
+height:140px;
+}
+
+/* about */
+
+.about{
+flex-direction:column;
+text-align:left;
+gap:20px;
+}
+
+.about img{
+width:200px;
+margin:auto;
+display:block;
+}
+
+.about p{
+line-height:1.7;
+font-size:15px;
+text-align:left;
+}
+
+/* experience */
+
+.exp-grid{
+grid-template-columns:1fr !important;
+}
+
+/* skills */
+
+.skills-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+/* blogs */
+
+.blog-grid{
+grid-template-columns:1fr;
+}
+
+/* footer */
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.contact-right{
+text-align:center;
+}
+
+}
+
+
 </style>
 
 </head>
@@ -372,7 +576,11 @@ display:none;
 
 <div class="logo">ANAND <span>JOGAWADE</span></div>
 
-<nav>
+<div class="menu-toggle" id="menuToggle">
+☰
+</div>
+
+<nav id="navbar">
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
@@ -414,18 +622,15 @@ src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/mai
 <h2>Lead Penetration Tester</h2>
 
 <p>
-I am a Penetration Tester with 2.5+ years of experience conducting web application, mobile (Android & iOS), and enterprise infrastructure security assessments<p></p>
-across internal and external environments. My work focuses on identifying exploitable weaknesses, mapping realistic attack paths, and demonstrating measurable<p></p>
-business impact through controlled exploitation. In internal assessments, I analyze network architecture and Active Directory environments to identify privilege<p></p> 
-boundaries, trust relationships,and lateral movement opportunities. I prioritize attack path validation assessing how an initial foothold could escalate toward<p></p>
-broader compromise within enterprise domains.<br><br>
+I am a Penetration Tester with 2.5+ years of experience conducting web application, mobile (Android & iOS), and enterprise infrastructure security assessments across internal and external environments. My work focuses on identifying exploitable weaknesses, mapping realistic attack paths, and demonstrating measurable business impact through controlled exploitation. In internal assessments, I analyze network architecture and Active Directory environments to identify privilege boundaries, trust relationships, and lateral movement opportunities. I prioritize attack path validation assessing how an initial foothold could escalate toward broader compromise within enterprise domains.
+</p>
 
-My methodology emphasizes manual testing, business logic flaw discovery, authentication and authorization bypass analysis, privilege escalation, and structured<p></p>
-attack chaining. Where in scope, I also evaluate the effectiveness of security controls by validating detection and response mechanisms, including endpoint and<p></p>
-XDR defenses, to assess resilience against adversarial techniques.Beyond vulnerability discovery, I work closely with engineering and IT teams to provide <p></p>
-risk-prioritized remediation guidance, support secure configuration improvements, and conduct retesting to ensure effective resolution. Alongside enterprise <p></p>
-engagements, I undertake independent security testing and source code reviews,helping organizations strengthen secure development practices and reduce overall<p></p>
-attack surface exposure.
+<p>
+My methodology emphasizes manual testing, business logic flaw discovery, authentication and authorization bypass analysis, privilege escalation, and structured attack chaining. Where in scope, I also evaluate the effectiveness of security controls by validating detection and response mechanisms, including endpoint and XDR defenses, to assess resilience against adversarial techniques.
+</p>
+
+<p>
+Beyond vulnerability discovery, I work closely with engineering and IT teams to provide risk-prioritized remediation guidance, support secure configuration improvements, and conduct retesting to ensure effective resolution. Alongside enterprise engagements, I undertake independent security testing and source code reviews, helping organizations strengthen secure development practices and reduce overall attack surface exposure.
 </p>
 
 </div>
@@ -721,7 +926,7 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-const particleCount=100;
+const particleCount = window.innerWidth < 768 ? 35 : 100;
 
 for(let i=0;i<particleCount;i++){
 
@@ -833,6 +1038,13 @@ btn.style.display=window.scrollY>300?"block":"none";
 
 btn.onclick=function(){
 window.scrollTo({top:0,behavior:"smooth"});
+};
+
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.onclick = () => {
+navbar.classList.toggle("active");
 };
 
 </script>
