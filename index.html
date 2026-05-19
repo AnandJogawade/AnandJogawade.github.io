@@ -99,12 +99,38 @@ z-index:2;
 }
 
 .profile{
-width:210px;
-height:210px;
+width:250px;
+height:250px;
 border-radius:50%;
-border:5px solid #1e88ff;
 object-fit:cover;
-margin-bottom:20px;
+object-position:center top;
+border:4px solid #1e88ff;
+box-shadow:
+0 0 10px #1e88ff,
+0 0 25px rgba(30,136,255,.7),
+0 0 45px rgba(30,136,255,.45);
+animation:profileGlow 3s infinite alternate;
+margin-bottom:22px;
+
+overflow:hidden;
+}
+
+@keyframes profileGlow{
+
+0%{
+box-shadow:
+0 0 10px #1e88ff,
+0 0 25px rgba(30,136,255,.5),
+0 0 40px rgba(30,136,255,.25);
+}
+
+100%{
+box-shadow:
+0 0 18px #1e88ff,
+0 0 40px rgba(30,136,255,.85),
+0 0 65px rgba(30,136,255,.55);
+}
+
 }
 
 .hero h1{
@@ -166,6 +192,60 @@ width:260px;
 border-radius:10px;
 }
 
+/* ABOUT BUTTONS */
+
+.about-buttons{
+display:flex;
+gap:16px;
+margin-top:25px;
+flex-wrap:wrap;
+align-items:center;
+}
+
+/* BUTTON STYLE */
+
+.btn-primary{
+background:#1e88ff;
+color:white;
+padding:14px 24px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+font-size:15px;
+transition:.3s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+min-width:180px;
+border:1px solid transparent;
+}
+
+.btn-primary:hover{
+background:#0d6efd;
+transform:translateY(-2px);
+box-shadow:0 0 15px rgba(30,136,255,.35);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+.about-buttons{
+flex-direction:column;
+align-items:stretch;
+width:100%;
+}
+
+.btn-primary{
+width:100%;
+min-width:100%;
+padding:14px 18px;
+font-size:14px;
+}
+
+}
+
 /* EXPERIENCE */
 
 .exp-grid{
@@ -198,6 +278,133 @@ color:#1e88ff;
 margin-top:10px;
 padding-left:18px;
 color:#bbb;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+
+#Certifications{
+padding:90px 8%;
+}
+
+#Certifications h1{
+text-align:center;
+color:#1e88ff;
+margin-bottom:50px;
+font-size:42px;
+}
+
+/* GRID */
+
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+gap:22px;
+max-width:1400px;
+margin:auto;
+}
+
+/* CARD */
+
+.cert-card{
+background:#0f0f12;
+border:1px solid #16161c;
+border-radius:16px;
+padding:28px 22px;
+text-decoration:none;
+transition:.28s ease;
+display:block;
+text-align:center;
+}
+
+.cert-card:hover{
+transform:translateY(-4px);
+border-color:#1e88ff;
+background:#121218;
+box-shadow:0 0 18px rgba(30,136,255,.10);
+}
+
+/* LOGO */
+
+.cert-logo{
+width:90px;
+height:90px;
+object-fit:contain;
+margin-bottom:18px;
+}
+
+/* CERT NAME */
+
+.cert-content h3{
+color:#ffffff;
+font-size:18px;
+line-height:1.5;
+margin-bottom:12px;
+font-weight:600;
+}
+
+/* PROVIDER */
+
+.cert-content p{
+color:#1e88ff;
+font-size:14px;
+font-weight:500;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+.cert-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+#Certifications{
+padding:80px 5%;
+}
+
+#Certifications h1{
+font-size:32px;
+margin-bottom:35px;
+}
+
+.cert-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.cert-card{
+padding:24px 18px;
+}
+
+.cert-logo{
+width:80px;
+height:80px;
+}
+
+.cert-content h3{
+font-size:17px;
+}
+
+.cert-content p{
+font-size:13px;
+}
+
+.cert-card:hover{
+transform:none;
+}
+
 }
 
 /* SKILLS */
@@ -509,6 +716,7 @@ display:block;
 background-attachment:scroll;
 }
 
+
 /* profile */
 
 .profile{
@@ -587,10 +795,12 @@ text-align:center;
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#experience">Experience</a></li>
+<li><a href="#Certifications">Certifications</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#skills">Stats</a></li>
 <li><a href="#Projects">Projects</a></li>
 <li><a href="#blogs">Blogs</a></li>
+
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -604,7 +814,7 @@ text-align:center;
 <div class="hero-content">
 
 <img class="profile"
-src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/home/newMe.png">
+src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/about/formalPic.jpeg">
 
 <h1>Anand Jogawade</h1>
 <h3 id="title">Security Researcher</h3>
@@ -631,6 +841,25 @@ I am a Penetration Tester with 2.5+ years of experience conducting web applicati
 My methodology emphasizes manual testing, business logic flaw discovery, authentication and authorization bypass analysis, privilege escalation, and structured attack chaining. Where in scope, I also evaluate the effectiveness of security controls by validating detection and response mechanisms, including endpoint and XDR defenses, to assess resilience against adversarial techniques. Beyond vulnerability discovery, I work closely with engineering and IT teams to provide risk-prioritized remediation guidance, support secure configuration improvements, and conduct retesting to ensure effective resolution. Alongside enterprise engagements, I undertake independent security testing and source code reviews, helping organizations strengthen secure development practices and reduce overall attack surface exposure.
 </p>
 
+<div class="about-buttons">
+
+<a href="https://github.com/AnandJogawade" class="btn-primary">
+GitHub
+</a>
+
+<a href="http://www.linkedin.com/in/anand-jogawade" download class="btn-primary">
+Linkedin
+</a>
+
+<a href="https://medium.com/@Anand_Jogawade" download class="btn-primary">
+Medium
+</a>
+
+<a href="resume.pdf" download class="btn-primary">
+⬇ Download Resume
+</a>
+
+</div>
 </div>
 
 </div>
@@ -715,6 +944,144 @@ My methodology emphasizes manual testing, business logic flaw discovery, authent
 <li>Creating & Configuring Network</li>
 </ul>
 </div>
+
+</div>
+
+</section>
+
+<section id="Certifications">
+
+<h1>Certifications</h1>
+
+<div class="cert-grid">
+
+<a href="" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CRTP.png?raw=true" class="cert-logo">
+<h3>Certified Red Team Professional (CRTP)</h3>
+<p>Altered Security</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/ECPPTv3.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Logo/ECPPTv3.png" class="cert-logo">
+<h3>Certified Professional Penetration Tester (eCPPTv3)</h3>
+<p>INE Security</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Active%20Directory%20Red%20Team%20Specialist%20(AD-RTS).png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/AD-RTS.png?raw=true" class="cert-logo">
+<h3>Certified Active Directory Red Team Specialist (AD-RTS)</h3>
+<p>CyberWarFare Labs</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Red%20Team%20Analyst%20(CRTA).png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CRTA.png?raw=true" class="cert-logo">
+<h3>Certified Red Team Analyst (CRTA)</h3>
+<p>CyberWarFare Labs</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Red%20Team%20CredOps%20Infiltrator.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Red%20Team%20%E2%80%93%20CredOps%20Infiltrator%20(CRT-COI).png?raw=true" class="cert-logo">
+<h3>Certified Red Team CredOps Infiltrator (CRT-COI)</h3>
+<p>CyberWarFare Labs</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20in%20Cybersecurity.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CC.png?raw=true" class="cert-logo">
+<h3>Certified in Cybersecurity</h3>
+<p>ISC2</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Fortinet%20Certified%20Associate%20in%20Cybersecurity.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/FCA.png?raw=true" class="cert-logo">
+<h3>Fortinet Certified Associate in Cybersecurity</h3>
+<p>Fortinet</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20AppSec%20Practitionerv2%20(CAP).png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CAP.png?raw=true" class="cert-logo">
+<h3>Certified AppSec Practitioner (CAP)</h3>
+<p>The SecOps Group</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Cloud%20Security%20Practitioner-AWS%20(CCSP-AWS).png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cloud%20Security%20Practitioner%E2%80%93AWS.png?raw=true" class="cert-logo">
+<h3>Certified Cloud Security Practitioner–AWS</h3>
+<p>The SecOps Group</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Network%20Security%20Practitioner%20(CNSP).png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Network%20Security%20Practitioner%20(CNSP).png?raw=true" class="cert-logo">
+<h3>Certified Network Security Practitioner (CNSP)</h3>
+<p>The SecOps Group</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/C3SA.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cyber%20Security%20Analyst%20(C3SA).png?raw=true" class="cert-logo">
+<h3>Certified Cyber Security Analyst (C3SA)</h3>
+<p>CyberWarFare Labs</p>
+</div>
+</a>
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Cybersecurity%20Educator%20Professional%20(CCEP).png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cybersecurity%20Educator%20Professional%20(CCEP).png?raw=true" class="cert-logo">
+<h3>Certified Cybersecurity Educator Professional (CCEP)</h3>
+<p>Red Team Leaders</p>
+</div>
+</a>
+
+<a href="https://www.credly.com/badges/d9f1a6de-ebd0-4f66-9e83-52d45d17d508/public_url" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Ethical%20Hacker.png?raw=true" class="cert-logo">
+<h3>Ethical Hacker</h3>
+<p>Cisco Networking Academy</p>
+</div>
+</a>
+
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/BTF.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Blue%20Team%20Fundamentals%20(BTF).png?raw=true" class="cert-logo">
+<h3>Blue Team Fundamentals (BTF)</h3>
+<p>CyberWarFare Labs</p>
+</div>
+</a>
+
+
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Threat%20intelligence%20Analyst.png" target="_blank" class="cert-card">
+<div class="cert-content">
+<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Threat%20intelligence%20Analyst.png?raw=true/" class="cert-logo">
+<h3>Threat intelligence Analyst</h3>
+<p>arcX</p>
+</div>
+</a>
+
+
+
+</div>
+
+</a>
 
 </div>
 
