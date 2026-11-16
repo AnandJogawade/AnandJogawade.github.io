@@ -43,8 +43,8 @@ nav ul{display:flex;list-style:none;gap:25px}nav a{color:#ccc;font-size:14px;fon
 .socials a:hover{background:#0d6efd;transform:translateY(-2px);box-shadow:0 4px 20px rgba(30,136,255,.4);color:#fff}
 
 /* CVE */
-.cve-box{margin-top:50px;padding-top:35px;border-top:1px solid var(--border)}
-.cve-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-top:18px;transition:.3s}.cve-card:hover{border-color:var(--border-hover);box-shadow:0 0 25px var(--glow)}
+
+.cve-grid{max-width:800px;margin:0 auto}.cve-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;transition:.3s}.cve-card:hover{border-color:var(--border-hover);box-shadow:0 0 25px var(--glow)}
 .badges{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
 .badge{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}.badge.yellow{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.2)}.badge.blue{background:rgba(30,136,255,.12);color:var(--blue);border:1px solid rgba(30,136,255,.2)}
 .cve-card h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}.cve-card h3 a{color:#fff}.cve-card h3 a:hover{color:var(--cyan)}
@@ -132,7 +132,17 @@ section{padding:70px 5%}
 <div class="cve-box"><div class="section-label">CVE Discoveries</div><div class="cve-card"><div class="badges"><span class="badge yellow">CVSS 4.4 Medium</span><span class="badge blue">CWE-79</span><span class="badge blue">Stored XSS</span></div><h3><a href="https://github.com/AnandJogawade/CVE-2026-48849-Roundcube-Webmail-Stored-XSS" target="_blank">CVE-2026-48849</a></h3><p class="desc">Stored Cross-Site Scripting (XSS) / HTML / CSS Injection in Roundcube Webmail. Auto-executes malicious payloads on session restore without user interaction.</p><div class="meta"><span>Product: Roundcube Webmail</span><span>Versions: &lt;1.6.16, &lt;1.7.1</span><span><a href="https://roundcube.net/news/2026/05/24/security-updates-1.6.16-and-1.7.1" target="_blank">Advisory &rarr;</a></span></div></div></div>
 </div></div></section>
 
-<section id="experience"><div class="section-header reveal"><div class="section-label">Career</div><div class="section-title">Experience</div></div><div class="grid exp">
+<section id="cve">
+<div class="section-header reveal"><div class="section-label">Security Research</div><div class="section-title">CVE Discoveries</div></div>
+<div class="cve-grid">
+<div class="cve-card reveal">
+<div class="badges"><span class="badge yellow">CVSS 4.4 Medium</span><span class="badge blue">CWE-79</span><span class="badge blue">Stored XSS</span></div>
+<h3><a href="https://github.com/AnandJogawade/CVE-2026-48849-Roundcube-Webmail-Stored-XSS" target="_blank">CVE-2026-48849</a></h3>
+<p class="desc">Stored Cross-Site Scripting (XSS) / HTML / CSS Injection in Roundcube Webmail. Auto-executes malicious payloads on session restore without user interaction.</p>
+<div class="meta"><span>Product: Roundcube Webmail</span><span>Versions: &lt;1.6.16, &lt;1.7.1</span><span><a href="https://roundcube.net/news/2026/05/24/security-updates-1.6.16-and-1.7.1" target="_blank">Advisory &rarr;</a></span></div>
+</div>
+</div>
+</section><section id="experience"><div class="section-header reveal"><div class="section-label">Career</div><div class="section-title">Experience</div></div><div class="grid exp">
 <div class="card reveal"><h3>Lead Penetration Tester</h3><p class="sub">Infilux AppSec</p><ul><li>Web Application Penetration Testing</li><li>Mobile Application Penetration Testing</li><li>Internal Network / Active Directory Security Assessments</li><li>Firewall Rule Reviews</li><li>Lead and Mentor Penetration Testing Team</li><li>Provide Client Remediation Guidance</li></ul></div>
 <div class="card reveal"><h3>Application Security Engineer</h3><p class="sub">Pixel Softwares</p><ul><li>Web Application Penetration Testing</li><li>Conduct Secure Code Reviews</li><li>Work With Development Teams</li></ul></div>
 <div class="card reveal"><h3>Security Researcher (Bug Bounty)</h3><p class="sub">Com Olho</p><ul><li>Web Application Penetration Testing</li><li>Vulnerability Discovery &amp; Responsible Disclosure</li><li>Reporting and Documenting Security Findings</li></ul></div>
