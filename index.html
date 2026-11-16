@@ -1,1417 +1,168 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anand Jogawade</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Anand Jogawade | Penetration Tester &amp; Security Researcher</title>
+<meta name="description" content="Anand Jogawade (Zazy) - Lead Penetration Tester, Red Teamer & Security Researcher. CRTP | ECPPTv3 | AD-RTS | CRTA | CRT-COI certified. CVE-2026-48849 discoverer.">
+<meta property="og:title" content="Anand Jogawade - Penetration Tester & Security Researcher">
+<meta property="og:description" content="Lead Penetration Tester specializing in offensive security, red team operations, and vulnerability research. CVE-2026-48849 discoverer.">
+<meta property="og:url" content="https://anandjogawade.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#3b82f6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 5L10 25v35c0 28 17 45 40 55 23-10 40-27 40-55V25z' fill='%233b82f6' stroke='%2306b6d4' stroke-width='3'/%3E%3Cpath d='M44 65l-14-14 7-7 7 7 17-17 7 7z' fill='white'/%3E%3C/svg%3E">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,Arial;
-scroll-behavior:smooth;
-}
-
-#about h2{
-color:#1e88ff;
-text-align:left;
-}
-  
-body{
-background:#0a0a0c;
-color:#e6e6e6;
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#0d0d0f;
-padding:16px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #1a1a1a;
-z-index:1000;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-color:white;
-}
-
-.logo span{
-color:#1e88ff;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
-
-nav a{
-color:#ccc;
-text-decoration:none;
-font-size:15px;
-}
-
-nav a:hover{
-color:#1e88ff;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-background-image:url("https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/bg.jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.65);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-}
-
-.profile{
-width:250px;
-height:250px;
-border-radius:50%;
-object-fit:cover;
-object-position:center top;
-border:4px solid #1e88ff;
-box-shadow:
-0 0 10px #1e88ff,
-0 0 25px rgba(30,136,255,.7),
-0 0 45px rgba(30,136,255,.45);
-animation:profileGlow 3s infinite alternate;
-margin-bottom:22px;
-
-overflow:hidden;
-}
-
-@keyframes profileGlow{
-
-0%{
-box-shadow:
-0 0 10px #1e88ff,
-0 0 25px rgba(30,136,255,.5),
-0 0 40px rgba(30,136,255,.25);
-}
-
-100%{
-box-shadow:
-0 0 18px #1e88ff,
-0 0 40px rgba(30,136,255,.85),
-0 0 65px rgba(30,136,255,.55);
-}
-
-}
-
-.hero h1{
-color:#1e88ff;
-}
-
-#title{
-color:white;
-margin-top:6px;
-font-weight:500;
-transition:.3s;
-}
-
-/* PARTICLES */
-
-#particles{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:1;
-}
-
-/* SECTIONS */
-
-section{
-padding:90px 8%;
-}
-
-/* SECTION TITLES (NEW COLOR CHANGE) */
-
-h2{
-text-align:left;
-color:#1e88ff;
-}
-
-#experience h1,
-#skills h1,
-#blogs h1{
-text-align:center;
-color:#1e88ff;
-}
-  
-  
-/* ABOUT */
-
-.about{
-display:flex;
-gap:60px;
-align-items:center;
-justify-content:center;
-max-width:2200px;
-margin:auto;
-}
-
-.about img{
-width:260px;
-border-radius:10px;
-}
-
-/* ABOUT BUTTONS */
-
-.about-buttons{
-display:flex;
-gap:16px;
-margin-top:25px;
-flex-wrap:wrap;
-align-items:center;
-}
-
-/* BUTTON STYLE */
-
-.btn-primary{
-background:#1e88ff;
-color:white;
-padding:14px 24px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-font-size:15px;
-transition:.3s;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-min-width:180px;
-border:1px solid transparent;
-}
-
-.btn-primary:hover{
-background:#0d6efd;
-transform:translateY(-2px);
-box-shadow:0 0 15px rgba(30,136,255,.35);
-}
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width:768px){
-
-.about-buttons{
-flex-direction:column;
-align-items:stretch;
-width:100%;
-}
-
-.btn-primary{
-width:100%;
-min-width:100%;
-padding:14px 18px;
-font-size:14px;
-}
-
-}
-
-/* EXPERIENCE */
-
-.exp-grid{
-margin-top:60px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(550px,1fr));
-gap:24px;
-max-width:1500px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.exp-card{
-background:#121214;
-padding:28px;
-border-radius:13px;
-transition:.27s;
-font-size:18px;
-}
-
-.exp-card:hover{
-transform:translateY(-5px);
-}
-
-.exp-card h3{
-color:#1e88ff;
-}
-
-.exp-card ul{
-margin-top:10px;
-padding-left:18px;
-color:#bbb;
-}
-
-/* =========================
-   CERTIFICATIONS
-========================= */
-
-#Certifications{
-padding:90px 8%;
-}
-
-#Certifications h1{
-text-align:center;
-color:#1e88ff;
-margin-bottom:50px;
-font-size:42px;
-}
-
-/* GRID */
-
-.cert-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-gap:22px;
-max-width:1400px;
-margin:auto;
-}
-
-/* CARD */
-
-.cert-card{
-background:#0f0f12;
-border:1px solid #16161c;
-border-radius:16px;
-padding:28px 22px;
-text-decoration:none;
-transition:.28s ease;
-display:block;
-text-align:center;
-}
-
-.cert-card:hover{
-transform:translateY(-4px);
-border-color:#1e88ff;
-background:#121218;
-box-shadow:0 0 18px rgba(30,136,255,.10);
-}
-
-/* LOGO */
-
-.cert-logo{
-width:90px;
-height:90px;
-object-fit:contain;
-margin-bottom:18px;
-}
-
-/* CERT NAME */
-
-.cert-content h3{
-color:#ffffff;
-font-size:18px;
-line-height:1.5;
-margin-bottom:12px;
-font-weight:600;
-}
-
-/* PROVIDER */
-
-.cert-content p{
-color:#1e88ff;
-font-size:14px;
-font-weight:500;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width:992px){
-
-.cert-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width:768px){
-
-#Certifications{
-padding:80px 5%;
-}
-
-#Certifications h1{
-font-size:32px;
-margin-bottom:35px;
-}
-
-.cert-grid{
-grid-template-columns:1fr;
-gap:18px;
-}
-
-.cert-card{
-padding:24px 18px;
-}
-
-.cert-logo{
-width:80px;
-height:80px;
-}
-
-.cert-content h3{
-font-size:17px;
-}
-
-.cert-content p{
-font-size:13px;
-}
-
-.cert-card:hover{
-transform:none;
-}
-
-}
-
-/* SKILLS */
-
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:40px;
-align-items:start;
-}
-
-.skill{
-background:#121214;
-padding:16px 20px;
-text-align:center;
-border-radius:8px;
-transition:.3s;
-height:auto;
-}
-
-.skill:hover{
-transform:scale(1.08);
-background:#1a1a1f;
-}
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:40px;
-text-align:center;
-}
-
-.stat-box{
-background:#121214;
-padding:30px;
-border-radius:10px;
-transition:.3s;
-}
-
-.stat-box:hover{
-transform:translateY(-6px);
-background:#1a1a1f;
-}
-
-.stat-number{
-font-size:34px;
-color:#1e88ff;
-}
-
-/* BLOG */
-
-.blog-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.blog{
-background:#121214;
-border-radius:10px;
-overflow:hidden;
-transition:.3s;
-cursor:pointer;
-}
-
-.blog:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px rgba(30,136,255,.25);
-}
-
-.blog img{
-width:100%;
-height:150px;
-object-fit:cover;
-}
-
-.blog-content{
-padding:15px;
-}
-
-/* FOOTER */
-
-/* FOOTER */
-
-footer{
-background:#0d0d0f;
-padding:35px 8%;
-border-top:1px solid #1a1a1a;
-font-size:14px;
-margin-top:40px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-width:100%;
-gap:20px;
-align-items:start;
-}
-
-.about-left h3,
-.contact-right h3{
-font-size:16px;
-color:white;
-margin-bottom:8px;
-}
-
-.footer-text{
-color:#bfbfbf;
-line-height:1.6;
-max-width:520px;
-}
-
-.contact-right{
-text-align:right;
-}
-
-.contact-right p{
-color:#bfbfbf;
-margin:4px 0;
-}
-
-.footer-bottom{
-text-align:center;
-margin-top:20px;
-color:#aaa;
-}
-
-.footer-bottom span{
-color:#1e88ff;
-}
-
-.footer-grid ul{
-list-style:none;
-margin-top:10px;
-}
-
-.footer-grid a{
-color:#ccc;
-text-decoration:none;
-}
-
-.footer-grid a:hover{
-color:#1e88ff;
-}
-
-/* SCROLL BUTTON */
-
-#topBtn{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#1e88ff;
-width:45px;
-height:45px;
-border:none;
-border-radius:50%;
-color:white;
-font-size:18px;
-cursor:pointer;
-display:none;
-}
-
-/* =========================
-   MOBILE HEADER
-   ========================= */
-
-.menu-toggle{
-display:none;
-font-size:26px;
-color:white;
-cursor:pointer;
-}
-
-/* ===== DESKTOP ABOUT FIX ===== */
-
-.about div{
-flex:1;
-}
-
-.about p{
-margin-bottom:14px;
-line-height:1.7;
-font-size:16px;
-}
-
-/* =========================
-   MOBILE VIEW
-   ========================= */
-
-   
-@media (max-width:768px){
-
-/* MOBILE FONT OPTIMIZATION */
-
-body{
-font-size:14px;
-}
-
-/* logo */
-
-.logo{
-font-size:18px;
-}
-
-/* section headings */
-
-h1{
-font-size:22px;
-}
-
-h2{
-font-size:20px;
-}
-
-/* about text */
-
-.about p{
-font-size:14px;
-line-height:1.6;
-}
-
-/* experience cards */
-
-.exp-card{
-font-size:14px;
-padding:20px;
-}
-
-.exp-card h3{
-font-size:16px;
-}
-
-/* skills */
-
-.skill{
-font-size:13px;
-padding:14px;
-}
-
-/* stats */
-
-.stat-number{
-font-size:26px;
-}
-
-.stats p{
-font-size:13px;
-}
-
-/* blogs */
-
-.blog-content{
-font-size:13px;
-}
-
-/* footer */
-
-.footer-text{
-font-size:13px;
-}
-
-/* header */
-
-header{
-padding:14px 5%;
-}
-
-.menu-toggle{
-display:block;
-}
-
-nav{
-position:absolute;
-top:60px;
-left:0;
-width:100%;
-background:#0d0d0f;
-display:none;
-border-top:1px solid #1a1a1a;
-}
-
-nav ul{
-flex-direction:column;
-gap:0;
-}
-
-nav ul li{
-border-bottom:1px solid #1a1a1a;
-}
-
-nav a{
-display:block;
-padding:14px 20px;
-}
-
-nav.active{
-display:block;
-}
-
-/* hero */
-
-.hero{
-background-attachment:scroll;
-}
-
-
-/* profile */
-
-.profile{
-width:140px;
-height:140px;
-}
-
-/* about */
-
-.about{
-flex-direction:column;
-text-align:left;
-gap:20px;
-}
-
-.about img{
-width:200px;
-margin:auto;
-display:block;
-}
-
-.about p{
-line-height:1.7;
-font-size:15px;
-text-align:left;
-}
-
-/* experience */
-
-.exp-grid{
-grid-template-columns:1fr !important;
-}
-
-/* skills */
-
-.skills-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-/* blogs */
-
-.blog-grid{
-grid-template-columns:1fr;
-}
-
-/* footer */
-
-.footer-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.contact-right{
-text-align:center;
-}
-
-}
-
-
+:root{--primary:#3b82f6;--primary-dark:#2563eb;--primary-glow:rgba(59,130,246,.15);--accent:#06b6d4;--bg:#0a0a0f;--bg-card:rgba(17,17,26,.85);--bg-card-hover:rgba(25,25,40,.95);--border:rgba(59,130,246,.08);--border-hover:rgba(59,130,246,.25);--text:#e2e8f0;--text-muted:#94a3b8;--text-dim:#64748b;--gradient:linear-gradient(135deg,var(--primary),var(--accent));--radius:12px;--transition:.3s cubic-bezier(.4,0,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden}::selection{background:var(--primary);color:#fff}img{max-width:100%;display:block}a{color:var(--primary);text-decoration:none;transition:var(--transition)}a:hover{color:var(--accent)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
+section{padding:100px 8%;position:relative}.section-label{display:inline-block;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}.section-title{font-size:clamp(28px,4vw,42px);font-weight:700;color:#fff;margin-bottom:50px;position:relative;display:inline-block}.section-title::after{content:'';position:absolute;bottom:-8px;left:0;width:60px;height:3px;background:var(--gradient);border-radius:2px}.section-title.center{text-align:center;display:block}.section-title.center::after{left:50%;transform:translateX(-50%)}.section-header{text-align:center;margin-bottom:60px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+header{position:fixed;top:0;left:0;width:100%;padding:14px 6%;display:flex;justify-content:space-between;align-items:center;z-index:1000;transition:var(--transition);backdrop-filter:blur(0)}header.scrolled{background:rgba(10,10,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:10px 6%}.logo{font-size:20px;font-weight:700;color:#fff;letter-spacing:.5px}.logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}nav ul{display:flex;list-style:none;gap:28px}nav a{color:var(--text-muted);font-size:14px;font-weight:500;position:relative;padding:4px 0}nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gradient);transition:var(--transition)}nav a:hover{color:#fff}nav a:hover::after{width:100%}.menu-toggle{display:none;font-size:24px;color:#fff;cursor:pointer;background:none;border:none}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:url('bg.jpg') center/cover fixed}.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,15,.7) 0%,rgba(10,10,15,.85) 100%)}#particles{position:absolute;inset:0;z-index:1}.hero-content{position:relative;z-index:2}.profile-img{width:200px;height:200px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--primary);box-shadow:0 0 30px rgba(59,130,246,.3),0 0 60px rgba(59,130,246,.1);margin:0 auto 24px;animation:glow 4s ease-in-out infinite alternate}@keyframes glow{0%{box-shadow:0 0 20px rgba(59,130,246,.2),0 0 40px rgba(59,130,246,.1)}100%{box-shadow:0 0 30px rgba(59,130,246,.4),0 0 60px rgba(59,130,246,.2)}}.hero h1{font-size:clamp(28px,5vw,48px);font-weight:700;color:#fff;margin-bottom:8px}.hero-subtitle{font-size:clamp(16px,2.5vw,22px);color:var(--text-muted);min-height:32px}.typing-text{color:var(--primary);font-weight:500}.cursor{display:inline-block;width:2px;height:1.1em;background:var(--primary);margin-left:2px;animation:blink .8s infinite}@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;animation:bounce 2s infinite}@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}.scroll-indicator svg{width:24px;height:24px;stroke:var(--text-muted)}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:60px;align-items:start;max-width:1100px;margin:0 auto}.about-img{width:260px;border-radius:var(--radius);border:2px solid var(--border)}.about-text h2{color:var(--primary);font-size:24px;margin-bottom:16px}.about-text p{color:var(--text-muted);margin-bottom:16px;font-size:15px}.social-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}.social-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;color:#fff;background:rgba(59,130,246,.12);border:1px solid var(--border);transition:var(--transition)}.social-btn:hover{background:var(--primary);border-color:var(--primary);color:#fff;transform:translateY(-2px);box-shadow:0 4px 20px rgba(59,130,246,.3)}
+.cve-section{margin-top:60px;padding-top:40px;border-top:1px solid var(--border)}.cve-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:20px}.cve-card:hover{border-color:var(--border-hover)}.cve-badges{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}.cve-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.5px}.cve-badge.medium{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.2)}.cve-badge.info{background:rgba(59,130,246,.15);color:var(--primary);border:1px solid rgba(59,130,246,.2)}.cve-title{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}.cve-title a{color:#fff}.cve-title a:hover{color:var(--primary)}.cve-desc{color:var(--text-muted);font-size:14px;margin-bottom:12px}.cve-meta{display:flex;gap:24px;color:var(--text-dim);font-size:13px;flex-wrap:wrap}
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;max-width:1200px;margin:0 auto}.exp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:var(--transition)}.exp-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.3)}.exp-card h3{color:var(--primary);font-size:18px;margin-bottom:4px}.exp-card .company{color:var(--text-muted);font-size:14px;margin-bottom:12px}.exp-card ul{padding-left:18px;color:var(--text-muted);font-size:14px}.exp-card li{margin-bottom:4px}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1200px;margin:0 auto}.cert-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:var(--transition);display:block;color:inherit}.cert-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.3);color:inherit}.cert-logo{width:80px;height:80px;object-fit:contain;margin:0 auto 16px}.cert-card h3{color:#fff;font-size:16px;line-height:1.4;margin-bottom:8px;font-weight:600}.cert-card .provider{color:var(--primary);font-size:13px;font-weight:500}
+.arsenal-category{margin-bottom:36px;text-align:center}.arsenal-category h3{color:var(--text-muted);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}.badge-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.badge-grid img{height:32px;transition:var(--transition)}.badge-grid img:hover{transform:scale(1.08)}
+.skills-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:900px;margin:0 auto}.skill-tag{background:var(--bg-card);border:1px solid var(--border);padding:10px 20px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text);transition:var(--transition);cursor:default}.skill-tag:hover{border-color:var(--primary);color:var(--primary);background:rgba(59,130,246,.06)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:900px;margin:60px auto 0}.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:var(--transition)}.stat-card:hover{border-color:var(--border-hover);transform:translateY(-4px)}.stat-number{font-size:36px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2}.stat-label{color:var(--text-muted);font-size:13px;margin-top:6px}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1200px;margin:0 auto}.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:var(--transition);display:flex;flex-direction:column}.project-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.3)}.project-card h3{font-size:18px;color:#fff;margin-bottom:8px}.project-card h3 a{color:#fff}.project-card h3 a:hover{color:var(--primary)}.project-desc{color:var(--text-muted);font-size:14px;flex:1;margin-bottom:16px}.project-tags{display:flex;flex-wrap:wrap;gap:6px}.project-tag{padding:3px 10px;border-radius:4px;font-size:11px;font-weight:600;background:rgba(59,130,246,.1);color:var(--primary);border:1px solid rgba(59,130,246,.15)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1200px;margin:0 auto}.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:var(--transition);display:block;color:inherit}.blog-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.3);color:inherit}.blog-card img{width:100%;height:160px;object-fit:cover}.blog-card .blog-body{padding:18px}.blog-card .blog-title{font-size:15px;color:#fff;font-weight:600;line-height:1.5;margin-bottom:8px}.blog-card .read-more{color:var(--primary);font-size:13px;font-weight:600}
+footer{background:rgba(13,13,18,.95);border-top:1px solid var(--border);padding:50px 8% 24px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;max-width:1100px;margin:0 auto}.footer-about h3{font-size:18px;color:#fff;margin-bottom:12px}.footer-about p{color:var(--text-muted);font-size:14px;line-height:1.7;max-width:460px}.footer-contact h3{font-size:18px;color:#fff;margin-bottom:12px;text-align:right}.footer-contact p{color:var(--text-muted);font-size:14px;text-align:right;margin-bottom:6px}.footer-contact a{color:var(--text-muted)}.footer-contact a:hover{color:var(--primary)}.footer-bottom{text-align:center;padding-top:30px;margin-top:30px;border-top:1px solid var(--border);color:var(--text-dim);font-size:13px}.footer-bottom span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:600}
+#topBtn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:18px;cursor:pointer;display:none;z-index:999;transition:var(--transition);box-shadow:0 4px 15px rgba(59,130,246,.3)}#topBtn:hover{background:var(--primary-dark);transform:translateY(-2px)}
+@media(max-width:768px){section{padding:70px 5%}.menu-toggle{display:block}nav{position:absolute;top:100%;left:0;width:100%;background:rgba(10,10,15,.97);backdrop-filter:blur(16px);display:none;border-top:1px solid var(--border)}nav.active{display:block}nav ul{flex-direction:column;gap:0}nav a{display:block;padding:14px 20px;border-bottom:1px solid var(--border)}nav a::after{display:none}.hero{background-attachment:scroll}.profile-img{width:150px;height:150px}.about-grid{grid-template-columns:1fr;text-align:center}.about-img{margin:0 auto}.about-text{text-align:left}.social-links{justify-content:center}.exp-grid{grid-template-columns:1fr}.cert-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-contact{text-align:center}.footer-contact h3,.footer-contact p{text-align:center}.cve-meta{justify-content:center}.cve-badges{justify-content:center}}
+@media(max-width:480px){.cert-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}}
 </style>
-
 </head>
-
 <body>
-
-<header>
-
+<header id="header">
 <div class="logo">ANAND <span>JOGAWADE</span></div>
-
-<div class="menu-toggle" id="menuToggle">
-☰
-</div>
-
-<nav id="navbar">
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#Certifications">Certifications</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#stats">Stats</a></li>
-<li><a href="#Projects">Projects</a></li>
-<li><a href="#blogs">Blogs</a></li>
-
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+<nav id="navbar"><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#blogs">Blogs</a></li><li><a href="#contact">Contact</a></li></ul></nav>
 </header>
-
 <section class="hero" id="home">
-
 <canvas id="particles"></canvas>
-
 <div class="hero-content">
-
-<img class="profile"
-src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/about/formalPic.jpeg">
-
+<img class="profile-img" src="images/about/formalPic.jpeg" alt="Anand Jogawade" loading="eager">
 <h1>Anand Jogawade</h1>
-<h3 id="title">Security Researcher</h3>
-
+<div class="hero-subtitle"><span class="typing-text" id="typingText"></span><span class="cursor"></span></div>
 </div>
-
+<div class="scroll-indicator"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
 </section>
-
 <section id="about">
-
-<div class="about">
-
-<img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/main/images/about/aformalPic.jpeg">
-
-<div>
-<br><br>
+<div class="about-grid reveal">
+<img class="about-img" src="images/about/aformalPic.jpeg" alt="Anand Jogawade" loading="lazy">
+<div class="about-text">
+<div class="section-label">About Me</div>
 <h2>Lead Penetration Tester</h2>
-
-<p>
-I am a Penetration Tester and Security Researcher with experience assessing web applications, APIs, mobile applications (Android & iOS), and enterprise infrastructure across both internal and external environments.
-
-My experience includes black-box, gray-box, and white-box assessments, with a strong focus on manual testing, business logic vulnerabilities, authentication and authorization flaws, privilege escalation, and attack chaining.
-</p>
-
-<p>
-I assess Active Directory environments, network architectures, trust relationships, and privilege boundaries to uncover opportunities for lateral movement and domain compromise. I also evaluate security controls by testing endpoint protection, EDR/XDR solutions, and detection capabilities against adversarial techniques.
-
-Security research is a significant part of my work. I regularly perform vulnerability research, source code review, and responsible disclosure. My research has resulted in publicly assigned CVE-2026-48849 and security fixes in widely used software</p>
-<p>
-Beyond identifying vulnerabilities, I collaborate with engineering and IT teams to provide risk-based remediation guidance, improve security configurations, and validate fixes through retesting.
-</p>
-<div class="about-buttons">
-
-<a href="https://github.com/AnandJogawade" class="btn-primary">
-GitHub
-</a>
-
-<a href="http://www.linkedin.com/in/anand-jogawade" target="_blank" class="btn-primary">
-Linkedin
-</a>
-
-<a href="https://medium.com/@Anand_Jogawade" target="_blank" class="btn-primary">
-Medium
-</a>
-
+<p>I am a Penetration Tester and Security Researcher with experience assessing web applications, APIs, mobile applications (Android &amp; iOS), and enterprise infrastructure across both internal and external environments. My work spans black-box, gray-box, and white-box assessments with a strong focus on manual testing, business logic vulnerabilities, authentication flaws, privilege escalation, and attack chaining.</p>
+<p>I assess Active Directory environments, network architectures, trust relationships, and privilege boundaries to uncover lateral movement and domain compromise opportunities. I evaluate security controls by testing endpoint protection, EDR/XDR solutions, and detection capabilities against adversarial techniques.</p>
+<p>Security research is a core part of my work. I perform vulnerability research, source code review, and responsible disclosure. My research has resulted in publicly assigned CVE-2026-48849 and security fixes in widely used software. Beyond finding vulnerabilities, I collaborate with engineering and IT teams to provide risk-based remediation guidance and validate fixes through retesting.</p>
+<div class="social-links">
+<a href="https://github.com/AnandJogawade" target="_blank" class="social-btn">GitHub</a>
+<a href="http://www.linkedin.com/in/anand-jogawade" target="_blank" class="social-btn">LinkedIn</a>
+<a href="https://medium.com/@Anand_Jogawade" target="_blank" class="social-btn">Medium</a>
+</div>
+<div class="cve-section">
+<div class="section-label">CVE Discoveries</div>
+<div class="cve-card">
+<div class="cve-badges"><span class="cve-badge medium">CVSS 4.4 Medium</span><span class="cve-badge info">CWE-79</span><span class="cve-badge info">Stored XSS</span></div>
+<div class="cve-title"><a href="https://github.com/AnandJogawade/CVE-2026-48849-Roundcube-Webmail-Stored-XSS" target="_blank">CVE-2026-48849</a></div>
+<div class="cve-desc">Stored Cross-Site Scripting (XSS) / HTML / CSS Injection in Roundcube Webmail. Auto-executes malicious payloads on session restore without user interaction.</div>
+<div class="cve-meta"><span>Product: Roundcube Webmail</span><span>Versions: &lt;1.6.16, &lt;1.7.1</span><span><a href="https://roundcube.net/news/2026/05/24/security-updates-1.6.16-and-1.7.1" target="_blank">Advisory &rarr;</a></span></div>
 </div>
 </div>
-
+</div>
 </div>
 </section>
 <section id="experience">
-
-<h1>Experience</h1>
+<div class="section-header reveal"><div class="section-label">Career</div><div class="section-title center">Experience</div></div>
 <div class="exp-grid">
-<div class="exp-card">
-<h3>Lead Penetration Tester</h3>
-<p>Infilux AppSec</p>
-<ul>
-<li>Web Application Penetration Testing</li>
-<li>Mobile Application Penetration Testing</li>
-<li>Internal Network / Active Directory Security Assessments</li>
-<li>Firewall Rule Reviews</li>
-<li>Lead and Mentor Penetration Testing Team</li>
-<li>Provide Client Remediation Guidance</li>
-</ul>
+<div class="exp-card reveal"><h3>Lead Penetration Tester</h3><p class="company">Infilux AppSec</p><ul><li>Web Application Penetration Testing</li><li>Mobile Application Penetration Testing</li><li>Internal Network / Active Directory Security Assessments</li><li>Firewall Rule Reviews</li><li>Lead and Mentor Penetration Testing Team</li><li>Provide Client Remediation Guidance</li></ul></div>
+<div class="exp-card reveal"><h3>Application Security Engineer</h3><p class="company">Pixel Softwares</p><ul><li>Web Application Penetration Testing</li><li>Conduct Secure Code Reviews</li><li>Work With Development Teams</li></ul></div>
+<div class="exp-card reveal"><h3>Security Researcher (Bug Bounty)</h3><p class="company">Com Olho</p><ul><li>Web Application Penetration Testing</li><li>Vulnerability Discovery &amp; Responsible Disclosure</li><li>Reporting and Documenting Security Findings</li></ul></div>
+<div class="exp-card reveal"><h3>Security Auditor</h3><p class="company">Phoenix TechnoCyber</p><ul><li>Infrastructure VAPT</li><li>Firewall Rule Reviews</li><li>Web Application Penetration Testing</li><li>Conducting IS/GAP Audits</li><li>Client Remediation Guidance</li></ul></div>
+<div class="exp-card reveal"><h3>Web Application Security Intern</h3><p class="company">TechnoHacks EduTech Official</p><ul><li>Web Application Penetration Testing</li><li>Setup/Configuring VMs</li><li>Packet Capturing</li></ul></div>
+<div class="exp-card reveal"><h3>Penetration Testing Intern</h3><p class="company">ShadowFox</p><ul><li>Network Penetration Testing</li><li>Web Application Penetration Testing</li><li>Wifi Hacking</li><li>Packet Capturing</li></ul></div>
+<div class="exp-card reveal"><h3>Cyber Security Intern</h3><p class="company">Tutelr</p><ul><li>Configuration Hardening Of Windows Machine</li><li>Performing Forensics Assessments</li><li>Creating &amp; Configuring Network</li></ul></div>
 </div>
-
-<div class="exp-card">
-<h3>Application Security Engineer</h3>
-<p>Pixel Softwares</p>
-<ul>
-<li>Web Application Penetration Testing</li>
-<li>Conduct Secure Code Reviews</li>
-<li>Work With Development Teams</li>
-</ul>
-</div>
-
-<div class="exp-card">
-<h3>Security Researcher(Bug Bounty)</h3>
-<p>Com Olho</p>
-<ul>
-<li>Web Application Penetration Testing</li>
-<li>Vulnerability Discovery & Responsible Disclosure</li>
-<li>Reporting and Documenting Security Findings</li>
-</ul>
-</div>
-
-<div class="exp-card">
-<h3>Security Auditor</h3>
-<p>Phoenix TechnoCyber</p>
-<ul>
-<li>Infrastructure VAPT</li>
-<li>Firewall Rule Reviews</li>
-<li>Web Application Penetration Testing</li>
-<li>Conducting IS/GAP Audits</li>
-<li>client Remediation Guidance</li>
-</ul>
-</div>
-
-<div class="exp-card">
-<h3>Web Application Security Intern</h3>
-<p>TechnoHacks EduTech Official</p>
-<ul>
-<li>Web Application Penetration Testing</li>
-<li>Setup/Configuring VMs</li>
-<li>Packet Capturing</li>
-</ul>
-</div>
-
-<div class="exp-card">
-<h3>Penetration Testing Intern</h3>
-<p>ShadowFox</p>
-<ul>
-<li>Network Penetration Testing</li>
-<li>Web Application Penetration Testing</li>
-<li>Wifi Hacking</li>
-<li>Packet Capturing</li>
-
-</ul>
-</div>
-
-<div class="exp-card">
-<h3>Cyber Security Intern</h3>
-<p>Tutelr</p>
-<ul>
-<li>Configuration Hardening Of Windows Machine</li>
-<li>Performing Forensics Assessments</li>
-<li>Creating & Configuring Network</li>
-</ul>
-</div>
-
-</div>
-
 </section>
-
-<section id="Certifications">
-
-<h1>Certifications</h1>
-
+<section id="certifications">
+<div class="section-header reveal"><div class="section-label">Credentials</div><div class="section-title center">Certifications</div></div>
 <div class="cert-grid">
-
-<a href="https://www.alteredsecurity.com/redteamlab" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CRTP.png?raw=true" class="cert-logo">
-<h3>Certified Red Team Professional (CRTP)</h3>
-<p>Altered Security</p>
+<a href="https://www.alteredsecurity.com/redteamlab" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CRTP.png?raw=true" class="cert-logo" alt="CRTP" loading="lazy"><h3>Certified Red Team Professional (CRTP)</h3><p class="provider">Altered Security</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/ECPPTv3.png" target="_blank" class="cert-card reveal"><img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Logo/ECPPTv3.png" class="cert-logo" alt="eCPPTv3" loading="lazy"><h3>Certified Professional Penetration Tester (eCPPTv3)</h3><p class="provider">INE Security</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Active%20Directory%20Red%20Team%20Specialist%20(AD-RTS).png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/AD-RTS.png?raw=true" class="cert-logo" alt="AD-RTS" loading="lazy"><h3>Certified Active Directory Red Team Specialist (AD-RTS)</h3><p class="provider">CyberWarFare Labs</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Red%20Team%20Analyst%20(CRTA).png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CRTA.png?raw=true" class="cert-logo" alt="CRTA" loading="lazy"><h3>Certified Red Team Analyst (CRTA)</h3><p class="provider">CyberWarFare Labs</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Red%20Team%20CredOps%20Infiltrator.png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Red%20Team%20%E2%80%93%20CredOps%20Infiltrator%20(CRT-COI).png?raw=true" class="cert-logo" alt="CRT-COI" loading="lazy"><h3>Certified Red Team CredOps Infiltrator (CRT-COI)</h3><p class="provider">CyberWarFare Labs</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20in%20Cybersecurity.png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CC.png?raw=true" class="cert-logo" alt="CC" loading="lazy"><h3>Certified in Cybersecurity</h3><p class="provider">ISC2</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Fortinet%20Certified%20Associate%20in%20Cybersecurity.png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/FCA.png?raw=true" class="cert-logo" alt="FCA" loading="lazy"><h3>Fortinet Certified Associate in Cybersecurity</h3><p class="provider">Fortinet</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20AppSec%20Practitionerv2%20(CAP).png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CAP.png?raw=true" class="cert-logo" alt="CAP" loading="lazy"><h3>Certified AppSec Practitioner (CAP)</h3><p class="provider">The SecOps Group</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Cloud%20Security%20Practitioner-AWS%20(CCSP-AWS).png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cloud%20Security%20Practitioner%E2%80%93AWS.png?raw=true" class="cert-logo" alt="CCSP-AWS" loading="lazy"><h3>Certified Cloud Security Practitioner - AWS</h3><p class="provider">The SecOps Group</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Network%20Security%20Practitioner%20(CNSP).png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Network%20Security%20Practitioner%20(CNSP).png?raw=true" class="cert-logo" alt="CNSP" loading="lazy"><h3>Certified Network Security Practitioner (CNSP)</h3><p class="provider">The SecOps Group</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/C3SA.png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cyber%20Security%20Analyst%20(C3SA).png?raw=true" class="cert-logo" alt="C3SA" loading="lazy"><h3>Certified Cyber Security Analyst (C3SA)</h3><p class="provider">CyberWarFare Labs</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Cybersecurity%20Educator%20Professional%20(CCEP).png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cybersecurity%20Educator%20Professional%20(CCEP).png?raw=true" class="cert-logo" alt="CCEP" loading="lazy"><h3>Certified Cybersecurity Educator Professional (CCEP)</h3><p class="provider">Red Team Leaders</p></a>
+<a href="https://www.credly.com/badges/d9f1a6de-ebd0-4f66-9e83-52d45d17d508/public_url" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Ethical%20Hacker.png?raw=true" class="cert-logo" alt="Ethical Hacker" loading="lazy"><h3>Ethical Hacker</h3><p class="provider">Cisco Networking Academy</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/BTF.png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Blue%20Team%20Fundamentals%20(BTF).png?raw=true" class="cert-logo" alt="BTF" loading="lazy"><h3>Blue Team Fundamentals (BTF)</h3><p class="provider">CyberWarFare Labs</p></a>
+<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Threat%20intelligence%20Analyst.png" target="_blank" class="cert-card reveal"><img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Threat%20intelligence%20Analyst.png?raw=true" class="cert-logo" alt="TIA" loading="lazy"><h3>Threat Intelligence Analyst</h3><p class="provider">arcX</p></a>
 </div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/ECPPTv3.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Logo/ECPPTv3.png" class="cert-logo">
-<h3>Certified Professional Penetration Tester (eCPPTv3)</h3>
-<p>INE Security</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Active%20Directory%20Red%20Team%20Specialist%20(AD-RTS).png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/AD-RTS.png?raw=true" class="cert-logo">
-<h3>Certified Active Directory Red Team Specialist (AD-RTS)</h3>
-<p>CyberWarFare Labs</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Red%20Team%20Analyst%20(CRTA).png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CRTA.png?raw=true" class="cert-logo">
-<h3>Certified Red Team Analyst (CRTA)</h3>
-<p>CyberWarFare Labs</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Red%20Team%20CredOps%20Infiltrator.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Red%20Team%20%E2%80%93%20CredOps%20Infiltrator%20(CRT-COI).png?raw=true" class="cert-logo">
-<h3>Certified Red Team CredOps Infiltrator (CRT-COI)</h3>
-<p>CyberWarFare Labs</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20in%20Cybersecurity.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CC.png?raw=true" class="cert-logo">
-<h3>Certified in Cybersecurity</h3>
-<p>ISC2</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Fortinet%20Certified%20Associate%20in%20Cybersecurity.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/FCA.png?raw=true" class="cert-logo">
-<h3>Fortinet Certified Associate in Cybersecurity</h3>
-<p>Fortinet</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20AppSec%20Practitionerv2%20(CAP).png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/CAP.png?raw=true" class="cert-logo">
-<h3>Certified AppSec Practitioner (CAP)</h3>
-<p>The SecOps Group</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Cloud%20Security%20Practitioner-AWS%20(CCSP-AWS).png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cloud%20Security%20Practitioner%E2%80%93AWS.png?raw=true" class="cert-logo">
-<h3>Certified Cloud Security Practitioner–AWS</h3>
-<p>The SecOps Group</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Network%20Security%20Practitioner%20(CNSP).png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Network%20Security%20Practitioner%20(CNSP).png?raw=true" class="cert-logo">
-<h3>Certified Network Security Practitioner (CNSP)</h3>
-<p>The SecOps Group</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/C3SA.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cyber%20Security%20Analyst%20(C3SA).png?raw=true" class="cert-logo">
-<h3>Certified Cyber Security Analyst (C3SA)</h3>
-<p>CyberWarFare Labs</p>
-</div>
-</a>
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Certified%20Cybersecurity%20Educator%20Professional%20(CCEP).png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Certified%20Cybersecurity%20Educator%20Professional%20(CCEP).png?raw=true" class="cert-logo">
-<h3>Certified Cybersecurity Educator Professional (CCEP)</h3>
-<p>Red Team Leaders</p>
-</div>
-</a>
-
-<a href="https://www.credly.com/badges/d9f1a6de-ebd0-4f66-9e83-52d45d17d508/public_url" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Ethical%20Hacker.png?raw=true" class="cert-logo">
-<h3>Ethical Hacker</h3>
-<p>Cisco Networking Academy</p>
-</div>
-</a>
-
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/BTF.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Blue%20Team%20Fundamentals%20(BTF).png?raw=true" class="cert-logo">
-<h3>Blue Team Fundamentals (BTF)</h3>
-<p>CyberWarFare Labs</p>
-</div>
-</a>
-
-
-<a href="https://raw.githubusercontent.com/AnandJogawade/AnandJogawade.github.io/refs/heads/main/images/Cert-Images/Threat%20intelligence%20Analyst.png" target="_blank" class="cert-card">
-<div class="cert-content">
-<img src="https://github.com/AnandJogawade/AnandJogawade.github.io/blob/main/images/Cert-Logo/Threat%20intelligence%20Analyst.png?raw=true/" class="cert-logo">
-<h3>Threat intelligence Analyst</h3>
-<p>arcX</p>
-</div>
-</a>
-
-
-
-</div>
-
-</a>
-
-</div>
-
 </section>
-
+<section id="arsenal">
+<div class="section-header reveal"><div class="section-label">Toolkit</div><div class="section-title center">Arsenal &amp; Tech Stack</div></div>
+<div class="arsenal-category reveal"><h3>Offensive Tools</h3><div class="badge-grid"><img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali Linux"><img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white" alt="Burp Suite"><img src="https://img.shields.io/badge/Metasploit-2596CD?style=for-the-badge&logo=metasploit&logoColor=white" alt="Metasploit"><img src="https://img.shields.io/badge/Cobalt_Strike-E32636?style=for-the-badge&logoColor=white" alt="Cobalt Strike"><img src="https://img.shields.io/badge/Acunetix-6C3ECB?style=for-the-badge&logoColor=white" alt="Acunetix"><img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark"><img src="https://img.shields.io/badge/BloodHound-DC143C?style=for-the-badge&logoColor=white" alt="BloodHound"><img src="https://img.shields.io/badge/Impacket-333333?style=for-the-badge&logoColor=white" alt="Impacket"><img src="https://img.shields.io/badge/Netexec-00AA00?style=for-the-badge&logoColor=white" alt="Netexec"><img src="https://img.shields.io/badge/Claude_Code-D97706?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code"></div></div>
+<div class="arsenal-category reveal"><h3>Languages &amp; Scripting</h3><div class="badge-grid"><img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"><img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash"><img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black" alt="C"><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++"></div></div>
+<div class="arsenal-category reveal"><h3>Platforms &amp; Environment</h3><div class="badge-grid"><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"><img src="https://img.shields.io/badge/WSL-4D4D4D?style=for-the-badge&logo=windows&logoColor=white" alt="WSL"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"><img src="https://img.shields.io/badge/Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Cloud"></div></div>
+</section>
 <section id="skills">
-
-<h1>Skills</h1>
-
-<div class="skills-grid">
-
-<div class="skill">Active Directory Assessment</div>
-<div class="skill">AV/XDR/EDR Bypass</div>
-<div class="skill">Red Teaming</div>
-<div class="skill">Network VAPT</div>
-<div class="skill">Web Application VAPT</div>
-<div class="skill">Android/IOS Application VAPT</div>
-<div class="skill">API Security Testing</div>
-<div class="skill">Secure Code Review</div>
-<div class="skill">Firewall Rule Review</div>
-<div class="skill">IS/GAP Audit</div>
-<div class="skill">Shell Scripting</div>
-<div class="skill">Bash Scripting</div>
-<div class="skill">Python</div>
-<div class="skill">Networking</div>
-<div class="skill">Team Lead</div>
-<div class="skill">Problem Solving</div>
-<div class="skill">Critical Thinking</div>
-
+<div class="section-header reveal"><div class="section-label">Expertise</div><div class="section-title center">Skills</div></div>
+<div class="skills-grid reveal"><div class="skill-tag">Active Directory Assessment</div><div class="skill-tag">AV/XDR/EDR Bypass</div><div class="skill-tag">Red Teaming</div><div class="skill-tag">Network VAPT</div><div class="skill-tag">Web Application VAPT</div><div class="skill-tag">Android/iOS Application VAPT</div><div class="skill-tag">API Security Testing</div><div class="skill-tag">Secure Code Review</div><div class="skill-tag">Firewall Rule Review</div><div class="skill-tag">IS/GAP Audit</div><div class="skill-tag">Shell Scripting</div><div class="skill-tag">Bash Scripting</div><div class="skill-tag">Python Scripting</div><div class="skill-tag">Networking</div><div class="skill-tag">Vulnerability Research</div><div class="skill-tag">Responsible Disclosure</div><div class="skill-tag">Team Leadership</div><div class="skill-tag">Problem Solving</div><div class="skill-tag">Critical Thinking</div></div>
+<div class="stats-grid">
+<div class="stat-card reveal"><div class="stat-number" data-target="15">0</div><div class="stat-label">Certifications</div></div>
+<div class="stat-card reveal"><div class="stat-number" data-target="1">0</div><div class="stat-label">CVEs Published</div></div>
+<div class="stat-card reveal"><div class="stat-number" data-target="23">0</div><div class="stat-label">Courses Completed</div></div>
+<div class="stat-card reveal"><div class="stat-number" data-target="12">0</div><div class="stat-label">Security Trainings Conducted</div></div>
+<div class="stat-card reveal"><div class="stat-number" id="expMonths">0</div><div class="stat-label">Months Work Experience</div></div>
 </div>
 </section>
-<section id="stats">
-
-<h1>Stats</h1>
-
-<div class="stats">
-
-<div class="stat-box">
-<div class="stat-number" data-target="14">0</div>
-<p>Certifications</p>
+<section id="projects">
+<div class="section-header reveal"><div class="section-label">Open Source</div><div class="section-title center">Projects</div></div>
+<div class="project-grid">
+<div class="project-card reveal"><h3><a href="https://github.com/AnandJogawade/RedTeam-PowerShell-AMSI-Bypass" target="_blank">RedTeam-PowerShell-AMSI-Bypass</a></h3><p class="project-desc">Collection of AMSI bypass techniques including reflection-based, memory patching, syscall, and obfuscation methods. One-liner and multi-liner scripts for red team operations.</p><div class="project-tags"><span class="project-tag">PowerShell</span><span class="project-tag">AMSI Bypass</span><span class="project-tag">Red Team</span></div></div>
+<div class="project-card reveal"><h3><a href="https://github.com/AnandJogawade/Windows-Reverse-Shell" target="_blank">Windows-Reverse-Shell</a></h3><p class="project-desc">29+ reverse shell payloads organized by complexity - basic, advanced, persistent, encrypted TCP, and HTTP beacon shells for penetration testing.</p><div class="project-tags"><span class="project-tag">PowerShell</span><span class="project-tag">Reverse Shell</span><span class="project-tag">Offensive</span></div></div>
+<div class="project-card reveal"><h3><a href="https://github.com/AnandJogawade/CVE-2026-48849-Roundcube-Webmail-Stored-XSS" target="_blank">CVE-2026-48849</a></h3><p class="project-desc">Stored XSS in Roundcube Webmail discovered and responsibly disclosed. Auto-executes on session restore. Includes PoC, payload breakdown, and attack flow documentation.</p><div class="project-tags"><span class="project-tag">CVE</span><span class="project-tag">XSS</span><span class="project-tag">Research</span></div></div>
+<div class="project-card reveal"><h3><a href="https://github.com/AnandJogawade/Zazy-Pentest-Plugin-for-Claude" target="_blank">Zazy-Pentest-Plugin-for-Claude</a></h3><p class="project-desc">Pentesting plugin for Claude Code that automates security testing workflows. Integrates offensive security tools directly into AI-assisted testing.</p><div class="project-tags"><span class="project-tag">Claude Code</span><span class="project-tag">Plugin</span><span class="project-tag">Automation</span></div></div>
 </div>
-
-<div class="stat-box">
-<div class="stat-number" data-target="23">0</div>
-<p>Course Completed</p>
-</div>
-
-<div class="stat-box">
-<div class="stat-number" data-target="12">0</div>
-<p>Conducted Awareness Trainings</p>
-</div>
-
-<div class="stat-box">
-<div class="stat-number" id="expMonths">0</div>
-<p>Total Work Exp (Months)</p>
-</div>
-
-</div>
-
 </section>
 <section id="blogs">
-<h1>Latest Blogs</h1>
-
+<div class="section-header reveal"><div class="section-label">Writing</div><div class="section-title center">Latest Blogs</div></div>
 <div class="blog-grid">
-
-<a href="https://medium.com/@Anand_Jogawade/my-ecpptv3-exam-experience-a-real-test-of-manual-pentesting-skills-febdce44d95f" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*txqZn2Ayt1Thn6uD9XDpTw.png">
-<div class="blog-content">
-My eCPPTv3 Exam Experience — A Real Test of Manual Pentesting Skills... <br>(Read More)
-</div>
-</div>
-</a>
-
-
-<a href="https://medium.com/@Anand_Jogawade/the-dark-side-of-free-streaming-apps-why-pikashow-castle-and-others-are-digital-landmines-️-ce5f0a3ab3ea" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png">
-<div class="blog-content">
-🚫The Dark Side of Free Streaming Apps: Why PikaShow, Castle, and Others Are Digital Landmines⚠️... <br>(Read More)
-</div>
-</div>
-</a>
-
-
-<a href="https://medium.com/@Anand_Jogawade/social-engineering-attacks-and-cybersecurity-awareness-for-end-users-c1b5dd81cbfd" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*lZhGKtFo_hci3BYW9n6ydQ.png">
-<div class="blog-content">
-Social Engineering Attacks and Cybersecurity Awareness... <br>(Read More)
-</div>
-</div>
-</a>
-
-
-<a href="https://medium.com/@Anand_Jogawade/cybersecurity-for-small-businesses-fe64eeeeac3a" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*-YyoInXnXQCTvihUQaOXbQ.png">
-<div class="blog-content">
-Cybersecurity for Small Businesses... <br>(Read More)
-</div>
-</div>
-</a>
-
-<a href="https://medium.com/@Anand_Jogawade/ldap-nightmare-a-serious-threat-to-active-directory-in-2025-7c3e38857c24" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*JLL03zl3YlJSntCRjPv1DQ.png">
-<div class="blog-content">
-LDAP Nightmare: A Serious Threat to Active Directory in 2025... <br>(Read More)
-</div>
-</div>
-</a>
-
-<a href="https://medium.com/@Anand_Jogawade/emerging-cybersecurity-technologies-the-future-of-digital-protection-9be56fae924c" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6EMT6UwBIlJeLXFZQHHNRQ.png">
-<div class="blog-content">
-Emerging Cybersecurity Technologies: The Future of Digital Protection... <br>(Read More)
-</div>
-</div>
-</a>
-
-<a href="https://medium.com/@Anand_Jogawade/cyberwarfare-labs-certified-red-team-analyst-crta-certification-my-experience-honest-7f206d951d8f" target="_blank" style="text-decoration:none;color:inherit;">
-<div class="blog">
-<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*KlgN48yXT4_WdPWd2DP3gQ.png">
-<div class="blog-content">
-CyberWarFare Labs: Certified Red Team Analyst (CRTA) Certification — My Experience & Honest Review (24hr Exam Format)... <br>(Read More)
-</div>
-</div>
-</a>
-
-
-
+<a href="https://medium.com/@Anand_Jogawade/my-ecpptv3-exam-experience-a-real-test-of-manual-pentesting-skills-febdce44d95f" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*txqZn2Ayt1Thn6uD9XDpTw.png" alt="eCPPTv3" loading="lazy"><div class="blog-body"><div class="blog-title">My eCPPTv3 Exam Experience - A Real Test of Manual Pentesting Skills</div><span class="read-more">Read More &rarr;</span></div></a>
+<a href="https://medium.com/@Anand_Jogawade/the-dark-side-of-free-streaming-apps-why-pikashow-castle-and-others-are-digital-landmines-%EF%B8%8F-ce5f0a3ab3ea" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*pCH7MTmzlBdoGkuWYGqweQ.png" alt="Streaming Apps" loading="lazy"><div class="blog-body"><div class="blog-title">The Dark Side of Free Streaming Apps: Why PikaShow, Castle, and Others Are Digital Landmines</div><span class="read-more">Read More &rarr;</span></div></a>
+<a href="https://medium.com/@Anand_Jogawade/social-engineering-attacks-and-cybersecurity-awareness-for-end-users-c1b5dd81cbfd" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*lZhGKtFo_hci3BYW9n6ydQ.png" alt="Social Engineering" loading="lazy"><div class="blog-body"><div class="blog-title">Social Engineering Attacks and Cybersecurity Awareness</div><span class="read-more">Read More &rarr;</span></div></a>
+<a href="https://medium.com/@Anand_Jogawade/cybersecurity-for-small-businesses-fe64eeeeac3a" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*-YyoInXnXQCTvihUQaOXbQ.png" alt="Small Business" loading="lazy"><div class="blog-body"><div class="blog-title">Cybersecurity for Small Businesses</div><span class="read-more">Read More &rarr;</span></div></a>
+<a href="https://medium.com/@Anand_Jogawade/ldap-nightmare-a-serious-threat-to-active-directory-in-2025-7c3e38857c24" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*JLL03zl3YlJSntCRjPv1DQ.png" alt="LDAP Nightmare" loading="lazy"><div class="blog-body"><div class="blog-title">LDAP Nightmare: A Serious Threat to Active Directory</div><span class="read-more">Read More &rarr;</span></div></a>
+<a href="https://medium.com/@Anand_Jogawade/emerging-cybersecurity-technologies-the-future-of-digital-protection-9be56fae924c" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*6EMT6UwBIlJeLXFZQHHNRQ.png" alt="Emerging Tech" loading="lazy"><div class="blog-body"><div class="blog-title">Emerging Cybersecurity Technologies: The Future of Digital Protection</div><span class="read-more">Read More &rarr;</span></div></a>
+<a href="https://medium.com/@Anand_Jogawade/cyberwarfare-labs-certified-red-team-analyst-crta-certification-my-experience-honest-7f206d951d8f" target="_blank" class="blog-card reveal"><img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*KlgN48yXT4_WdPWd2DP3gQ.png" alt="CRTA" loading="lazy"><div class="blog-body"><div class="blog-title">CRTA Certification - My Experience &amp; Honest Review (24hr Exam Format)</div><span class="read-more">Read More &rarr;</span></div></a>
 </div>
 </section>
-
 <footer id="contact">
-
 <div class="footer-grid">
-
-<div class="about-left">
-<h3>Anand Jogawade</h3>
-
-<p class="footer-text">
-Thank you so much for taking the time to visit my personal website! Here, you'll find a showcase of my work, passions, and creative journey. I’d love for you to connect with me on my social media platforms and dive deeper into the projects I’ve been working on.<br><br>
-
-Let’s collaborate, innovate, and create something truly extraordinary together. Your ideas, feedback, and thoughts mean the world to me, so don’t hesitate to reach out. The best is yet to come—let’s make it happen!
-</p>
-
+<div class="footer-about"><h3>Anand Jogawade</h3><p>Penetration Tester and Security Researcher focused on offensive security, red team operations, and vulnerability research. Building tools and sharing knowledge to strengthen security defenses.</p></div>
+<div class="footer-contact"><h3>Contact</h3><p><a href="mailto:anandjogawade@gmail.com">anandjogawade@gmail.com</a></p><p><a href="http://www.linkedin.com/in/anand-jogawade" target="_blank">linkedin.com/in/anand-jogawade</a></p><p><a href="https://github.com/AnandJogawade" target="_blank">github.com/AnandJogawade</a></p></div>
 </div>
-
-
-<div class="contact-right">
-<h3>Contact Info</h3>
-<p>✉ anandjogawade@gmail.com</p>
-<p>✉ www.linkedin.com/in/anand-jogawade</p>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-Designed ❤️ by <span>Anand Jogawade</span>
-</div>
-
+<div class="footer-bottom">Designed by <span>Anand Jogawade</span></div>
 </footer>
-
-<button id="topBtn">↑</button>
-
+<button id="topBtn" aria-label="Scroll to top">&uarr;</button>
 <script>
-
-/* TITLE ROTATION */
-
-const titles=[
-"Application Security Engineer",
-"Lead Penetration Tester",
-"Red Team Specialist",
-"Lead Offensive Security",
-"Security Auditor"
-];
-
-let i=0;
-const title=document.getElementById("title");
-
-setInterval(()=>{
-title.style.opacity=0;
-
-setTimeout(()=>{
-title.innerText=titles[i];
-title.style.opacity=1;
-i=(i+1)%titles.length;
-},100);
-
-},1500);
-
-/* PARTICLES */
-
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-const particleCount = window.innerWidth < 768 ? 35 : 100;
-
-for(let i=0;i<particleCount;i++){
-
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-vx:(Math.random()-0.5)*0.8,
-vy:(Math.random()-0.5)*0.8,
-size:2,
-color:Math.random()>0.5?"#ffffff":"#1e88ff"
-});
-
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-particles.forEach((p,i)=>{
-
-p.x+=p.vx;
-p.y+=p.vy;
-
-if(p.x<0 || p.x>canvas.width || p.y<0 || p.y>canvas.height){
-p.x=Math.random()*canvas.width;
-p.y=Math.random()*canvas.height;
-}
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-ctx.fillStyle=p.color;
-ctx.fill();
-
-particles.slice(i+1).forEach(p2=>{
-
-let dx=p.x-p2.x;
-let dy=p.y-p2.y;
-let dist=Math.sqrt(dx*dx+dy*dy);
-
-if(dist<120){
-
-ctx.beginPath();
-ctx.moveTo(p.x,p.y);
-ctx.lineTo(p2.x,p2.y);
-ctx.strokeStyle="rgba(0,150,255,"+(1-dist/120)+")";
-ctx.stroke();
-
-}
-
-});
-
-});
-
-requestAnimationFrame(draw);
-
-}
-
-draw();
-
-/* COUNTERS */
-
-const start=new Date("2024-01-01");
-
-function calcMonths(){
-const now=new Date();
-let months=(now.getFullYear()-start.getFullYear())*12;
-months+=now.getMonth()-start.getMonth();
-return months;
-}
-
-let months=calcMonths();
-let counter=0;
-
-let interval=setInterval(()=>{
-
-counter++;
-
-document.getElementById("expMonths").innerText=counter;
-
-if(counter>=months)clearInterval(interval);
-
-},700);
-
-document.querySelectorAll(".stat-number").forEach(el=>{
-
-let target=parseInt(el.getAttribute("data-target"));
-if(!target) return;
-
-let count=0;
-
-let interval=setInterval(()=>{
-
-count++;
-el.innerText=count;
-
-if(count>=target)clearInterval(interval);
-
-},700);
-
-});
-
-/* SCROLL BUTTON */
-
-const btn=document.getElementById("topBtn");
-
-window.onscroll=function(){
-btn.style.display=window.scrollY>300?"block":"none";
-};
-
-btn.onclick=function(){
-window.scrollTo({top:0,behavior:"smooth"});
-};
-
-const menuToggle = document.getElementById("menuToggle");
-const navbar = document.getElementById("navbar");
-
-menuToggle.onclick = () => {
-navbar.classList.toggle("active");
-};
-
+const titles=["Lead Penetration Tester","Red Team Specialist","Security Researcher","Bug Bounty Hunter","Offensive Security Lead"];let ti=0,ci=0,deleting=false;const typingEl=document.getElementById("typingText");function typeEffect(){const current=titles[ti];if(!deleting){typingEl.textContent=current.substring(0,ci+1);ci++;if(ci===current.length){deleting=true;setTimeout(typeEffect,2000);return}setTimeout(typeEffect,80)}else{typingEl.textContent=current.substring(0,ci-1);ci--;if(ci===0){deleting=false;ti=(ti+1)%titles.length;setTimeout(typeEffect,400);return}setTimeout(typeEffect,40)}}typeEffect();
+const canvas=document.getElementById("particles"),ctx=canvas.getContext("2d");function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}resizeCanvas();window.addEventListener("resize",resizeCanvas);const pCount=window.innerWidth<768?30:80,pts=[];for(let i=0;i<pCount;i++)pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,s:Math.random()*1.5+.5});function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);pts.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.s,0,Math.PI*2);ctx.fillStyle="rgba(59,130,246,.4)";ctx.fill();for(let j=i+1;j<pts.length;j++){const dx=p.x-pts[j].x,dy=p.y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle="rgba(59,130,246,"+((.15)*(1-d/120))+")";ctx.stroke()}}});requestAnimationFrame(drawParticles)}drawParticles();
+const header=document.getElementById("header");window.addEventListener("scroll",()=>{header.classList.toggle("scrolled",window.scrollY>50);document.getElementById("topBtn").style.display=window.scrollY>400?"block":"none"});
+document.getElementById("menuToggle").addEventListener("click",()=>{document.getElementById("navbar").classList.toggle("active")});document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>{document.getElementById("navbar").classList.remove("active")}));
+document.getElementById("topBtn").addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
+const revealObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");revealObserver.unobserve(e.target)}})},{threshold:.1,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".reveal").forEach(el=>revealObserver.observe(el));
+const counterObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,target=parseInt(el.dataset.target);if(!target||el.dataset.counted)return;el.dataset.counted="1";let count=0;const step=Math.max(1,Math.floor(target/30));const interval=setInterval(()=>{count=Math.min(count+step,target);el.textContent=count;if(count>=target)clearInterval(interval)},40);counterObserver.unobserve(el)})},{threshold:.5});document.querySelectorAll(".stat-number[data-target]").forEach(el=>counterObserver.observe(el));
+const expObserver=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;if(el.dataset.counted)return;el.dataset.counted="1";const start=new Date("2024-01-01"),now=new Date();const months=(now.getFullYear()-start.getFullYear())*12+(now.getMonth()-start.getMonth());let count=0;const interval=setInterval(()=>{count++;el.textContent=count;if(count>=months)clearInterval(interval)},40);expObserver.unobserve(el)})},{threshold:.5});const expEl=document.getElementById("expMonths");if(expEl)expObserver.observe(expEl);
 </script>
-
 </body>
 </html>
-
-
-
